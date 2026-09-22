@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Tantia University International Office</title>
+  <meta name="description" content="Contact Tantia University's International Admissions Office. Get in touch for program inquiries, campus tours, scholarship information, and visa support." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: var(--grad-hero);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      color: var(--white);
+      position: sticky;
+      top: 100px;
+    }
+    .contact-info-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .contact-info-title em { color: var(--gold); font-style: italic; }
+    .contact-info-desc { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 36px; }
+
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      background: rgba(255,255,255,0.07);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-detail:hover { background: rgba(255,255,255,0.12); }
+    .contact-detail-icon { font-size: 24px; flex-shrink: 0; }
+    .contact-detail-label { font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .contact-detail-value { font-size: 14.5px; color: rgba(255,255,255,0.9); line-height: 1.5; }
+    .contact-detail-value a { color: inherit; }
+
+    .office-hours {
+      margin-top: 32px;
+      padding: 24px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius-md);
+    }
+    .oh-title { font-family: var(--font-ui); font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 12px; letter-spacing: 0.04em; }
+    .oh-item { display: flex; justify-content: space-between; font-size: 13.5px; color: rgba(255,255,255,0.8); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .oh-item:last-child { border-bottom: none; }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 56px;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--gray-100);
+    }
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .contact-form-grid .full { grid-column: span 2; }
+
+    .inquiry-types {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .inquiry-type {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--gray-200);
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: var(--transition);
+      background: var(--white);
+    }
+    .inquiry-type:hover, .inquiry-type.selected {
+      border-color: var(--royal);
+      background: rgba(30,77,183,0.08);
+      color: var(--royal);
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-200);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-question {
+      padding: 20px 24px;
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-question:hover { color: var(--royal); }
+    .faq-icon { font-size: 20px; transition: transform 0.3s; color: var(--gold); flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease-smooth), padding 0.3s;
+      padding: 0 24px;
+      font-size: 14.5px;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 24px 20px; }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info-card { position: static; }
+      .contact-form-grid { grid-template-columns: 1fr; }
+      .contact-form-grid .full { grid-column: span 1; }
+      .contact-form-card { padding: 28px 20px; }
+    }
+
+    /* ============================================
+       RESPONSIVE OVERRIDES - ALL DEVICES
+       ============================================ */
+    
+    /* Tablet Landscape (768px - 1023px) */
+    @media (max-width: 1023px) {
+      .two-col-grid { grid-template-columns: 1fr !important; }
+      .three-col-grid { grid-template-columns: 1fr 1fr !important; }
+      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+
+    /* Tablet Portrait (600px - 767px) */
+    @media (max-width: 767px) {
+      .three-col-grid { grid-template-columns: 1fr !important; }
+      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
+      .apply-grid { grid-template-columns: 1fr !important; }
+      .apply-grid .full-width { grid-column: span 1 !important; }
+      .contact-layout { grid-template-columns: 1fr !important; }
+      .contact-info-card { position: static !important; }
+      .contact-form-card { padding: 24px 18px !important; }
+      .contact-form-grid { grid-template-columns: 1fr !important; }
+      .contact-form-grid .full { grid-column: span 1 !important; }
+      .leadership-grid { grid-template-columns: 1fr 1fr !important; }
+      .values-grid { grid-template-columns: 1fr 1fr !important; }
+      .awards-grid { grid-template-columns: 1fr !important; }
+      .admission-steps { grid-template-columns: 1fr 1fr !important; }
+      .eligibility-grid { grid-template-columns: 1fr !important; }
+      .scholarship-grid { grid-template-columns: 1fr !important; }
+      .fee-table { font-size: 12px; }
+      .fee-table th, .fee-table td { padding: 12px 14px; }
+      .faculty-header-card { grid-template-columns: 1fr !important; text-align: center; }
+      .courses-grid { grid-template-columns: 1fr 1fr !important; }
+      .research-grid { grid-template-columns: 1fr !important; }
+      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
+      .sports-grid { grid-template-columns: repeat(4, 1fr) !important; }
+      .international-support-grid { grid-template-columns: 1fr !important; }
+      .hostel-grid { grid-template-columns: 1fr !important; }
+      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
+      .facility-hero-grid { grid-template-columns: 1fr !important; }
+      .facility-card.large { grid-column: span 1 !important; height: 260px !important; }
+      .timeline::before { left: 20px !important; }
+      .timeline-item { grid-template-columns: 48px 1fr !important; }
+      .timeline-content { padding: 20px !important; }
+      .why-acc-badge { display: none; }
+      .events-timeline { padding-left: 28px !important; }
+      .life-hero-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
+      .mosaic-item.span-2-rows { grid-row: span 1 !important; height: 200px; }
+      .mosaic-item { height: 180px; }
+    }
+
+    /* Mobile (up to 599px) */
+    @media (max-width: 599px) {
+      .leadership-grid { grid-template-columns: 1fr !important; }
+      .values-grid { grid-template-columns: 1fr !important; }
+      .admission-steps { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .scholarship-grid { grid-template-columns: 1fr !important; }
+      .courses-grid { grid-template-columns: 1fr !important; }
+      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
+      .sports-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
+      .apply-form { padding: 24px 16px !important; }
+      .eligibility-card { padding: 24px 20px !important; }
+      .faculty-tabs { gap: 8px !important; }
+      .faculty-tab { font-size: 12px !important; padding: 8px 14px !important; }
+      .section-header[style*="justify-content:space-between"] { flex-direction: column !important; }
+    }
+
+  </style>
+</head>
+<body>
+<div class="loader-screen" id="loader">
+  <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
+  <div class="loader-ring"></div>
+  <div class="loader-text">Loading</div>
+</div><div class="loader-text">Loading</div></div>
+<div class="announcement-bar">🌍 <span>Applications Open 2025–26</span> — International Students Welcome! &nbsp;<a href="admissions.html">Apply Now →</a></div>
+
+
+<!-- Nav Overlay -->
+<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.png" alt="Tantia University Logo" />
+        <div class="nav-brand-text">
+          <div class="university-name">Tantia University</div>
+          <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" id="nl-home">Home</a>
+        <a href="about.html" id="nl-about">About</a>
+        <a href="academics.html" id="nl-academics">Academics</a>
+        <a href="admissions.html" id="nl-admissions">Admissions</a>
+        <a href="campus.html" id="nl-campus">Campus</a>
+        <a href="student-life.html" id="nl-student">Student Life</a>
+        <a href="contact.html" id="nl-contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
+        <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="academics.html" onclick="closeMenu()">Academics</a>
+  <a href="admissions.html" onclick="closeMenu()">Admissions</a>
+  <a href="campus.html" onclick="closeMenu()">Campus</a>
+  <a href="student-life.html" onclick="closeMenu()">Student Life</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2025–26 →</a>
+</nav>
+
+
+<div class="page-hero">
+  <div style="position:absolute;inset:0;background-image:url('assets/hero_campus.jpg');background-size:cover;background-position:center;opacity:0.2;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Contact</div>
+    <h1>Get in <em>Touch</em><br />With Us</h1>
+    <p>Our international admissions team is ready to answer all your questions about programs, eligibility, scholarships, and campus life.</p>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<section class="section-pad" style="background:var(--off-white);">
+  <div class="container">
+    <div class="contact-layout">
+      <!-- Info Card -->
+      <div class="contact-info-card fade-in">
+        <div class="contact-info-title">Let's <em>Connect</em></div>
+        <div class="contact-info-desc">Whether you're an international student, parent, or counselor — we're here to help you take the next step.</div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Address</div>
+            <div class="contact-detail-value">Tantia University, Tantia Nagar,<br />Sri Ganganagar, Rajasthan – 335002, India</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-value"><a href="tel:+911544297019">+91-1544-297019</a><br /><a href="tel:+919414487000">+91-9414487000</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value">
+              <a href="mailto:international@tantiauniversity.com">international@tantiauniversity.com</a><br />
+              <a href="mailto:admissions@tantiauniversity.com">admissions@tantiauniversity.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <div>
+            <div class="contact-detail-label">Website</div>
+            <div class="contact-detail-value"><a href="https://www.tantiauniversity.com" target="_blank">www.tantiauniversity.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">💬</div>
+          <div>
+            <div class="contact-detail-label">WhatsApp (International)</div>
+            <div class="contact-detail-value"><a href="https://wa.me/919414487000">+91-9414487000</a></div>
+          </div>
+        </div>
+
+        <div class="office-hours">
+          <div class="oh-title">🕐 Office Hours (IST)</div>
+          <div class="oh-item"><span>Monday – Friday</span><span>9:00 AM – 5:30 PM</span></div>
+          <div class="oh-item"><span>Saturday</span><span>9:00 AM – 1:00 PM</span></div>
+          <div class="oh-item"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card fade-up delay-2">
+        <h2 style="font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--navy);margin-bottom:8px;">Send Us a <span style="color:var(--royal);">Message</span></h2>
+        <p style="font-size:15px;color:var(--gray-600);margin-bottom:32px;">Fill the form below and we'll respond within 24 hours.</p>
+
+        <div style="margin-bottom:24px;">
+          <div style="font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">I am enquiring about:</div>
+          <div class="inquiry-types" id="inquiryTypes">
+            <button class="inquiry-type selected" onclick="selectInquiry(this)">Admissions</button>
+            <button class="inquiry-type" onclick="selectInquiry(this)">Programs</button>
+            <button class="inquiry-type" onclick="selectInquiry(this)">Scholarships</button>
+            <button class="inquiry-type" onclick="selectInquiry(this)">Campus Tour</button>
+            <button class="inquiry-type" onclick="selectInquiry(this)">International Visa</button>
+            <button class="inquiry-type" onclick="selectInquiry(this)">Other</button>
+          </div>
+        </div>
+
+        <form onsubmit="submitContact(event)" id="contactForm">
+          <div class="contact-form-grid">
+            <div class="form-group">
+              <label class="form-label" for="c-name">Full Name *</label>
+              <input class="form-input" id="c-name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email Address *</label>
+              <input class="form-input" id="c-email" type="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-phone">Phone / WhatsApp</label>
+              <input class="form-input" id="c-phone" type="tel" placeholder="+1 234 567 8900" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-country">Country</label>
+              <select class="form-select" id="c-country">
+                <option value="">Select Country</option>
+                <option>India</option><option>Nepal</option><option>Bangladesh</option><option>Nigeria</option>
+                <option>Kenya</option><option>UAE</option><option>USA</option><option>UK</option><option>Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="c-message">Your Message *</label>
+              <textarea class="form-textarea" id="c-message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" id="contact-btn">
+                Send Message →
+              </button>
+            </div>
+          </div>
+        </form>
+        <div id="contact-success" style="display:none;text-align:center;padding:48px 0;">
+          <div style="font-size:64px;margin-bottom:16px;">✅</div>
+          <h3 style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--navy);margin-bottom:12px;">Message Sent!</h3>
+          <p style="color:var(--gray-600);font-size:16px;">Thank you for reaching out. Our team will contact you within 24 hours.</p>
+          <a href="index.html" class="btn btn-royal btn-md" style="margin-top:20px;">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Offices / Quick Connect -->
+<section class="section-pad" style="background:var(--white);">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">International Presence</div>
+      <h2 class="section-title">Reach Us <span>Globally</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;">
+      <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:var(--transition);cursor:pointer;" class="fade-up delay-1" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-size:48px;margin-bottom:12px;">🇮🇳</div>
+        <div style="font-family:var(--font-ui);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">India HQ</div>
+        <div style="font-size:13px;color:var(--gray-600);">Sri Ganganagar, Rajasthan<br />+91-1544-297019</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:var(--transition);cursor:pointer;" class="fade-up delay-2" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-size:48px;margin-bottom:12px;">🌍</div>
+        <div style="font-family:var(--font-ui);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">Africa Region</div>
+        <div style="font-size:13px;color:var(--gray-600);">Nigeria, Kenya, Ghana<br />africa@tantiauniversity.com</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:var(--transition);cursor:pointer;" class="fade-up delay-3" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-size:48px;margin-bottom:12px;">🌏</div>
+        <div style="font-family:var(--font-ui);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">South Asia</div>
+        <div style="font-size:13px;color:var(--gray-600);">Nepal, Bangladesh, Sri Lanka<br />saarc@tantiauniversity.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div class="faq-list fade-up delay-2" style="max-width:800px;margin:56px auto 0;">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">How can international students apply to Tantia University? <span class="faq-icon">+</span></div>
+        <div class="faq-answer">International students can apply through the university's official website or the Study in India portal. The process involves eligibility review, submission of documents (transcripts, English proficiency scores, passport), fee payment, and visa processing.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">What English proficiency tests are accepted? <span class="faq-icon">+</span></div>
+        <div class="faq-answer">We accept IELTS (minimum 6.0 overall), TOEFL (minimum 80 iBT), Cambridge English qualifications, and PTE Academic. Students from English-medium schools may be exempt with appropriate documentation.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Are there scholarships available for international students? <span class="faq-icon">+</span></div>
+        <div class="faq-answer">Yes! We offer the International Scholar Award (50% tuition waiver), Merit Scholarship (up to 100%), and Sports Excellence Grant (25%). Students can also apply for the Study in India Government Scholarship.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">What is the fee for MBBS for international students? <span class="faq-icon">+</span></div>
+        <div class="faq-answer">MBBS tuition fees for international students are approximately $14,500 USD per year. Hostel and mess facilities are an additional $1,500 per year. Contact admissions for a complete fee breakdown.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Does Tantia University help with student visa? <span class="faq-icon">+</span></div>
+        <div class="faq-answer">Absolutely. Our international cell provides full support including provisional admission letters for visa applications, FRRO registration guidance, visa extension support, and immigration counseling throughout your stay.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Is Tantia University recognized internationally? <span class="faq-icon">+</span></div>
+        <div class="faq-answer">Yes. Tantia University is UGC-recognized, NAAC accredited, and an AIU member — meaning our degrees are recognized by universities and professional bodies worldwide. MBBS is MCI/NMC approved, and Law is BCI recognized.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="cta-title">Still Have <em>Questions?</em></div>
+    <p class="cta-subtitle">Our admissions counselors are available Monday–Saturday. Call or WhatsApp us now.</p>
+    <div class="cta-actions">
+      <a href="tel:+919414487000" class="btn btn-primary btn-lg">📞 Call Now</a>
+      <a href="https://wa.me/919414487000" target="_blank" class="btn btn-outline btn-lg">💬 WhatsApp</a>
+      <a href="admissions.html" class="btn btn-glass btn-lg">Apply Online</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Tantia University Logo" />
+        <div class="footer-brand-name">Tantia University</div>
+        <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
+        <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class education & research since 1999.</p>
+        <div class="footer-socials">
+          <div class="social-icon">f</div>
+          <div class="social-icon">𝕏</div>
+          <div class="social-icon">📸</div>
+          <div class="social-icon">in</div>
+          <div class="social-icon">▶</div>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus.html">Campus</a></li>
+        <li><a href="student-life.html">Student Life</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="academics.html#medical">Medical Sciences</a></li>
+        <li><a href="academics.html#engineering">Engineering</a></li>
+        <li><a href="academics.html#management">Management</a></li>
+        <li><a href="academics.html#law">Law</a></li>
+        <li><a href="academics.html#agriculture">Agriculture</a></li>
+        <li><a href="academics.html#pharma">Pharmacy</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
+        <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
+        <li><a href="mailto:international@tantiauniversity.com">✉️ international@tantiauniversity.com</a></li>
+        <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2025 Tantia University. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="main.js"></script>
+<script>
+function selectInquiry(btn) {
+  document.querySelectorAll('.inquiry-type').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+function submitContact(e) {
+  e.preventDefault();
+  const btn = document.getElementById('contact-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  setTimeout(() => {
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('contact-success').style.display = 'block';
+  }, 1200);
+}
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
