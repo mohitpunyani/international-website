@@ -1,0 +1,11 @@
+.DS_Store
+.env
+*.log
+backend/.env
+backend/database/*.sqlite
+backend/vendor/
+backend/node_modules/
+backend/public/build/
+backend/public/storage
+backend/public/hot
+scratch/
