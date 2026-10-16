@@ -22,7 +22,7 @@ COPY backend/composer.json backend/composer.lock ./
 RUN composer install --no-dev --no-scripts --no-autoloader --no-interaction --ignore-platform-req=php+
 
 COPY backend/package.json backend/package-lock.json ./
-RUN npm ci || npm install
+RUN npm ci --legacy-peer-deps || npm install --legacy-peer-deps
 
 COPY backend/ .
 RUN composer dump-autoload --optimize --no-dev --ignore-platform-req=php+
