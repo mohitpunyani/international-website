@@ -49,7 +49,7 @@ export default function Home({ programs = [], testimonials = [], featuredNews, r
             {/* ---- HERO ---- */}
             <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-[#0D2137]">
                 <div className={`absolute inset-0 bg-cover bg-center transition-transform duration-[8s] ease-out ${heroLoaded ? 'scale-100' : 'scale-105'}`}
-                    style={{ backgroundImage: "url('/images/campus_students.jpg')" }} />
+                    style={{ backgroundImage: "url('/images/about_hero.jpg')" }} />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0D2137]/95 via-[#0D2137]/80 to-[#0D2137]/60" />
 
                 <div className="container relative z-10 py-24">

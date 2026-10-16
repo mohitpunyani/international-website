@@ -267,7 +267,7 @@ export default function Academics({ programsByFaculty = {} }) {
                                                 <div className="text-2xl font-black text-white">{feeInfo.finalFee}</div>
                                             </div>
                                             <div className="text-[10px] text-emerald-300 bg-emerald-950/50 px-2.5 py-1 rounded-lg border border-emerald-500/30">
-                                                ✓ Approved 2025-26
+                                                ✓ Approved 2026-27
                                             </div>
                                         </div>
                                     </div>
