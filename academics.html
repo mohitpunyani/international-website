@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Academics – 116+ Programs | Tantia University</title>
-  <meta name="description" content="Explore 116+ undergraduate, postgraduate and doctoral programs at Tantia University across Medical Sciences, Engineering, Management, Law, Agriculture, Pharmacy & more." />
+  <meta name="description"
+    content="Explore 116+ undergraduate, postgraduate and doctoral programs at Tantia University across Medical Sciences, Engineering, Management, Law, Agriculture, Pharmacy & more." />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .faculty-tabs {
@@ -14,6 +16,7 @@
       justify-content: center;
       margin-bottom: 48px;
     }
+
     .faculty-tab {
       display: flex;
       align-items: center;
@@ -29,19 +32,38 @@
       cursor: pointer;
       transition: var(--transition);
     }
-    .faculty-tab:hover, .faculty-tab.active {
+
+    .faculty-tab:hover,
+    .faculty-tab.active {
       background: var(--navy);
       border-color: var(--navy);
       color: var(--white);
     }
-    .faculty-tab.active { background: var(--grad-navy); }
+
+    .faculty-tab.active {
+      background: var(--grad-navy);
+    }
 
     .faculty-section {
       display: none;
       animation: fadeSlide 0.4s var(--ease-smooth);
     }
-    .faculty-section.active { display: block; }
-    @keyframes fadeSlide { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+    .faculty-section.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .faculty-header-card {
       background: var(--grad-navy);
@@ -53,16 +75,18 @@
       gap: 40px;
       align-items: center;
     }
+
     .faculty-big-icon {
       font-size: 72px;
       width: 120px;
       height: 120px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-lg);
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
     .faculty-header-title {
       font-family: var(--font-display);
       font-size: 36px;
@@ -70,7 +94,13 @@
       color: var(--white);
       margin-bottom: 12px;
     }
-    .faculty-header-desc { color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.7; }
+
+    .faculty-header-desc {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
     .faculty-header-stats {
       display: flex;
       flex-direction: column;
@@ -78,19 +108,27 @@
       text-align: center;
       flex-shrink: 0;
     }
+
     .fac-stat-num {
       font-family: var(--font-ui);
       font-size: 36px;
       font-weight: 800;
       color: var(--gold);
     }
-    .fac-stat-label { font-size: 12px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .fac-stat-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
 
     .courses-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
+
     .course-card {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -100,7 +138,13 @@
       transition: var(--transition);
       cursor: pointer;
     }
-    .course-card:hover { border-color: var(--royal); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+    .course-card:hover {
+      border-color: var(--royal);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
     .course-level {
       font-family: var(--font-ui);
       font-size: 11px;
@@ -110,6 +154,7 @@
       color: var(--royal);
       margin-bottom: 8px;
     }
+
     .course-name {
       font-family: var(--font-ui);
       font-size: 17px;
@@ -117,7 +162,13 @@
       color: var(--navy);
       margin-bottom: 10px;
     }
-    .course-details { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .course-details {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
     .course-detail {
       display: flex;
       align-items: center;
@@ -125,6 +176,7 @@
       font-size: 12.5px;
       color: var(--gray-600);
     }
+
     .course-apply {
       margin-top: 20px;
       padding-top: 16px;
@@ -138,6 +190,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .research-card {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -146,442 +199,923 @@
       border-top: 4px solid var(--royal);
       transition: var(--transition);
     }
-    .research-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+
+    .research-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
 
     @media (max-width: 900px) {
-      .courses-grid { grid-template-columns: 1fr 1fr; }
-      .faculty-header-card { grid-template-columns: 1fr; text-align: center; }
-      .faculty-header-stats { flex-direction: row; justify-content: center; }
-      .research-grid { grid-template-columns: 1fr 1fr; }
+      .courses-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .faculty-header-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .faculty-header-stats {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+
     @media (max-width: 600px) {
-      .courses-grid { grid-template-columns: 1fr; }
-      .research-grid { grid-template-columns: 1fr; }
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ============================================
        RESPONSIVE OVERRIDES - ALL DEVICES
        ============================================ */
-    
+
     /* Tablet Landscape (768px - 1023px) */
     @media (max-width: 1023px) {
-      .two-col-grid { grid-template-columns: 1fr !important; }
-      .three-col-grid { grid-template-columns: 1fr 1fr !important; }
-      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
+      .two-col-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .three-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .four-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
     }
 
     /* Tablet Portrait (600px - 767px) */
     @media (max-width: 767px) {
-      .three-col-grid { grid-template-columns: 1fr !important; }
-      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
-      .apply-grid { grid-template-columns: 1fr !important; }
-      .apply-grid .full-width { grid-column: span 1 !important; }
-      .contact-layout { grid-template-columns: 1fr !important; }
-      .contact-info-card { position: static !important; }
-      .contact-form-card { padding: 24px 18px !important; }
-      .contact-form-grid { grid-template-columns: 1fr !important; }
-      .contact-form-grid .full { grid-column: span 1 !important; }
-      .leadership-grid { grid-template-columns: 1fr 1fr !important; }
-      .values-grid { grid-template-columns: 1fr 1fr !important; }
-      .awards-grid { grid-template-columns: 1fr !important; }
-      .admission-steps { grid-template-columns: 1fr 1fr !important; }
-      .eligibility-grid { grid-template-columns: 1fr !important; }
-      .scholarship-grid { grid-template-columns: 1fr !important; }
-      .fee-table { font-size: 12px; }
-      .fee-table th, .fee-table td { padding: 12px 14px; }
-      .faculty-header-card { grid-template-columns: 1fr !important; text-align: center; }
-      .courses-grid { grid-template-columns: 1fr 1fr !important; }
-      .research-grid { grid-template-columns: 1fr !important; }
-      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
-      .sports-grid { grid-template-columns: repeat(4, 1fr) !important; }
-      .international-support-grid { grid-template-columns: 1fr !important; }
-      .hostel-grid { grid-template-columns: 1fr !important; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
-      .facility-hero-grid { grid-template-columns: 1fr !important; }
-      .facility-card.large { grid-column: span 1 !important; height: 260px !important; }
-      .timeline::before { left: 20px !important; }
-      .timeline-item { grid-template-columns: 48px 1fr !important; }
-      .timeline-content { padding: 20px !important; }
-      .why-acc-badge { display: none; }
-      .events-timeline { padding-left: 28px !important; }
-      .life-hero-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
-      .mosaic-item.span-2-rows { grid-row: span 1 !important; height: 200px; }
-      .mosaic-item { height: 180px; }
+      .three-col-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .four-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .apply-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .apply-grid .full-width {
+        grid-column: span 1 !important;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-info-card {
+        position: static !important;
+      }
+
+      .contact-form-card {
+        padding: 24px 18px !important;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-form-grid .full {
+        grid-column: span 1 !important;
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .awards-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admission-steps {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .eligibility-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .fee-table {
+        font-size: 12px;
+      }
+
+      .fee-table th,
+      .fee-table td {
+        padding: 12px 14px;
+      }
+
+      .faculty-header-card {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+
+      .international-support-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hostel-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .facility-hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .facility-card.large {
+        grid-column: span 1 !important;
+        height: 260px !important;
+      }
+
+      .timeline::before {
+        left: 20px !important;
+      }
+
+      .timeline-item {
+        grid-template-columns: 48px 1fr !important;
+      }
+
+      .timeline-content {
+        padding: 20px !important;
+      }
+
+      .why-acc-badge {
+        display: none;
+      }
+
+      .events-timeline {
+        padding-left: 28px !important;
+      }
+
+      .life-hero-mosaic {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto !important;
+      }
+
+      .mosaic-item.span-2-rows {
+        grid-row: span 1 !important;
+        height: 200px;
+      }
+
+      .mosaic-item {
+        height: 180px;
+      }
     }
 
     /* Mobile (up to 599px) */
     @media (max-width: 599px) {
-      .leadership-grid { grid-template-columns: 1fr !important; }
-      .values-grid { grid-template-columns: 1fr !important; }
-      .admission-steps { grid-template-columns: 1fr !important; gap: 40px !important; }
-      .scholarship-grid { grid-template-columns: 1fr !important; }
-      .courses-grid { grid-template-columns: 1fr !important; }
-      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
-      .sports-grid { grid-template-columns: repeat(3, 1fr) !important; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
-      .apply-form { padding: 24px 16px !important; }
-      .eligibility-card { padding: 24px 20px !important; }
-      .faculty-tabs { gap: 8px !important; }
-      .faculty-tab { font-size: 12px !important; padding: 8px 14px !important; }
-      .section-header[style*="justify-content:space-between"] { flex-direction: column !important; }
-    }
+      .leadership-grid {
+        grid-template-columns: 1fr !important;
+      }
 
+      .values-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admission-steps {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .apply-form {
+        padding: 24px 16px !important;
+      }
+
+      .eligibility-card {
+        padding: 24px 20px !important;
+      }
+
+      .faculty-tabs {
+        gap: 8px !important;
+      }
+
+      .faculty-tab {
+        font-size: 12px !important;
+        padding: 8px 14px !important;
+      }
+
+      .section-header[style*="justify-content:space-between"] {
+        flex-direction: column !important;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<div class="loader-screen" id="loader">
-  <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
-  <div class="loader-ring"></div>
+  <div class="loader-screen" id="loader">
+    <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading</div>
+  </div>
   <div class="loader-text">Loading</div>
-</div><div class="loader-text">Loading</div></div>
+  </div>
 
-<div class="announcement-bar">🌍 <span>Applications Open 2025–26</span> — International Students Welcome! &nbsp;<a href="admissions.html">Apply Now →</a></div>
+  <div class="announcement-bar">🌍 <span>Applications Open 2026-27</span> — International Students Welcome! &nbsp;<a
+      href="admissions.html">Apply Now →</a></div>
 
 
-<!-- Nav Overlay -->
-<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+  <!-- Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="nav-brand-text">
-          <div class="university-name">Tantia University</div>
-          <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="nav-brand-text">
+            <div class="university-name">Tantia University</div>
+            <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" id="nl-home">Home</a>
+          <a href="about.html" id="nl-about">About</a>
+          <a href="academics.html" id="nl-academics">Academics</a>
+          <a href="admissions.html" id="nl-admissions">Admissions</a>
+          <a href="campus.html" id="nl-campus">Campus</a>
+          <a href="contact.html" id="nl-contact">Contact</a>
         </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" id="nl-home">Home</a>
-        <a href="about.html" id="nl-about">About</a>
-        <a href="academics.html" id="nl-academics">Academics</a>
-        <a href="admissions.html" id="nl-admissions">Admissions</a>
-        <a href="campus.html" id="nl-campus">Campus</a>
-        <a href="contact.html" id="nl-contact">Contact</a>
+        <div class="nav-cta">
+          <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
+          <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </div>
       </div>
-      <div class="nav-cta">
-        <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
-        <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="academics.html" onclick="closeMenu()">Academics</a>
+    <a href="admissions.html" onclick="closeMenu()">Admissions</a>
+    <a href="campus.html" onclick="closeMenu()">Campus</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2026-27 →</a>
+  </nav>
+
+
+  <div class="page-hero">
+    <div
+      style="position:absolute;inset:0;background-image:url('assets/campus_life.jpg');background-size:cover;background-position:center;opacity:0.2;">
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Academics</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+        <span class="badge badge-gold">116+ Programs</span>
+        <span class="badge badge-white">10 Faculties</span>
+        <span class="badge badge-teal">UG · PG · PhD</span>
       </div>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
+      <h1>World-Class <em>Academic</em><br />Programs</h1>
+      <p>From Medicine to Engineering, Law to Management — discover your path among 116+ internationally recognized
+        programs designed for global success.</p>
     </div>
   </div>
-</nav>
 
-<!-- Mobile Nav -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="academics.html" onclick="closeMenu()">Academics</a>
-  <a href="admissions.html" onclick="closeMenu()">Admissions</a>
-  <a href="campus.html" onclick="closeMenu()">Campus</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2025–26 →</a>
-</nav>
-
-
-<div class="page-hero">
-  <div style="position:absolute;inset:0;background-image:url('assets/campus_life.jpg');background-size:cover;background-position:center;opacity:0.2;"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Academics</div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
-      <span class="badge badge-gold">116+ Programs</span>
-      <span class="badge badge-white">10 Faculties</span>
-      <span class="badge badge-teal">UG · PG · PhD</span>
-    </div>
-    <h1>World-Class <em>Academic</em><br />Programs</h1>
-    <p>From Medicine to Engineering, Law to Management — discover your path among 116+ internationally recognized programs designed for global success.</p>
-  </div>
-</div>
-
-<!-- Programs Explorer -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Explore Programs</div>
-      <h2 class="section-title">Browse by <span>Faculty</span></h2>
-    </div>
-
-    <div class="faculty-tabs" id="facultyTabs">
-      <button class="faculty-tab active" data-faculty="medical" onclick="switchFaculty('medical', this)">🏥 Medical</button>
-      <button class="faculty-tab" data-faculty="engineering" onclick="switchFaculty('engineering', this)">⚙️ Engineering</button>
-      <button class="faculty-tab" data-faculty="management" onclick="switchFaculty('management', this)">💼 Management</button>
-      <button class="faculty-tab" data-faculty="law" onclick="switchFaculty('law', this)">⚖️ Law</button>
-      <button class="faculty-tab" data-faculty="agriculture" onclick="switchFaculty('agriculture', this)">🌾 Agriculture</button>
-      <button class="faculty-tab" data-faculty="pharma" onclick="switchFaculty('pharma', this)">💊 Pharmacy</button>
-      <button class="faculty-tab" data-faculty="education" onclick="switchFaculty('education', this)">📚 Education</button>
-    </div>
-
-    <!-- Medical -->
-    <div class="faculty-section active" id="faculty-medical">
-      <div class="faculty-header-card">
-        <div class="faculty-big-icon">🏥</div>
-        <div>
-          <div class="faculty-header-title">Medical & Health Sciences</div>
-          <div class="faculty-header-desc">A world-class medical faculty with a 500-bed teaching hospital, cutting-edge labs, and experienced faculty. Train as a doctor, nurse, or healthcare professional with clinical excellence.</div>
-        </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">20+</div><div class="fac-stat-label">Courses</div></div>
-          <div><div class="fac-stat-num">500</div><div class="fac-stat-label">Bed Hospital</div></div>
-        </div>
+  <!-- Programs Explorer -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Explore Programs</div>
+        <h2 class="section-title">Browse by <span>Faculty</span></h2>
       </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">MBBS</div><div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋 MCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">BAMS (Ayurveda)</div><div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋 CCIM Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">BHMS (Homeopathy)</div><div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋 CCH Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">BPT (Physiotherapy)</div><div class="course-details"><span class="course-detail">⏱️ 4.5 Years</span><span class="course-detail">📋 INC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Sc. Nursing</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 INC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">MD / MS (Various)</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 NBE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Sc. Medical Lab Tech</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Sc. Radiology</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Doctoral</div><div class="course-name">Ph.D. in Medical Sciences</div><div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋 Research Based</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
 
-    <!-- Engineering -->
-    <div class="faculty-section" id="faculty-engineering">
-      <div class="faculty-header-card" style="background:linear-gradient(135deg,#1A3070,#2C63D9);">
-        <div class="faculty-big-icon">⚙️</div>
-        <div>
-          <div class="faculty-header-title">Engineering & Technology</div>
-          <div class="faculty-header-desc">AICTE-approved B.Tech & B.E. programs with modern laboratories, innovative project work, and industry partnerships preparing engineers for the global market.</div>
-        </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">12+</div><div class="fac-stat-label">Specializations</div></div>
-          <div><div class="fac-stat-num">95%</div><div class="fac-stat-label">Placement</div></div>
-        </div>
+      <div class="faculty-tabs" id="facultyTabs">
+        <button class="faculty-tab active" data-faculty="medical" onclick="switchFaculty('medical', this)">🏥
+          Medical</button>
+        <button class="faculty-tab" data-faculty="engineering" onclick="switchFaculty('engineering', this)">⚙️
+          Engineering</button>
+        <button class="faculty-tab" data-faculty="management" onclick="switchFaculty('management', this)">💼
+          Management</button>
+        <button class="faculty-tab" data-faculty="law" onclick="switchFaculty('law', this)">⚖️ Law</button>
+        <button class="faculty-tab" data-faculty="agriculture" onclick="switchFaculty('agriculture', this)">🌾
+          Agriculture</button>
+        <button class="faculty-tab" data-faculty="pharma" onclick="switchFaculty('pharma', this)">💊 Pharmacy</button>
+        <button class="faculty-tab" data-faculty="education" onclick="switchFaculty('education', this)">📚
+          Education</button>
       </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Tech – Computer Science</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Tech – Electronics & Comm.</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Tech – Mechanical Engg.</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Tech – Civil Engineering</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Tech – Electrical Engg.</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">M.Tech – Various Branches</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
 
-    <!-- Management -->
-    <div class="faculty-section" id="faculty-management">
-      <div class="faculty-header-card" style="background:linear-gradient(135deg,#1a4030,#2d6a4f);">
-        <div class="faculty-big-icon">💼</div>
-        <div>
-          <div class="faculty-header-title">Management & Commerce</div>
-          <div class="faculty-header-desc">Industry-aligned MBA, BBA, B.Com programs with entrepreneurship incubator, global business exposure, and 200+ corporate recruiters.</div>
+      <!-- Medical -->
+      <div class="faculty-section active" id="faculty-medical">
+        <div class="faculty-header-card">
+          <div class="faculty-big-icon">🏥</div>
+          <div>
+            <div class="faculty-header-title">Medical & Health Sciences</div>
+            <div class="faculty-header-desc">A world-class medical faculty with a 500-bed teaching hospital,
+              cutting-edge labs, and experienced faculty. Train as a doctor, nurse, or healthcare professional with
+              clinical excellence.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">20+</div>
+              <div class="fac-stat-label">Courses</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">500</div>
+              <div class="fac-stat-label">Bed Hospital</div>
+            </div>
+          </div>
         </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">10+</div><div class="fac-stat-label">Specializations</div></div>
-          <div><div class="fac-stat-num">200+</div><div class="fac-stat-label">Recruiters</div></div>
-        </div>
-      </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">MBA – Marketing</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">MBA – Finance</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">MBA – HR Management</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 AICTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">BBA – Business Admin</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Com (Honours)</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">M.Com</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
-
-    <!-- Law -->
-    <div class="faculty-section" id="faculty-law">
-      <div class="faculty-header-card" style="background:linear-gradient(135deg,#3d1a1a,#7c3a3a);">
-        <div class="faculty-big-icon">⚖️</div>
-        <div>
-          <div class="faculty-header-title">Law & Legal Studies</div>
-          <div class="faculty-header-desc">BCI recognized law faculty with experienced professors, dedicated moot court chambers, and a legal aid clinic. Prepare for national and international legal careers.</div>
-        </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">5+</div><div class="fac-stat-label">Programs</div></div>
-          <div><div class="fac-stat-num">BCI</div><div class="fac-stat-label">Recognized</div></div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">MBBS</div>
+            <div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋
+                MCI Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">BAMS (Ayurveda)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋
+                CCIM Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">BHMS (Homeopathy)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋
+                CCH Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">BPT (Physiotherapy)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4.5 Years</span><span class="course-detail">📋
+                INC Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Sc. Nursing</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 INC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">MD / MS (Various)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 NBE
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Sc. Medical Lab Tech</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Sc. Radiology</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Doctoral</div>
+            <div class="course-name">Ph.D. in Medical Sciences</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋
+                Research Based</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
         </div>
       </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">LLB (3-Year)</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 BCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">BA LLB (5-Year)</div><div class="course-details"><span class="course-detail">⏱️ 5 Years</span><span class="course-detail">📋 BCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">LLM</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Doctoral</div><div class="course-name">Ph.D. in Law</div><div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋 Research Based</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
 
-    <!-- Agriculture -->
-    <div class="faculty-section" id="faculty-agriculture">
-      <div class="faculty-header-card" style="background:linear-gradient(135deg,#1a3d1a,#2d6a2d);">
-        <div class="faculty-big-icon">🌾</div>
-        <div>
-          <div class="faculty-header-title">Agriculture & Veterinary Sciences</div>
-          <div class="faculty-header-desc">Hands-on agricultural and veterinary education with research farms, livestock facilities, and focus on sustainable agri-tech for modern farming challenges.</div>
+      <!-- Engineering -->
+      <div class="faculty-section" id="faculty-engineering">
+        <div class="faculty-header-card" style="background:linear-gradient(135deg,#1A3070,#2C63D9);">
+          <div class="faculty-big-icon">⚙️</div>
+          <div>
+            <div class="faculty-header-title">Engineering & Technology</div>
+            <div class="faculty-header-desc">AICTE-approved B.Tech & B.E. programs with modern laboratories, innovative
+              project work, and industry partnerships preparing engineers for the global market.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">12+</div>
+              <div class="fac-stat-label">Specializations</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">95%</div>
+              <div class="fac-stat-label">Placement</div>
+            </div>
+          </div>
         </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">8+</div><div class="fac-stat-label">Programs</div></div>
-          <div><div class="fac-stat-num">100ac</div><div class="fac-stat-label">Research Farm</div></div>
-        </div>
-      </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Sc. Agriculture</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 ICAR Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.V.Sc. & A.H.</div><div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋 VCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">M.Sc. Agriculture</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 ICAR Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Doctoral</div><div class="course-name">Ph.D. in Agriculture</div><div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋 Research Based</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
-
-    <!-- Pharmacy -->
-    <div class="faculty-section" id="faculty-pharma">
-      <div class="faculty-header-card" style="background:linear-gradient(135deg,#3d1a3d,#7c3a7c);">
-        <div class="faculty-big-icon">💊</div>
-        <div>
-          <div class="faculty-header-title">Pharmacy & Life Sciences</div>
-          <div class="faculty-header-desc">PCI approved pharmacy programs with advanced pharmaceutical labs, drug analysis facilities, and industry tie-ups for internships and placements.</div>
-        </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">6+</div><div class="fac-stat-label">Programs</div></div>
-          <div><div class="fac-stat-num">PCI</div><div class="fac-stat-label">Approved</div></div>
-        </div>
-      </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Diploma</div><div class="course-name">D.Pharm</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 PCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Pharm</div><div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 PCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">M.Pharm</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 PCI Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Doctoral</div><div class="course-name">Ph.D. in Pharmacy</div><div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋 Research Based</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
-
-    <!-- Education -->
-    <div class="faculty-section" id="faculty-education">
-      <div class="faculty-header-card" style="background:linear-gradient(135deg,#1a2a3d,#2a4a6d);">
-        <div class="faculty-big-icon">📚</div>
-        <div>
-          <div class="faculty-header-title">Education & Humanities</div>
-          <div class="faculty-header-desc">B.Ed, M.Ed, B.P.Ed, and Arts & Social Sciences programs focused on developing educators, thinkers, and changemakers for a progressive society.</div>
-        </div>
-        <div class="faculty-header-stats">
-          <div><div class="fac-stat-num">10+</div><div class="fac-stat-label">Programs</div></div>
-          <div><div class="fac-stat-num">NCTE</div><div class="fac-stat-label">Recognized</div></div>
-        </div>
-      </div>
-      <div class="courses-grid">
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.Ed</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 NCTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Postgraduate</div><div class="course-name">M.Ed</div><div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 NCTE Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">B.P.Ed (Physical Education)</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-        <div class="course-card"><div class="course-level">Undergraduate</div><div class="course-name">BA (Various Hons.)</div><div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC Approved</span></div><div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Research -->
-<section class="section-pad" style="background:var(--white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Research & Innovation</div>
-      <h2 class="section-title">Pioneering <span>Research</span> Centers</h2>
-      <p class="section-subtitle">Pushing boundaries of knowledge through state-of-the-art research infrastructure and global collaborations.</p>
-    </div>
-    <div class="research-grid">
-      <div class="research-card fade-up delay-1">
-        <div style="font-size:40px;margin-bottom:16px;">🧬</div>
-        <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;">Biomedical Research Center</div>
-        <div style="font-size:14px;color:var(--gray-600);line-height:1.7;">Advanced genomics, clinical research and biomedical innovation with state-of-the-art laboratories and international collaborations.</div>
-      </div>
-      <div class="research-card fade-up delay-2" style="border-top-color:var(--gold);">
-        <div style="font-size:40px;margin-bottom:16px;">🌱</div>
-        <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;">Agricultural Innovation Lab</div>
-        <div style="font-size:14px;color:var(--gray-600);line-height:1.7;">Research on sustainable farming, crop science, drought-resistant varieties, and agri-tech solutions for arid regions.</div>
-      </div>
-      <div class="research-card fade-up delay-3" style="border-top-color:var(--teal);">
-        <div style="font-size:40px;margin-bottom:16px;">💻</div>
-        <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;">AI & Technology Hub</div>
-        <div style="font-size:14px;color:var(--gray-600);line-height:1.7;">Artificial Intelligence, machine learning, robotics research with industry partnerships and startup incubation support.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="cta-title">Find Your Perfect <em>Program</em></div>
-    <p class="cta-subtitle">Apply online today and take the first step toward your global career.</p>
-    <div class="cta-actions">
-      <a href="admissions.html" class="btn btn-primary btn-lg">Apply Online →</a>
-      <a href="contact.html" class="btn btn-outline btn-lg">Get Counseling</a>
-    </div>
-  </div>
-</section>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="footer-brand-name">Tantia University</div>
-        <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
-        <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class education & research since 1999.</p>
-        <div class="footer-socials">
-          <div class="social-icon">f</div>
-          <div class="social-icon">𝕏</div>
-          <div class="social-icon">📸</div>
-          <div class="social-icon">in</div>
-          <div class="social-icon">▶</div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Tech – Computer Science</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Tech – Electronics & Comm.</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Tech – Mechanical Engg.</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Tech – Civil Engineering</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Tech – Electrical Engg.</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">M.Tech – Various Branches</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
         </div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="academics.html">Academics</a></li>
-        <li><a href="admissions.html">Admissions</a></li>
-        <li><a href="campus.html">Campus</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Programs</h4><ul>
-        <li><a href="academics.html#medical">Medical Sciences</a></li>
-        <li><a href="academics.html#engineering">Engineering</a></li>
-        <li><a href="academics.html#management">Management</a></li>
-        <li><a href="academics.html#law">Law</a></li>
-        <li><a href="academics.html#agriculture">Agriculture</a></li>
-        <li><a href="academics.html#pharma">Pharmacy</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul>
-        <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
-        <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
-        <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
-        <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
-      </ul></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="footer-bottom">
-      <span>© 2025 Tantia University. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+
+      <!-- Management -->
+      <div class="faculty-section" id="faculty-management">
+        <div class="faculty-header-card" style="background:linear-gradient(135deg,#1a4030,#2d6a4f);">
+          <div class="faculty-big-icon">💼</div>
+          <div>
+            <div class="faculty-header-title">Management & Commerce</div>
+            <div class="faculty-header-desc">Industry-aligned MBA, BBA, B.Com programs with entrepreneurship incubator,
+              global business exposure, and 200+ corporate recruiters.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">10+</div>
+              <div class="fac-stat-label">Specializations</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">200+</div>
+              <div class="fac-stat-label">Recruiters</div>
+            </div>
+          </div>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">MBA – Marketing</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">MBA – Finance</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">MBA – HR Management</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋
+                AICTE Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">BBA – Business Admin</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Com (Honours)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">M.Com</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Law -->
+      <div class="faculty-section" id="faculty-law">
+        <div class="faculty-header-card" style="background:linear-gradient(135deg,#3d1a1a,#7c3a3a);">
+          <div class="faculty-big-icon">⚖️</div>
+          <div>
+            <div class="faculty-header-title">Law & Legal Studies</div>
+            <div class="faculty-header-desc">BCI recognized law faculty with experienced professors, dedicated moot
+              court chambers, and a legal aid clinic. Prepare for national and international legal careers.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">5+</div>
+              <div class="fac-stat-label">Programs</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">BCI</div>
+              <div class="fac-stat-label">Recognized</div>
+            </div>
+          </div>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">LLB (3-Year)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 BCI
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">BA LLB (5-Year)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 5 Years</span><span class="course-detail">📋 BCI
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">LLM</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Doctoral</div>
+            <div class="course-name">Ph.D. in Law</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋
+                Research Based</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agriculture -->
+      <div class="faculty-section" id="faculty-agriculture">
+        <div class="faculty-header-card" style="background:linear-gradient(135deg,#1a3d1a,#2d6a2d);">
+          <div class="faculty-big-icon">🌾</div>
+          <div>
+            <div class="faculty-header-title">Agriculture & Veterinary Sciences</div>
+            <div class="faculty-header-desc">Hands-on agricultural and veterinary education with research farms,
+              livestock facilities, and focus on sustainable agri-tech for modern farming challenges.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">8+</div>
+              <div class="fac-stat-label">Programs</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">100ac</div>
+              <div class="fac-stat-label">Research Farm</div>
+            </div>
+          </div>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Sc. Agriculture</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 ICAR
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.V.Sc. & A.H.</div>
+            <div class="course-details"><span class="course-detail">⏱️ 5.5 Years</span><span class="course-detail">📋
+                VCI Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">M.Sc. Agriculture</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 ICAR
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Doctoral</div>
+            <div class="course-name">Ph.D. in Agriculture</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋
+                Research Based</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pharmacy -->
+      <div class="faculty-section" id="faculty-pharma">
+        <div class="faculty-header-card" style="background:linear-gradient(135deg,#3d1a3d,#7c3a7c);">
+          <div class="faculty-big-icon">💊</div>
+          <div>
+            <div class="faculty-header-title">Pharmacy & Life Sciences</div>
+            <div class="faculty-header-desc">PCI approved pharmacy programs with advanced pharmaceutical labs, drug
+              analysis facilities, and industry tie-ups for internships and placements.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">6+</div>
+              <div class="fac-stat-label">Programs</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">PCI</div>
+              <div class="fac-stat-label">Approved</div>
+            </div>
+          </div>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Diploma</div>
+            <div class="course-name">D.Pharm</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 PCI
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Pharm</div>
+            <div class="course-details"><span class="course-detail">⏱️ 4 Years</span><span class="course-detail">📋 PCI
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">M.Pharm</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 PCI
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Doctoral</div>
+            <div class="course-name">Ph.D. in Pharmacy</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3-5 Years</span><span class="course-detail">📋
+                Research Based</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="faculty-section" id="faculty-education">
+        <div class="faculty-header-card" style="background:linear-gradient(135deg,#1a2a3d,#2a4a6d);">
+          <div class="faculty-big-icon">📚</div>
+          <div>
+            <div class="faculty-header-title">Education & Humanities</div>
+            <div class="faculty-header-desc">B.Ed, M.Ed, B.P.Ed, and Arts & Social Sciences programs focused on
+              developing educators, thinkers, and changemakers for a progressive society.</div>
+          </div>
+          <div class="faculty-header-stats">
+            <div>
+              <div class="fac-stat-num">10+</div>
+              <div class="fac-stat-label">Programs</div>
+            </div>
+            <div>
+              <div class="fac-stat-num">NCTE</div>
+              <div class="fac-stat-label">Recognized</div>
+            </div>
+          </div>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.Ed</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 NCTE
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Postgraduate</div>
+            <div class="course-name">M.Ed</div>
+            <div class="course-details"><span class="course-detail">⏱️ 2 Years</span><span class="course-detail">📋 NCTE
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">B.P.Ed (Physical Education)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+          <div class="course-card">
+            <div class="course-level">Undergraduate</div>
+            <div class="course-name">BA (Various Hons.)</div>
+            <div class="course-details"><span class="course-detail">⏱️ 3 Years</span><span class="course-detail">📋 UGC
+                Approved</span></div>
+            <div class="course-apply"><a href="admissions.html" class="btn btn-royal btn-sm">Apply →</a></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- Research -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Research & Innovation</div>
+        <h2 class="section-title">Pioneering <span>Research</span> Centers</h2>
+        <p class="section-subtitle">Pushing boundaries of knowledge through state-of-the-art research infrastructure and
+          global collaborations.</p>
+      </div>
+      <div class="research-grid">
+        <div class="research-card fade-up delay-1">
+          <div style="font-size:40px;margin-bottom:16px;">🧬</div>
+          <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;">
+            Biomedical Research Center</div>
+          <div style="font-size:14px;color:var(--gray-600);line-height:1.7;">Advanced genomics, clinical research and
+            biomedical innovation with state-of-the-art laboratories and international collaborations.</div>
+        </div>
+        <div class="research-card fade-up delay-2" style="border-top-color:var(--gold);">
+          <div style="font-size:40px;margin-bottom:16px;">🌱</div>
+          <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;">
+            Agricultural Innovation Lab</div>
+          <div style="font-size:14px;color:var(--gray-600);line-height:1.7;">Research on sustainable farming, crop
+            science, drought-resistant varieties, and agri-tech solutions for arid regions.</div>
+        </div>
+        <div class="research-card fade-up delay-3" style="border-top-color:var(--teal);">
+          <div style="font-size:40px;margin-bottom:16px;">💻</div>
+          <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;">
+            AI & Technology Hub</div>
+          <div style="font-size:14px;color:var(--gray-600);line-height:1.7;">Artificial Intelligence, machine learning,
+            robotics research with industry partnerships and startup incubation support.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="cta-title">Find Your Perfect <em>Program</em></div>
+      <p class="cta-subtitle">Apply online today and take the first step toward your global career.</p>
+      <div class="cta-actions">
+        <a href="admissions.html" class="btn btn-primary btn-lg">Apply Online →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Get Counseling</a>
+      </div>
+    </div>
+  </section>
 
 
-<script src="main.js"></script>
-<script>
-  function switchFaculty(id, btn) {
-    document.querySelectorAll('.faculty-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.faculty-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('faculty-' + id).classList.add('active');
-    btn.classList.add('active');
-  }
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="footer-brand-name">Tantia University</div>
+          <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
+          <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class
+            education & research since 1999.</p>
+          <div class="footer-socials">
+            <div class="social-icon">f</div>
+            <div class="social-icon">𝕏</div>
+            <div class="social-icon">📸</div>
+            <div class="social-icon">in</div>
+            <div class="social-icon">▶</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="academics.html#medical">Medical Sciences</a></li>
+            <li><a href="academics.html#engineering">Engineering</a></li>
+            <li><a href="academics.html#management">Management</a></li>
+            <li><a href="academics.html#law">Law</a></li>
+            <li><a href="academics.html#agriculture">Agriculture</a></li>
+            <li><a href="academics.html#pharma">Pharmacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
+            <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
+            <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
+            <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2025 Tantia University. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  // Check URL hash for direct links
-  const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    const btn = document.querySelector(`[data-faculty="${hash}"]`);
-    if (btn) switchFaculty(hash, btn);
-  }
-</script>
+
+  <script src="main.js"></script>
+  <script>
+    function switchFaculty(id, btn) {
+      document.querySelectorAll('.faculty-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.faculty-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('faculty-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // Check URL hash for direct links
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const btn = document.querySelector(`[data-faculty="${hash}"]`);
+      if (btn) switchFaculty(hash, btn);
+    }
+  </script>
 </body>
+
 </html>

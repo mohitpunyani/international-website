@@ -1,7 +1,7 @@
 import { Head, Link, useForm } from '@inertiajs/react';
 import MainLayout from '@/Layouts/MainLayout';
 
-const COUNTRIES = ['India','Nepal','Bangladesh','Sri Lanka','Nigeria','Kenya','UAE','Saudi Arabia','Afghanistan','Jordan','Ghana','Ethiopia','Pakistan','Other'];
+const COUNTRIES = ['India', 'Nepal', 'Bangladesh', 'Sri Lanka', 'Nigeria', 'Kenya', 'UAE', 'Saudi Arabia', 'Afghanistan', 'Jordan', 'Ghana', 'Ethiopia', 'Pakistan', 'Other'];
 
 export default function Admissions({ programs = [] }) {
     const { data, setData, post, processing, errors, wasSuccessful, reset } = useForm({
@@ -145,7 +145,7 @@ export default function Admissions({ programs = [] }) {
             <section className="section-pad bg-[#F8F9FC]" id="fee-structure">
                 <div className="container">
                     <div className="section-header centered fade-up">
-                        <div className="section-label">Approved Fee Structure 2025–26</div>
+                        <div className="section-label">Approved Fee Structure 2026-27</div>
                         <h2 className="section-title">Official <span>International Student Fee Structure</span></h2>
                         <p className="section-subtitle">Annual tuition fees for international students with approved 50% &amp; 70% scholarships.</p>
                     </div>
@@ -171,15 +171,15 @@ export default function Admissions({ programs = [] }) {
                             </thead>
                             <tbody className="divide-y divide-gray-100 text-gray-700">
                                 {[
-                                    { id: 1,  name: 'BPT (Bachelor of Physiotherapy)', orig: '$2,000', fee: '$1,000' },
-                                    { id: 2,  name: 'MPT (Master of Physiotherapy)', orig: '$2,200', fee: '$1,100' },
-                                    { id: 3,  name: 'BASLP (Audiology & Speech Language Pathology)', orig: '$1,000', fee: '$500' },
-                                    { id: 4,  name: 'BMLS (Medical Lab Sciences)', orig: '$1,000', fee: '$500' },
-                                    { id: 5,  name: 'B.Optom. (Bachelor of Optometry)', orig: '$1,000', fee: '$500' },
-                                    { id: 6,  name: 'BMRIT (Medical Radiology & Imaging Tech)', orig: '$1,000', fee: '$500' },
-                                    { id: 7,  name: 'B.Sc. Nursing', orig: '$3,000', fee: '$1,500' },
-                                    { id: 8,  name: 'Post Basic B.Sc. Nursing', orig: '$2,000', fee: '$1,000' },
-                                    { id: 9,  name: 'M.Sc. Nursing', orig: '$2,800', fee: '$1,400' },
+                                    { id: 1, name: 'BPT (Bachelor of Physiotherapy)', orig: '$2,000', fee: '$1,000' },
+                                    { id: 2, name: 'MPT (Master of Physiotherapy)', orig: '$2,200', fee: '$1,100' },
+                                    { id: 3, name: 'BASLP (Audiology & Speech Language Pathology)', orig: '$1,000', fee: '$500' },
+                                    { id: 4, name: 'BMLS (Medical Lab Sciences)', orig: '$1,000', fee: '$500' },
+                                    { id: 5, name: 'B.Optom. (Bachelor of Optometry)', orig: '$1,000', fee: '$500' },
+                                    { id: 6, name: 'BMRIT (Medical Radiology & Imaging Tech)', orig: '$1,000', fee: '$500' },
+                                    { id: 7, name: 'B.Sc. Nursing', orig: '$3,000', fee: '$1,500' },
+                                    { id: 8, name: 'Post Basic B.Sc. Nursing', orig: '$2,000', fee: '$1,000' },
+                                    { id: 9, name: 'M.Sc. Nursing', orig: '$2,800', fee: '$1,400' },
                                     { id: 10, name: 'M.Sc. Agriculture', orig: '$1,800', fee: '$900' },
                                     { id: 11, name: 'MBA (Agribusiness)', orig: '$1,000', fee: '$500' },
                                     { id: 12, name: 'B.Pharmacy', orig: '$2,000', fee: '$1,000' },

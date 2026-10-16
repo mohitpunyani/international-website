@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Life – World-Class Facilities | Tantia University</title>
-  <meta name="description" content="Explore Tantia University's sprawling campus with 500-bed hospital, modern labs, digital library, sports complexes, hostels, and vibrant cultural spaces." />
+  <meta name="description"
+    content="Explore Tantia University's sprawling campus with 500-bed hospital, modern labs, digital library, sports complexes, hostels, and vibrant cultural spaces." />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .facility-hero-grid {
@@ -12,6 +14,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .facility-card {
       border-radius: var(--radius-xl);
       overflow: hidden;
@@ -19,23 +22,38 @@
       height: 320px;
       cursor: pointer;
     }
-    .facility-card.large { grid-column: span 2; height: 380px; }
-    .facility-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-smooth); }
-    .facility-card:hover img { transform: scale(1.06); }
+
+    .facility-card.large {
+      grid-column: span 2;
+      height: 380px;
+    }
+
+    .facility-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease-smooth);
+    }
+
+    .facility-card:hover img {
+      transform: scale(1.06);
+    }
+
     .facility-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(11,27,58,0.9) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(11, 27, 58, 0.9) 0%, transparent 60%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 32px;
       color: var(--white);
     }
+
     .facility-badge {
       display: inline-block;
-      background: rgba(201,168,76,0.2);
-      border: 1px solid rgba(201,168,76,0.4);
+      background: rgba(201, 168, 76, 0.2);
+      border: 1px solid rgba(201, 168, 76, 0.4);
       color: var(--gold);
       font-family: var(--font-ui);
       font-size: 11px;
@@ -46,14 +64,25 @@
       border-radius: var(--radius-full);
       margin-bottom: 10px;
     }
-    .facility-name { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 6px; }
-    .facility-desc-text { font-size: 13.5px; color: rgba(255,255,255,0.75); }
+
+    .facility-name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .facility-desc-text {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.75);
+    }
 
     .facilities-list-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
+
     .facility-item {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -63,19 +92,41 @@
       transition: var(--transition);
       border-bottom: 3px solid transparent;
     }
-    .facility-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); border-bottom-color: var(--gold); }
-    .facility-item-icon { font-size: 44px; margin-bottom: 14px; }
-    .facility-item-name { font-family: var(--font-ui); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .facility-item-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+
+    .facility-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-bottom-color: var(--gold);
+    }
+
+    .facility-item-icon {
+      font-size: 44px;
+      margin-bottom: 14px;
+    }
+
+    .facility-item-name {
+      font-family: var(--font-ui);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .facility-item-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
 
     .campus-map-section {
       background: var(--navy);
       padding: 80px 0;
       text-align: center;
     }
+
     .map-placeholder {
-      background: rgba(255,255,255,0.04);
-      border: 2px dashed rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.04);
+      border: 2px dashed rgba(255, 255, 255, 0.15);
       border-radius: var(--radius-xl);
       height: 400px;
       display: flex;
@@ -86,6 +137,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .map-placeholder::before {
       content: '';
       position: absolute;
@@ -93,14 +145,25 @@
       background: url('assets/hero_campus.jpg') center/cover;
       opacity: 0.15;
     }
+
     .map-pin {
       position: absolute;
       font-size: 36px;
       animation: ping 1.5s ease-in-out infinite;
     }
+
     @keyframes ping {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.7; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+      }
     }
 
     .hostel-grid {
@@ -108,6 +171,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 28px;
     }
+
     .hostel-card {
       background: var(--white);
       border-radius: var(--radius-xl);
@@ -115,437 +179,758 @@
       box-shadow: var(--shadow-md);
       transition: var(--transition);
     }
-    .hostel-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
-    .hostel-img { height: 220px; overflow: hidden; }
-    .hostel-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .hostel-card:hover .hostel-img img { transform: scale(1.05); }
-    .hostel-body { padding: 28px 32px; }
-    .hostel-type { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--royal); margin-bottom: 8px; }
-    .hostel-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-    .hostel-amenities { display: flex; gap: 10px; flex-wrap: wrap; }
-    .hostel-amenity { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gray-600); }
+
+    .hostel-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hostel-img {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .hostel-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .hostel-card:hover .hostel-img img {
+      transform: scale(1.05);
+    }
+
+    .hostel-body {
+      padding: 28px 32px;
+    }
+
+    .hostel-type {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--royal);
+      margin-bottom: 8px;
+    }
+
+    .hostel-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .hostel-amenities {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hostel-amenity {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gray-600);
+    }
 
     @media (max-width: 900px) {
-      .facility-hero-grid { grid-template-columns: 1fr; }
-      .facility-card.large { grid-column: span 1; height: 280px; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr; }
-      .hostel-grid { grid-template-columns: 1fr; }
+      .facility-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .facility-card.large {
+        grid-column: span 1;
+        height: 280px;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hostel-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 600px) {
-      .facilities-list-grid { grid-template-columns: 1fr 1fr; }
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     /* ============================================
        RESPONSIVE OVERRIDES - ALL DEVICES
        ============================================ */
-    
+
     /* Tablet Landscape (768px - 1023px) */
     @media (max-width: 1023px) {
-      .two-col-grid { grid-template-columns: 1fr !important; }
-      .three-col-grid { grid-template-columns: 1fr 1fr !important; }
-      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
+      .two-col-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .three-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .four-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
     }
 
     /* Tablet Portrait (600px - 767px) */
     @media (max-width: 767px) {
-      .three-col-grid { grid-template-columns: 1fr !important; }
-      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
-      .apply-grid { grid-template-columns: 1fr !important; }
-      .apply-grid .full-width { grid-column: span 1 !important; }
-      .contact-layout { grid-template-columns: 1fr !important; }
-      .contact-info-card { position: static !important; }
-      .contact-form-card { padding: 24px 18px !important; }
-      .contact-form-grid { grid-template-columns: 1fr !important; }
-      .contact-form-grid .full { grid-column: span 1 !important; }
-      .leadership-grid { grid-template-columns: 1fr 1fr !important; }
-      .values-grid { grid-template-columns: 1fr 1fr !important; }
-      .awards-grid { grid-template-columns: 1fr !important; }
-      .admission-steps { grid-template-columns: 1fr 1fr !important; }
-      .eligibility-grid { grid-template-columns: 1fr !important; }
-      .scholarship-grid { grid-template-columns: 1fr !important; }
-      .fee-table { font-size: 12px; }
-      .fee-table th, .fee-table td { padding: 12px 14px; }
-      .faculty-header-card { grid-template-columns: 1fr !important; text-align: center; }
-      .courses-grid { grid-template-columns: 1fr 1fr !important; }
-      .research-grid { grid-template-columns: 1fr !important; }
-      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
-      .sports-grid { grid-template-columns: repeat(4, 1fr) !important; }
-      .international-support-grid { grid-template-columns: 1fr !important; }
-      .hostel-grid { grid-template-columns: 1fr !important; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
-      .facility-hero-grid { grid-template-columns: 1fr !important; }
-      .facility-card.large { grid-column: span 1 !important; height: 260px !important; }
-      .timeline::before { left: 20px !important; }
-      .timeline-item { grid-template-columns: 48px 1fr !important; }
-      .timeline-content { padding: 20px !important; }
-      .why-acc-badge { display: none; }
-      .events-timeline { padding-left: 28px !important; }
-      .life-hero-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
-      .mosaic-item.span-2-rows { grid-row: span 1 !important; height: 200px; }
-      .mosaic-item { height: 180px; }
+      .three-col-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .four-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .apply-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .apply-grid .full-width {
+        grid-column: span 1 !important;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-info-card {
+        position: static !important;
+      }
+
+      .contact-form-card {
+        padding: 24px 18px !important;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-form-grid .full {
+        grid-column: span 1 !important;
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .awards-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admission-steps {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .eligibility-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .fee-table {
+        font-size: 12px;
+      }
+
+      .fee-table th,
+      .fee-table td {
+        padding: 12px 14px;
+      }
+
+      .faculty-header-card {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+
+      .international-support-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hostel-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .facility-hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .facility-card.large {
+        grid-column: span 1 !important;
+        height: 260px !important;
+      }
+
+      .timeline::before {
+        left: 20px !important;
+      }
+
+      .timeline-item {
+        grid-template-columns: 48px 1fr !important;
+      }
+
+      .timeline-content {
+        padding: 20px !important;
+      }
+
+      .why-acc-badge {
+        display: none;
+      }
+
+      .events-timeline {
+        padding-left: 28px !important;
+      }
+
+      .life-hero-mosaic {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto !important;
+      }
+
+      .mosaic-item.span-2-rows {
+        grid-row: span 1 !important;
+        height: 200px;
+      }
+
+      .mosaic-item {
+        height: 180px;
+      }
     }
 
     /* Mobile (up to 599px) */
     @media (max-width: 599px) {
-      .leadership-grid { grid-template-columns: 1fr !important; }
-      .values-grid { grid-template-columns: 1fr !important; }
-      .admission-steps { grid-template-columns: 1fr !important; gap: 40px !important; }
-      .scholarship-grid { grid-template-columns: 1fr !important; }
-      .courses-grid { grid-template-columns: 1fr !important; }
-      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
-      .sports-grid { grid-template-columns: repeat(3, 1fr) !important; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
-      .apply-form { padding: 24px 16px !important; }
-      .eligibility-card { padding: 24px 20px !important; }
-      .faculty-tabs { gap: 8px !important; }
-      .faculty-tab { font-size: 12px !important; padding: 8px 14px !important; }
-      .section-header[style*="justify-content:space-between"] { flex-direction: column !important; }
-    }
+      .leadership-grid {
+        grid-template-columns: 1fr !important;
+      }
 
+      .values-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admission-steps {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .apply-form {
+        padding: 24px 16px !important;
+      }
+
+      .eligibility-card {
+        padding: 24px 20px !important;
+      }
+
+      .faculty-tabs {
+        gap: 8px !important;
+      }
+
+      .faculty-tab {
+        font-size: 12px !important;
+        padding: 8px 14px !important;
+      }
+
+      .section-header[style*="justify-content:space-between"] {
+        flex-direction: column !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-<div class="loader-screen" id="loader">
-  <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
-  <div class="loader-ring"></div>
+  <div class="loader-screen" id="loader">
+    <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading</div>
+  </div>
   <div class="loader-text">Loading</div>
-</div><div class="loader-text">Loading</div></div>
-<div class="announcement-bar">🌍 <span>Applications Open 2025–26</span> — International Students Welcome! &nbsp;<a href="admissions.html">Apply Now →</a></div>
+  </div>
+  <div class="announcement-bar">🌍 <span>Applications Open 2026-27</span> — International Students Welcome! &nbsp;<a
+      href="admissions.html">Apply Now →</a></div>
 
 
-<!-- Nav Overlay -->
-<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+  <!-- Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="nav-brand-text">
-          <div class="university-name">Tantia University</div>
-          <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="nav-brand-text">
+            <div class="university-name">Tantia University</div>
+            <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" id="nl-home">Home</a>
+          <a href="about.html" id="nl-about">About</a>
+          <a href="academics.html" id="nl-academics">Academics</a>
+          <a href="admissions.html" id="nl-admissions">Admissions</a>
+          <a href="campus.html" id="nl-campus">Campus</a>
+          <a href="contact.html" id="nl-contact">Contact</a>
         </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" id="nl-home">Home</a>
-        <a href="about.html" id="nl-about">About</a>
-        <a href="academics.html" id="nl-academics">Academics</a>
-        <a href="admissions.html" id="nl-admissions">Admissions</a>
-        <a href="campus.html" id="nl-campus">Campus</a>
-        <a href="contact.html" id="nl-contact">Contact</a>
+        <div class="nav-cta">
+          <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
+          <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </div>
       </div>
-      <div class="nav-cta">
-        <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
-        <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="academics.html" onclick="closeMenu()">Academics</a>
+    <a href="admissions.html" onclick="closeMenu()">Admissions</a>
+    <a href="campus.html" onclick="closeMenu()">Campus</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2026-27 →</a>
+  </nav>
+
+
+  <div class="page-hero">
+    <div
+      style="position:absolute;inset:0;background-image:url('assets/hero_campus.jpg');background-size:cover;background-position:center;opacity:0.3;">
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Campus</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+        <span class="badge badge-gold">200+ Acres</span>
+        <span class="badge badge-white">Smart Campus</span>
       </div>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
+      <h1>A Campus That <em>Inspires</em><br />Greatness</h1>
+      <p>Tantia University's sprawling 200-acre campus blends modern architecture with green spaces — a complete
+        ecosystem for learning, research, and living.</p>
     </div>
   </div>
-</nav>
 
-<!-- Mobile Nav -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="academics.html" onclick="closeMenu()">Academics</a>
-  <a href="admissions.html" onclick="closeMenu()">Admissions</a>
-  <a href="campus.html" onclick="closeMenu()">Campus</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2025–26 →</a>
-</nav>
-
-
-<div class="page-hero">
-  <div style="position:absolute;inset:0;background-image:url('assets/hero_campus.jpg');background-size:cover;background-position:center;opacity:0.3;"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Campus</div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
-      <span class="badge badge-gold">200+ Acres</span>
-      <span class="badge badge-white">Smart Campus</span>
-    </div>
-    <h1>A Campus That <em>Inspires</em><br />Greatness</h1>
-    <p>Tantia University's sprawling 200-acre campus blends modern architecture with green spaces — a complete ecosystem for learning, research, and living.</p>
-  </div>
-</div>
-
-<!-- Campus Showcase -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Campus Tour</div>
-      <h2 class="section-title">Explore Our <span>World-Class</span> Campus</h2>
-    </div>
-    <div class="facility-hero-grid" style="margin-top:56px;">
-      <div class="facility-card large fade-in">
-        <img src="assets/hero_campus.jpg" alt="Tantia University Main Campus" />
-        <div class="facility-card-overlay">
-          <span class="facility-badge">⭐ Landmark</span>
-          <div class="facility-name">Grand Main Campus</div>
-          <div class="facility-desc-text">200-acre green campus with iconic architecture, fountain courtyards, and world-class infrastructure.</div>
-        </div>
+  <!-- Campus Showcase -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Campus Tour</div>
+        <h2 class="section-title">Explore Our <span>World-Class</span> Campus</h2>
       </div>
-      <div class="facility-card fade-in delay-2">
-        <img src="assets/campus_life.jpg" alt="Research Laboratories" />
-        <div class="facility-card-overlay">
-          <span class="facility-badge">🔬 Research</span>
-          <div class="facility-name">Research Labs</div>
-          <div class="facility-desc-text">State-of-the-art laboratories for medical, engineering and science research.</div>
+      <div class="facility-hero-grid" style="margin-top:56px;">
+        <div class="facility-card large fade-in">
+          <img src="assets/hero_campus.jpg" alt="Tantia University Main Campus" />
+          <div class="facility-card-overlay">
+            <span class="facility-badge">⭐ Landmark</span>
+            <div class="facility-name">Grand Main Campus</div>
+            <div class="facility-desc-text">200-acre green campus with iconic architecture, fountain courtyards, and
+              world-class infrastructure.</div>
+          </div>
         </div>
-      </div>
-      <div class="facility-card fade-in delay-1">
-        <img src="assets/campus_students.jpg" alt="Digital Library" />
-        <div class="facility-card-overlay">
-          <span class="facility-badge">📚 Knowledge Hub</span>
-          <div class="facility-name">Digital Library</div>
-          <div class="facility-desc-text">50,000+ books, e-resources, and 24/7 study spaces for students.</div>
+        <div class="facility-card fade-in delay-2">
+          <img src="assets/campus_life.jpg" alt="Research Laboratories" />
+          <div class="facility-card-overlay">
+            <span class="facility-badge">🔬 Research</span>
+            <div class="facility-name">Research Labs</div>
+            <div class="facility-desc-text">State-of-the-art laboratories for medical, engineering and science research.
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="facility-card fade-in delay-2">
-        <img src="assets/campus_life.jpg" alt="Hospital" />
-        <div class="facility-card-overlay">
-          <span class="facility-badge">🏥 Healthcare</span>
-          <div class="facility-name">Teaching Hospital</div>
-          <div class="facility-desc-text">500+ bed hospital with advanced diagnostics and clinical training.</div>
+        <div class="facility-card fade-in delay-1">
+          <img src="assets/campus_students.jpg" alt="Digital Library" />
+          <div class="facility-card-overlay">
+            <span class="facility-badge">📚 Knowledge Hub</span>
+            <div class="facility-name">Digital Library</div>
+            <div class="facility-desc-text">50,000+ books, e-resources, and 24/7 study spaces for students.</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- All Facilities -->
-<section class="section-pad" style="background:var(--white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Infrastructure</div>
-      <h2 class="section-title">World-Class <span>Facilities</span></h2>
-    </div>
-    <div class="facilities-list-grid" style="margin-top:56px;">
-      <div class="facility-item fade-up delay-1"><div class="facility-item-icon">🏥</div><div class="facility-item-name">500-Bed Hospital</div><div class="facility-item-desc">Full-service teaching hospital with modern diagnostics, OT, and ICU.</div></div>
-      <div class="facility-item fade-up delay-2"><div class="facility-item-icon">🔬</div><div class="facility-item-name">Research Centres</div><div class="facility-item-desc">Dedicated labs for biomedical, engineering, and agricultural research.</div></div>
-      <div class="facility-item fade-up delay-3"><div class="facility-item-icon">📚</div><div class="facility-item-name">Digital Library</div><div class="facility-item-desc">50,000+ volumes, digital journals, INFLIBNET, and 24/7 study zones.</div></div>
-      <div class="facility-item fade-up delay-4"><div class="facility-item-icon">💻</div><div class="facility-item-name">Computer Labs</div><div class="facility-item-desc">400+ workstations with high-speed internet and latest software.</div></div>
-      <div class="facility-item fade-up delay-1"><div class="facility-item-icon">🏋️</div><div class="facility-item-name">Sports Complex</div><div class="facility-item-desc">Indoor & outdoor courts, swimming pool, gym, and athletic tracks.</div></div>
-      <div class="facility-item fade-up delay-2"><div class="facility-item-icon">🏠</div><div class="facility-item-name">Student Hostels</div><div class="facility-item-desc">Separate boys & girls hostels with mess, Wi-Fi, and security.</div></div>
-      <div class="facility-item fade-up delay-3"><div class="facility-item-icon">🎭</div><div class="facility-item-name">Auditorium</div><div class="facility-item-desc">2000-seat auditorium for events, convocations, and cultural programs.</div></div>
-      <div class="facility-item fade-up delay-4"><div class="facility-item-icon">🌿</div><div class="facility-item-name">Green Campus</div><div class="facility-item-desc">Eco-friendly campus with solar energy, herbal gardens, and rainwater harvesting.</div></div>
-      <div class="facility-item fade-up delay-1"><div class="facility-item-icon">🚌</div><div class="facility-item-name">Transport</div><div class="facility-item-desc">Fleet of 40+ buses connecting campus to city, railway & airport.</div></div>
-      <div class="facility-item fade-up delay-2"><div class="facility-item-icon">🍽️</div><div class="facility-item-name">Multi-Cuisine Cafeteria</div><div class="facility-item-desc">Hygienic dining with Indian, continental, and international food options.</div></div>
-      <div class="facility-item fade-up delay-3"><div class="facility-item-icon">🛡️</div><div class="facility-item-name">24/7 Security</div><div class="facility-item-desc">CCTV surveillance, secure access, and campus security personnel round the clock.</div></div>
-      <div class="facility-item fade-up delay-4"><div class="facility-item-icon">🌐</div><div class="facility-item-name">High-Speed Wi-Fi</div><div class="facility-item-desc">Campus-wide 1Gbps fiber internet connectivity for all students and faculty.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Hostels -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Student Accommodation</div>
-      <h2 class="section-title">Comfortable & <span>Safe Hostels</span></h2>
-      <p class="section-subtitle">Fully equipped residential facilities that feel like home — for both domestic and international students.</p>
-    </div>
-    <div class="hostel-grid" style="margin-top:56px;">
-      <div class="hostel-card fade-up delay-1">
-        <div class="hostel-img"><img src="assets/hero_campus.jpg" alt="Boys Hostel" /></div>
-        <div class="hostel-body">
-          <div class="hostel-type">👨 Boys Hostel</div>
-          <div class="hostel-name">Tantia Scholars Hall – Boys</div>
-          <p style="font-size:14px;color:var(--gray-600);margin:8px 0 16px;line-height:1.65;">Modern, air-cooled rooms with attached bathrooms, 24/7 hot water, secure entry, and dedicated study areas.</p>
-          <div class="hostel-amenities">
-            <span class="hostel-amenity">🛏️ 2/3 Sharing</span>
-            <span class="hostel-amenity">🍽️ Mess Included</span>
-            <span class="hostel-amenity">📶 Wi-Fi</span>
-            <span class="hostel-amenity">🔒 Secure Entry</span>
+        <div class="facility-card fade-in delay-2">
+          <img src="assets/campus_life.jpg" alt="Hospital" />
+          <div class="facility-card-overlay">
+            <span class="facility-badge">🏥 Healthcare</span>
+            <div class="facility-name">Teaching Hospital</div>
+            <div class="facility-desc-text">500+ bed hospital with advanced diagnostics and clinical training.</div>
           </div>
         </div>
       </div>
-      <div class="hostel-card fade-up delay-2">
-        <div class="hostel-img"><img src="assets/campus_students.jpg" alt="Girls Hostel" /></div>
-        <div class="hostel-body">
-          <div class="hostel-type">👩 Girls Hostel</div>
-          <div class="hostel-name">Tantia Grace Hall – Girls</div>
-          <p style="font-size:14px;color:var(--gray-600);margin:8px 0 16px;line-height:1.65;">Safe and modern accommodation for women students with lady warden, biometric access, and hygienic dining.</p>
-          <div class="hostel-amenities">
-            <span class="hostel-amenity">🛏️ 2 Sharing</span>
-            <span class="hostel-amenity">🍽️ Mess Included</span>
-            <span class="hostel-amenity">📶 Wi-Fi</span>
-            <span class="hostel-amenity">👩‍💼 Lady Warden</span>
+    </div>
+  </section>
+
+  <!-- All Facilities -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Infrastructure</div>
+        <h2 class="section-title">World-Class <span>Facilities</span></h2>
+      </div>
+      <div class="facilities-list-grid" style="margin-top:56px;">
+        <div class="facility-item fade-up delay-1">
+          <div class="facility-item-icon">🏥</div>
+          <div class="facility-item-name">500-Bed Hospital</div>
+          <div class="facility-item-desc">Full-service teaching hospital with modern diagnostics, OT, and ICU.</div>
+        </div>
+        <div class="facility-item fade-up delay-2">
+          <div class="facility-item-icon">🔬</div>
+          <div class="facility-item-name">Research Centres</div>
+          <div class="facility-item-desc">Dedicated labs for biomedical, engineering, and agricultural research.</div>
+        </div>
+        <div class="facility-item fade-up delay-3">
+          <div class="facility-item-icon">📚</div>
+          <div class="facility-item-name">Digital Library</div>
+          <div class="facility-item-desc">50,000+ volumes, digital journals, INFLIBNET, and 24/7 study zones.</div>
+        </div>
+        <div class="facility-item fade-up delay-4">
+          <div class="facility-item-icon">💻</div>
+          <div class="facility-item-name">Computer Labs</div>
+          <div class="facility-item-desc">400+ workstations with high-speed internet and latest software.</div>
+        </div>
+        <div class="facility-item fade-up delay-1">
+          <div class="facility-item-icon">🏋️</div>
+          <div class="facility-item-name">Sports Complex</div>
+          <div class="facility-item-desc">Indoor & outdoor courts, swimming pool, gym, and athletic tracks.</div>
+        </div>
+        <div class="facility-item fade-up delay-2">
+          <div class="facility-item-icon">🏠</div>
+          <div class="facility-item-name">Student Hostels</div>
+          <div class="facility-item-desc">Separate boys & girls hostels with mess, Wi-Fi, and security.</div>
+        </div>
+        <div class="facility-item fade-up delay-3">
+          <div class="facility-item-icon">🎭</div>
+          <div class="facility-item-name">Auditorium</div>
+          <div class="facility-item-desc">2000-seat auditorium for events, convocations, and cultural programs.</div>
+        </div>
+        <div class="facility-item fade-up delay-4">
+          <div class="facility-item-icon">🌿</div>
+          <div class="facility-item-name">Green Campus</div>
+          <div class="facility-item-desc">Eco-friendly campus with solar energy, herbal gardens, and rainwater
+            harvesting.</div>
+        </div>
+        <div class="facility-item fade-up delay-1">
+          <div class="facility-item-icon">🚌</div>
+          <div class="facility-item-name">Transport</div>
+          <div class="facility-item-desc">Fleet of 40+ buses connecting campus to city, railway & airport.</div>
+        </div>
+        <div class="facility-item fade-up delay-2">
+          <div class="facility-item-icon">🍽️</div>
+          <div class="facility-item-name">Multi-Cuisine Cafeteria</div>
+          <div class="facility-item-desc">Hygienic dining with Indian, continental, and international food options.
           </div>
-      </div>
-    </div>
-
-    <!-- Official Hostel Fee Table (Academic Session 2026–2027) -->
-    <div style="background:var(--white);border-radius:24px;padding:36px;box-shadow:var(--shadow-lg);margin-top:48px;border:1px solid rgba(0,0,0,0.06);">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div>
-          <span style="background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;">Session 2026–2027</span>
-          <h3 style="font-family:var(--font-display);font-size:22px;color:var(--navy);margin-top:6px;">Approved International Hostel Fee Structure</h3>
-          <p style="font-size:13px;color:var(--gray-500);margin-top:4px;">Stated fees are annual and strictly inclusive of mess charges.</p>
         </div>
-        <span style="font-size:13px;font-weight:700;color:#065f46;background:#ecfdf5;padding:6px 14px;border-radius:8px;border:1px solid #a7f3d0;">✓ Inclusive of Mess Charges</span>
-      </div>
-      <div style="overflow-x:auto;">
-        <table class="fee-table" style="width:100%;border-collapse:collapse;">
-          <thead>
-            <tr style="background:var(--navy);color:var(--white);">
-              <th style="padding:14px;width:60px;">S.No.</th>
-              <th style="padding:14px;text-align:left;">Residence Type</th>
-              <th style="padding:14px;text-align:left;">Annual Fee (USD)</th>
-              <th style="padding:14px;text-align:left;">Annual Fee (INR)</th>
-              <th style="padding:14px;text-align:center;">Mess Included</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding:14px;text-align:center;">1</td>
-              <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater Non-AC Room</td>
-              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,040/-</td>
-              <td style="padding:14px;font-weight:700;">₹1,00,000/-</td>
-              <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px;text-align:center;">2</td>
-              <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater Non-AC Room</td>
-              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/-</td>
-              <td style="padding:14px;font-weight:700;">₹1,50,000/-</td>
-              <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px;text-align:center;">3</td>
-              <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater AC Room</td>
-              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/-</td>
-              <td style="padding:14px;font-weight:700;">₹1,50,000/-</td>
-              <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px;text-align:center;">4</td>
-              <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater AC Room</td>
-              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 2,080/-</td>
-              <td style="padding:14px;font-weight:700;">₹2,00,000/-</td>
-              <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- International Delegation & Campus Life Gallery -->
-<section class="section-pad" style="background:var(--white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Campus Moments</div>
-      <h2 class="section-title">International <span>Delegations &amp; Campus Life</span></h2>
-      <p class="section-subtitle">Real moments welcoming our international students and guests at Tantia University.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:28px;margin-top:48px;">
-      <div style="background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid rgba(0,0,0,0.06);">
-        <div style="height:300px;overflow:hidden;">
-          <img src="assets/international_welcome_bouquet.jpg" alt="International Delegation Welcome" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="facility-item fade-up delay-3">
+          <div class="facility-item-icon">🛡️</div>
+          <div class="facility-item-name">24/7 Security</div>
+          <div class="facility-item-desc">CCTV surveillance, secure access, and campus security personnel round the
+            clock.</div>
         </div>
-        <div style="padding:24px;">
-          <h3 style="font-family:var(--font-display);font-size:18px;color:var(--navy);margin-bottom:8px;">Campus Arrival &amp; Bouquet Welcome</h3>
-          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">University representatives giving a traditional floral welcome to international delegation and students at Tantia University.</p>
-        </div>
-      </div>
-      <div style="background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid rgba(0,0,0,0.06);">
-        <div style="height:300px;overflow:hidden;">
-          <img src="assets/international_delegation_office.jpg" alt="Executive Meeting" style="width:100%;height:100%;object-fit:cover;" />
-        </div>
-        <div style="padding:24px;">
-          <h3 style="font-family:var(--font-display);font-size:18px;color:var(--navy);margin-bottom:8px;">Executive Office Interaction</h3>
-          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">Warm felicitation and academic briefing with international delegates and scholars at the university executive desk.</p>
+        <div class="facility-item fade-up delay-4">
+          <div class="facility-item-icon">🌐</div>
+          <div class="facility-item-name">High-Speed Wi-Fi</div>
+          <div class="facility-item-desc">Campus-wide 1Gbps fiber internet connectivity for all students and faculty.
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Map Section -->
-<section class="campus-map-section">
-  <div class="container">
-    <div class="section-label" style="color:rgba(255,255,255,0.5);justify-content:center;">Our Location</div>
-    <h2 class="section-title" style="color:var(--white);">📍 Find Us in <em>Sri Ganganagar</em></h2>
-    <p style="color:rgba(255,255,255,0.65);margin-top:8px;">Tantia Nagar, Sri Ganganagar, Rajasthan – 335002, India</p>
-    <div class="map-placeholder">
-      <div class="map-pin" style="top:45%;left:48%;">📍</div>
-      <div style="position:relative;z-index:1;text-align:center;color:rgba(255,255,255,0.8);">
-        <div style="font-size:32px;margin-bottom:12px;">🗺️</div>
-        <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;">Tantia University</div>
-        <div style="font-size:14px;margin-top:8px;opacity:0.7;">Sri Ganganagar, Rajasthan 335002</div>
-        <a href="https://goo.gl/maps/tantia" target="_blank" class="btn btn-primary btn-md" style="margin-top:20px;">Get Directions →</a>
+  <!-- Hostels -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Student Accommodation</div>
+        <h2 class="section-title">Comfortable & <span>Safe Hostels</span></h2>
+        <p class="section-subtitle">Fully equipped residential facilities that feel like home — for both domestic and
+          international students.</p>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="hostel-grid" style="margin-top:56px;">
+        <div class="hostel-card fade-up delay-1">
+          <div class="hostel-img"><img src="assets/hero_campus.jpg" alt="Boys Hostel" /></div>
+          <div class="hostel-body">
+            <div class="hostel-type">👨 Boys Hostel</div>
+            <div class="hostel-name">Tantia Scholars Hall – Boys</div>
+            <p style="font-size:14px;color:var(--gray-600);margin:8px 0 16px;line-height:1.65;">Modern, air-cooled rooms
+              with attached bathrooms, 24/7 hot water, secure entry, and dedicated study areas.</p>
+            <div class="hostel-amenities">
+              <span class="hostel-amenity">🛏️ 2/3 Sharing</span>
+              <span class="hostel-amenity">🍽️ Mess Included</span>
+              <span class="hostel-amenity">📶 Wi-Fi</span>
+              <span class="hostel-amenity">🔒 Secure Entry</span>
+            </div>
+          </div>
+        </div>
+        <div class="hostel-card fade-up delay-2">
+          <div class="hostel-img"><img src="assets/campus_students.jpg" alt="Girls Hostel" /></div>
+          <div class="hostel-body">
+            <div class="hostel-type">👩 Girls Hostel</div>
+            <div class="hostel-name">Tantia Grace Hall – Girls</div>
+            <p style="font-size:14px;color:var(--gray-600);margin:8px 0 16px;line-height:1.65;">Safe and modern
+              accommodation for women students with lady warden, biometric access, and hygienic dining.</p>
+            <div class="hostel-amenities">
+              <span class="hostel-amenity">🛏️ 2 Sharing</span>
+              <span class="hostel-amenity">🍽️ Mess Included</span>
+              <span class="hostel-amenity">📶 Wi-Fi</span>
+              <span class="hostel-amenity">👩‍💼 Lady Warden</span>
+            </div>
+          </div>
+        </div>
 
-<section class="cta-section">
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="cta-title">Experience the <em>Campus</em> Yourself</div>
-    <p class="cta-subtitle">Schedule a virtual or in-person campus tour with our team.</p>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Campus Tour →</a>
-      <a href="admissions.html" class="btn btn-outline btn-lg">Apply Now</a>
-    </div>
-  </div>
-</section>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="footer-brand-name">Tantia University</div>
-        <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
-        <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class education & research since 1999.</p>
-        <div class="footer-socials">
-          <div class="social-icon">f</div>
-          <div class="social-icon">𝕏</div>
-          <div class="social-icon">📸</div>
-          <div class="social-icon">in</div>
-          <div class="social-icon">▶</div>
+        <!-- Official Hostel Fee Table (Academic Session 2026–2027) -->
+        <div
+          style="background:var(--white);border-radius:24px;padding:36px;box-shadow:var(--shadow-lg);margin-top:48px;border:1px solid rgba(0,0,0,0.06);">
+          <div
+            style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+            <div>
+              <span
+                style="background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;">Session
+                2026–2027</span>
+              <h3 style="font-family:var(--font-display);font-size:22px;color:var(--navy);margin-top:6px;">Approved
+                International Hostel Fee Structure</h3>
+              <p style="font-size:13px;color:var(--gray-500);margin-top:4px;">Stated fees are annual and strictly
+                inclusive of mess charges.</p>
+            </div>
+            <span
+              style="font-size:13px;font-weight:700;color:#065f46;background:#ecfdf5;padding:6px 14px;border-radius:8px;border:1px solid #a7f3d0;">✓
+              Inclusive of Mess Charges</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="fee-table" style="width:100%;border-collapse:collapse;">
+              <thead>
+                <tr style="background:var(--navy);color:var(--white);">
+                  <th style="padding:14px;width:60px;">S.No.</th>
+                  <th style="padding:14px;text-align:left;">Residence Type</th>
+                  <th style="padding:14px;text-align:left;">Annual Fee (USD)</th>
+                  <th style="padding:14px;text-align:left;">Annual Fee (INR)</th>
+                  <th style="padding:14px;text-align:center;">Mess Included</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:14px;text-align:center;">1</td>
+                  <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater Non-AC Room</td>
+                  <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,040/-</td>
+                  <td style="padding:14px;font-weight:700;">₹1,00,000/-</td>
+                  <td style="padding:14px;text-align:center;"><span
+                      style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px;text-align:center;">2</td>
+                  <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater Non-AC Room</td>
+                  <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/-</td>
+                  <td style="padding:14px;font-weight:700;">₹1,50,000/-</td>
+                  <td style="padding:14px;text-align:center;"><span
+                      style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px;text-align:center;">3</td>
+                  <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater AC Room</td>
+                  <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/-</td>
+                  <td style="padding:14px;font-weight:700;">₹1,50,000/-</td>
+                  <td style="padding:14px;text-align:center;"><span
+                      style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px;text-align:center;">4</td>
+                  <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater AC Room</td>
+                  <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 2,080/-</td>
+                  <td style="padding:14px;font-weight:700;">₹2,00,000/-</td>
+                  <td style="padding:14px;text-align:center;"><span
+                      style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Yes</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="academics.html">Academics</a></li>
-        <li><a href="admissions.html">Admissions</a></li>
-        <li><a href="campus.html">Campus</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Programs</h4><ul>
-        <li><a href="academics.html#medical">Medical Sciences</a></li>
-        <li><a href="academics.html#engineering">Engineering</a></li>
-        <li><a href="academics.html#management">Management</a></li>
-        <li><a href="academics.html#law">Law</a></li>
-        <li><a href="academics.html#agriculture">Agriculture</a></li>
-        <li><a href="academics.html#pharma">Pharmacy</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul>
-        <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
-        <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
-        <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
-        <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
-      </ul></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="footer-bottom">
-      <span>© 2025 Tantia University. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+  </section>
+
+  <!-- International Delegation & Campus Life Gallery -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Campus Moments</div>
+        <h2 class="section-title">International <span>Delegations &amp; Campus Life</span></h2>
+        <p class="section-subtitle">Real moments welcoming our international students and guests at Tantia University.
+        </p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:28px;margin-top:48px;">
+        <div
+          style="background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid rgba(0,0,0,0.06);">
+          <div style="height:300px;overflow:hidden;">
+            <img src="assets/international_welcome_bouquet.jpg" alt="International Delegation Welcome"
+              style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;">
+            <h3 style="font-family:var(--font-display);font-size:18px;color:var(--navy);margin-bottom:8px;">Campus
+              Arrival &amp; Bouquet Welcome</h3>
+            <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">University representatives giving a
+              traditional floral welcome to international delegation and students at Tantia University.</p>
+          </div>
+        </div>
+        <div
+          style="background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid rgba(0,0,0,0.06);">
+          <div style="height:300px;overflow:hidden;">
+            <img src="assets/international_delegation_office.jpg" alt="Executive Meeting"
+              style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;">
+            <h3 style="font-family:var(--font-display);font-size:18px;color:var(--navy);margin-bottom:8px;">Executive
+              Office Interaction</h3>
+            <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">Warm felicitation and academic briefing
+              with international delegates and scholars at the university executive desk.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script src="main.js"></script>
+  <!-- Map Section -->
+  <section class="campus-map-section">
+    <div class="container">
+      <div class="section-label" style="color:rgba(255,255,255,0.5);justify-content:center;">Our Location</div>
+      <h2 class="section-title" style="color:var(--white);">📍 Find Us in <em>Sri Ganganagar</em></h2>
+      <p style="color:rgba(255,255,255,0.65);margin-top:8px;">Tantia Nagar, Sri Ganganagar, Rajasthan – 335002, India
+      </p>
+      <div class="map-placeholder">
+        <div class="map-pin" style="top:45%;left:48%;">📍</div>
+        <div style="position:relative;z-index:1;text-align:center;color:rgba(255,255,255,0.8);">
+          <div style="font-size:32px;margin-bottom:12px;">🗺️</div>
+          <div style="font-family:var(--font-ui);font-size:18px;font-weight:700;">Tantia University</div>
+          <div style="font-size:14px;margin-top:8px;opacity:0.7;">Sri Ganganagar, Rajasthan 335002</div>
+          <a href="https://goo.gl/maps/tantia" target="_blank" class="btn btn-primary btn-md"
+            style="margin-top:20px;">Get Directions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="cta-title">Experience the <em>Campus</em> Yourself</div>
+      <p class="cta-subtitle">Schedule a virtual or in-person campus tour with our team.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Schedule Campus Tour →</a>
+        <a href="admissions.html" class="btn btn-outline btn-lg">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="footer-brand-name">Tantia University</div>
+          <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
+          <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class
+            education & research since 1999.</p>
+          <div class="footer-socials">
+            <div class="social-icon">f</div>
+            <div class="social-icon">𝕏</div>
+            <div class="social-icon">📸</div>
+            <div class="social-icon">in</div>
+            <div class="social-icon">▶</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="academics.html#medical">Medical Sciences</a></li>
+            <li><a href="academics.html#engineering">Engineering</a></li>
+            <li><a href="academics.html#management">Management</a></li>
+            <li><a href="academics.html#law">Law</a></li>
+            <li><a href="academics.html#agriculture">Agriculture</a></li>
+            <li><a href="academics.html#pharma">Pharmacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
+            <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
+            <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
+            <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2025 Tantia University. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
+
 </html>

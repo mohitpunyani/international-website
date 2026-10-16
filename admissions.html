@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admissions 2025-26 – International Students | Tantia University</title>
-  <meta name="description" content="Apply to Tantia University for 2025-26. International student admissions open. Eligibility, IELTS/TOEFL requirements, fees, scholarships, and step-by-step application guide." />
+  <meta name="description"
+    content="Apply to Tantia University for 2025-26. International student admissions open. Eligibility, IELTS/TOEFL requirements, fees, scholarships, and step-by-step application guide." />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .admission-steps {
@@ -13,6 +15,7 @@
       gap: 20px;
       counter-reset: step;
     }
+
     .step-card {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -23,7 +26,12 @@
       transition: var(--transition);
       counter-increment: step;
     }
-    .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
     .step-card::before {
       content: "0" counter(step);
       position: absolute;
@@ -39,15 +47,32 @@
       border-radius: var(--radius-full);
       box-shadow: var(--shadow-gold);
     }
-    .step-icon { font-size: 44px; margin-bottom: 16px; }
-    .step-title { font-family: var(--font-ui); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .step-text { font-size: 13.5px; color: var(--gray-600); line-height: 1.65; }
+
+    .step-icon {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .step-title {
+      font-family: var(--font-ui);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .step-text {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
 
     .eligibility-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
     }
+
     .eligibility-card {
       background: var(--white);
       border-radius: var(--radius-xl);
@@ -55,8 +80,18 @@
       box-shadow: var(--shadow-md);
       border-top: 5px solid var(--royal);
     }
-    .eligibility-card.gold { border-top-color: var(--gold); }
-    .req-list { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+    .eligibility-card.gold {
+      border-top-color: var(--gold);
+    }
+
+    .req-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
     .req-item {
       display: flex;
       gap: 12px;
@@ -65,8 +100,18 @@
       background: var(--off-white);
       border-radius: var(--radius-md);
     }
-    .req-icon { font-size: 20px; flex-shrink: 0; }
-    .req-text { font-size: 14px; color: var(--navy); line-height: 1.5; font-weight: 500; }
+
+    .req-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .req-text {
+      font-size: 14px;
+      color: var(--navy);
+      line-height: 1.5;
+      font-weight: 500;
+    }
 
     .fee-table {
       width: 100%;
@@ -76,23 +121,45 @@
       overflow: hidden;
       box-shadow: var(--shadow-md);
     }
-    .fee-table thead { background: var(--grad-navy); color: var(--white); }
-    .fee-table th, .fee-table td {
+
+    .fee-table thead {
+      background: var(--grad-navy);
+      color: var(--white);
+    }
+
+    .fee-table th,
+    .fee-table td {
       padding: 16px 24px;
       text-align: left;
       font-family: var(--font-ui);
       font-size: 14px;
     }
-    .fee-table th { font-weight: 700; letter-spacing: 0.04em; }
-    .fee-table td { border-bottom: 1px solid var(--gray-100); color: var(--gray-600); }
-    .fee-table td:first-child { font-weight: 700; color: var(--navy); }
-    .fee-table tr:hover td { background: var(--off-white); }
+
+    .fee-table th {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .fee-table td {
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+    }
+
+    .fee-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .fee-table tr:hover td {
+      background: var(--off-white);
+    }
 
     .scholarship-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .scholarship-card {
       background: var(--grad-navy);
       border-radius: var(--radius-lg);
@@ -103,15 +170,22 @@
       overflow: hidden;
       transition: var(--transition);
     }
-    .scholarship-card:hover { transform: translateY(-6px); }
+
+    .scholarship-card:hover {
+      transform: translateY(-6px);
+    }
+
     .scholarship-card::before {
       content: '';
       position: absolute;
-      top: -40px; right: -40px;
-      width: 120px; height: 120px;
-      background: rgba(201,168,76,0.1);
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: rgba(201, 168, 76, 0.1);
       border-radius: 50%;
     }
+
     .scholarship-pct {
       font-family: var(--font-ui);
       font-size: 52px;
@@ -120,8 +194,19 @@
       line-height: 1;
       margin-bottom: 8px;
     }
-    .scholarship-name { font-family: var(--font-ui); font-size: 17px; font-weight: 700; margin-bottom: 12px; }
-    .scholarship-desc { font-size: 13.5px; color: rgba(255,255,255,0.7); line-height: 1.65; }
+
+    .scholarship-name {
+      font-family: var(--font-ui);
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .scholarship-desc {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.65;
+    }
 
     .apply-form {
       background: var(--white);
@@ -130,543 +215,1036 @@
       box-shadow: var(--shadow-xl);
       border: 1px solid var(--gray-100);
     }
+
     .apply-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
-    .apply-grid .full-width { grid-column: span 2; }
+
+    .apply-grid .full-width {
+      grid-column: span 2;
+    }
 
     @media (max-width: 900px) {
-      .admission-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .eligibility-grid { grid-template-columns: 1fr; }
-      .scholarship-grid { grid-template-columns: 1fr 1fr; }
-      .apply-grid { grid-template-columns: 1fr; }
-      .apply-grid .full-width { grid-column: span 1; }
+      .admission-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .eligibility-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .apply-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .apply-grid .full-width {
+        grid-column: span 1;
+      }
     }
+
     @media (max-width: 600px) {
-      .admission-steps { grid-template-columns: 1fr; }
-      .scholarship-grid { grid-template-columns: 1fr; }
-      .apply-form { padding: 28px 20px; }
+      .admission-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .apply-form {
+        padding: 28px 20px;
+      }
     }
 
     /* ============================================
        RESPONSIVE OVERRIDES - ALL DEVICES
        ============================================ */
-    
+
     /* Tablet Landscape (768px - 1023px) */
     @media (max-width: 1023px) {
-      .two-col-grid { grid-template-columns: 1fr !important; }
-      .three-col-grid { grid-template-columns: 1fr 1fr !important; }
-      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
+      .two-col-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .three-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .four-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
     }
 
     /* Tablet Portrait (600px - 767px) */
     @media (max-width: 767px) {
-      .three-col-grid { grid-template-columns: 1fr !important; }
-      .four-col-grid { grid-template-columns: 1fr 1fr !important; }
-      .apply-grid { grid-template-columns: 1fr !important; }
-      .apply-grid .full-width { grid-column: span 1 !important; }
-      .contact-layout { grid-template-columns: 1fr !important; }
-      .contact-info-card { position: static !important; }
-      .contact-form-card { padding: 24px 18px !important; }
-      .contact-form-grid { grid-template-columns: 1fr !important; }
-      .contact-form-grid .full { grid-column: span 1 !important; }
-      .leadership-grid { grid-template-columns: 1fr 1fr !important; }
-      .values-grid { grid-template-columns: 1fr 1fr !important; }
-      .awards-grid { grid-template-columns: 1fr !important; }
-      .admission-steps { grid-template-columns: 1fr 1fr !important; }
-      .eligibility-grid { grid-template-columns: 1fr !important; }
-      .scholarship-grid { grid-template-columns: 1fr !important; }
-      .fee-table { font-size: 12px; }
-      .fee-table th, .fee-table td { padding: 12px 14px; }
-      .faculty-header-card { grid-template-columns: 1fr !important; text-align: center; }
-      .courses-grid { grid-template-columns: 1fr 1fr !important; }
-      .research-grid { grid-template-columns: 1fr !important; }
-      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
-      .sports-grid { grid-template-columns: repeat(4, 1fr) !important; }
-      .international-support-grid { grid-template-columns: 1fr !important; }
-      .hostel-grid { grid-template-columns: 1fr !important; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
-      .facility-hero-grid { grid-template-columns: 1fr !important; }
-      .facility-card.large { grid-column: span 1 !important; height: 260px !important; }
-      .timeline::before { left: 20px !important; }
-      .timeline-item { grid-template-columns: 48px 1fr !important; }
-      .timeline-content { padding: 20px !important; }
-      .why-acc-badge { display: none; }
-      .events-timeline { padding-left: 28px !important; }
-      .life-hero-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
-      .mosaic-item.span-2-rows { grid-row: span 1 !important; height: 200px; }
-      .mosaic-item { height: 180px; }
+      .three-col-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .four-col-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .apply-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .apply-grid .full-width {
+        grid-column: span 1 !important;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-info-card {
+        position: static !important;
+      }
+
+      .contact-form-card {
+        padding: 24px 18px !important;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-form-grid .full {
+        grid-column: span 1 !important;
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .awards-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admission-steps {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .eligibility-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .fee-table {
+        font-size: 12px;
+      }
+
+      .fee-table th,
+      .fee-table td {
+        padding: 12px 14px;
+      }
+
+      .faculty-header-card {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+
+      .international-support-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hostel-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .facility-hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .facility-card.large {
+        grid-column: span 1 !important;
+        height: 260px !important;
+      }
+
+      .timeline::before {
+        left: 20px !important;
+      }
+
+      .timeline-item {
+        grid-template-columns: 48px 1fr !important;
+      }
+
+      .timeline-content {
+        padding: 20px !important;
+      }
+
+      .why-acc-badge {
+        display: none;
+      }
+
+      .events-timeline {
+        padding-left: 28px !important;
+      }
+
+      .life-hero-mosaic {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto !important;
+      }
+
+      .mosaic-item.span-2-rows {
+        grid-row: span 1 !important;
+        height: 200px;
+      }
+
+      .mosaic-item {
+        height: 180px;
+      }
     }
 
     /* Mobile (up to 599px) */
     @media (max-width: 599px) {
-      .leadership-grid { grid-template-columns: 1fr !important; }
-      .values-grid { grid-template-columns: 1fr !important; }
-      .admission-steps { grid-template-columns: 1fr !important; gap: 40px !important; }
-      .scholarship-grid { grid-template-columns: 1fr !important; }
-      .courses-grid { grid-template-columns: 1fr !important; }
-      .clubs-grid { grid-template-columns: 1fr 1fr !important; }
-      .sports-grid { grid-template-columns: repeat(3, 1fr) !important; }
-      .facilities-list-grid { grid-template-columns: 1fr 1fr !important; }
-      .apply-form { padding: 24px 16px !important; }
-      .eligibility-card { padding: 24px 20px !important; }
-      .faculty-tabs { gap: 8px !important; }
-      .faculty-tab { font-size: 12px !important; padding: 8px 14px !important; }
-      .section-header[style*="justify-content:space-between"] { flex-direction: column !important; }
-    }
+      .leadership-grid {
+        grid-template-columns: 1fr !important;
+      }
 
+      .values-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admission-steps {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+
+      .scholarship-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      .facilities-list-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .apply-form {
+        padding: 24px 16px !important;
+      }
+
+      .eligibility-card {
+        padding: 24px 20px !important;
+      }
+
+      .faculty-tabs {
+        gap: 8px !important;
+      }
+
+      .faculty-tab {
+        font-size: 12px !important;
+        padding: 8px 14px !important;
+      }
+
+      .section-header[style*="justify-content:space-between"] {
+        flex-direction: column !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-<div class="loader-screen" id="loader">
-  <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
-  <div class="loader-ring"></div>
+  <div class="loader-screen" id="loader">
+    <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading</div>
+  </div>
   <div class="loader-text">Loading</div>
-</div><div class="loader-text">Loading</div></div>
-<div class="announcement-bar">🌍 <span>Applications Open 2025–26</span> — International Students Welcome! &nbsp;<a href="#apply-form">Apply Now →</a></div>
+  </div>
+  <div class="announcement-bar">🌍 <span>Applications Open 2026-27</span> — International Students Welcome! &nbsp;<a
+      href="#apply-form">Apply Now →</a></div>
 
 
-<!-- Nav Overlay -->
-<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+  <!-- Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="nav-brand-text">
-          <div class="university-name">Tantia University</div>
-          <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="nav-brand-text">
+            <div class="university-name">Tantia University</div>
+            <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" id="nl-home">Home</a>
+          <a href="about.html" id="nl-about">About</a>
+          <a href="academics.html" id="nl-academics">Academics</a>
+          <a href="admissions.html" id="nl-admissions">Admissions</a>
+          <a href="campus.html" id="nl-campus">Campus</a>
+          <a href="contact.html" id="nl-contact">Contact</a>
         </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" id="nl-home">Home</a>
-        <a href="about.html" id="nl-about">About</a>
-        <a href="academics.html" id="nl-academics">Academics</a>
-        <a href="admissions.html" id="nl-admissions">Admissions</a>
-        <a href="campus.html" id="nl-campus">Campus</a>
-        <a href="contact.html" id="nl-contact">Contact</a>
-      </div>
-      <div class="nav-cta">
-        <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
-        <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
-      </div>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Mobile Nav -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="academics.html" onclick="closeMenu()">Academics</a>
-  <a href="admissions.html" onclick="closeMenu()">Admissions</a>
-  <a href="campus.html" onclick="closeMenu()">Campus</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2025–26 →</a>
-</nav>
-
-
-<div class="page-hero">
-  <div style="position:absolute;inset:0;background-image:url('assets/campus_students.jpg');background-size:cover;background-position:center;opacity:0.2;"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Admissions</div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
-      <span class="badge badge-gold">🌍 International Students</span>
-      <span class="badge badge-white">AIU Recognized</span>
-    </div>
-    <h1>Join Tantia<br /><em>Apply for 2025-26</em></h1>
-    <p>Your journey to world-class education begins here. Apply online and join students from 40+ countries at Tantia University.</p>
-    <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
-      <a href="#apply-form" class="btn btn-primary btn-lg">Apply Online →</a>
-      <a href="#eligibility" class="btn btn-outline btn-lg">Check Eligibility</a>
-    </div>
-  </div>
-</div>
-
-<!-- Admission Steps -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">How to Apply</div>
-      <h2 class="section-title">Simple <span>4-Step</span> Admission Process</h2>
-      <p class="section-subtitle">International and domestic admissions made simple. Follow these steps to join Tantia University.</p>
-    </div>
-    <div class="admission-steps" style="margin-top:64px;">
-      <div class="step-card fade-up delay-1">
-        <div class="step-icon">📋</div>
-        <div class="step-title">Check Eligibility</div>
-        <div class="step-text">Review program requirements. International students need AIU-recognized qualifications and valid passport.</div>
-      </div>
-      <div class="step-card fade-up delay-2">
-        <div class="step-icon">📝</div>
-        <div class="step-title">Fill Application</div>
-        <div class="step-text">Complete the online application form with personal, academic, and program preference details.</div>
-      </div>
-      <div class="step-card fade-up delay-3">
-        <div class="step-icon">📄</div>
-        <div class="step-title">Submit Documents</div>
-        <div class="step-text">Upload transcripts, English proficiency scores (IELTS/TOEFL), passport copy, and SOP.</div>
-      </div>
-      <div class="step-card fade-up delay-4">
-        <div class="step-icon">🎓</div>
-        <div class="step-title">Get Admission</div>
-        <div class="step-text">Receive provisional letter, pay fees, process student visa, and prepare for your global journey.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Eligibility -->
-<section class="section-pad" style="background:var(--white);" id="eligibility">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Requirements</div>
-      <h2 class="section-title">Eligibility <span>Criteria</span></h2>
-    </div>
-    <div class="eligibility-grid">
-      <div class="eligibility-card fade-up delay-1">
-        <h3 style="font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;">🌍 International Students</h3>
-        <p style="font-size:14px;color:var(--gray-600);margin-bottom:4px;">From SAARC, African, Middle East & other countries</p>
-        <div class="req-list">
-          <div class="req-item"><div class="req-icon">📚</div><div class="req-text">AIU-recognized 10+2 or equivalent qualification</div></div>
-          <div class="req-item"><div class="req-icon">🌐</div><div class="req-text">IELTS 6.0+ or TOEFL 80+ (English proficiency)</div></div>
-          <div class="req-item"><div class="req-icon">🛂</div><div class="req-text">Valid passport with student visa eligibility</div></div>
-          <div class="req-item"><div class="req-icon">📋</div><div class="req-text">Minimum 50% in relevant subjects (varies by program)</div></div>
-          <div class="req-item"><div class="req-icon">💳</div><div class="req-text">Apply via Study in India portal or direct admission</div></div>
+        <div class="nav-cta">
+          <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
+          <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
         </div>
-      </div>
-      <div class="eligibility-card gold fade-up delay-2">
-        <h3 style="font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;">🇮🇳 Domestic Students</h3>
-        <p style="font-size:14px;color:var(--gray-600);margin-bottom:4px;">Indian students from all states</p>
-        <div class="req-list">
-          <div class="req-item"><div class="req-icon">🎓</div><div class="req-text">10+2 (PCB for Medical / PCM for Engineering) from recognized board</div></div>
-          <div class="req-item"><div class="req-icon">📊</div><div class="req-text">Minimum 50% aggregate marks in qualifying exam</div></div>
-          <div class="req-item"><div class="req-icon">🏆</div><div class="req-text">NEET score (for MBBS, BAMS, BHMS programs)</div></div>
-          <div class="req-item"><div class="req-icon">📑</div><div class="req-text">JEE Main / REAP for Engineering programs</div></div>
-          <div class="req-item"><div class="req-icon">🆔</div><div class="req-text">Valid Aadhaar, domicile certificate & mark sheets</div></div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Fee Structure -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label">Fee Structure 2025–26</div>
-      <h2 class="section-title">Official <span>International Student Fee Structure</span></h2>
-      <p class="section-subtitle">Annual tuition fee structure for new international students with approved 50% and 70% scholarships.</p>
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="academics.html" onclick="closeMenu()">Academics</a>
+    <a href="admissions.html" onclick="closeMenu()">Admissions</a>
+    <a href="campus.html" onclick="closeMenu()">Campus</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2026-27 →</a>
+  </nav>
+
+
+  <div class="page-hero">
+    <div
+      style="position:absolute;inset:0;background-image:url('assets/campus_students.jpg');background-size:cover;background-position:center;opacity:0.2;">
     </div>
-
-    <!-- 50% Scholarship Category Header -->
-    <div style="margin-top:32px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin:0;">
-        🎓 Undergraduate & Postgraduate Programs <span style="background:#e0f2fe;color:#0369a1;font-size:12px;padding:4px 10px;border-radius:20px;margin-left:8px;font-weight:600;">50% Scholarship Applicable</span>
-      </h3>
-      <span style="font-size:13px;color:var(--gray-500);">All fees in USD ($) / Year</span>
-    </div>
-
-    <div style="overflow-x:auto;border-radius:var(--radius-md);box-shadow:var(--shadow-md);">
-      <table class="fee-table fade-in" style="margin-top:0;">
-        <thead>
-          <tr>
-            <th style="width:60px;">S.No.</th>
-            <th>Course / Program</th>
-            <th>Original Annual Fee</th>
-            <th>Scholarship</th>
-            <th>After 50% Scholarship</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>BPT (Bachelor of Physiotherapy)</td><td>$2,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$1,000 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>2</td><td>MPT (Master of Physiotherapy)</td><td>$2,200 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$1,100 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>3</td><td>BASLP (Audiology & Speech Language Pathology)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>4</td><td>BMLS (Medical Lab Sciences)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>5</td><td>B.Optom. (Bachelor of Optometry)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>6</td><td>BMRIT (Medical Radiology & Imaging Tech)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>7</td><td>B.Sc. Nursing</td><td>$3,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$1,500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>8</td><td>Post Basic B.Sc. Nursing</td><td>$2,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$1,000 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>9</td><td>M.Sc. Nursing</td><td>$2,800 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$1,400 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>10</td><td>M.Sc. Agriculture</td><td>$1,800 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$900 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>11</td><td>MBA (Agribusiness)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>12</td><td>B.Pharmacy</td><td>$2,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$1,000 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>13</td><td>D.Pharmacy</td><td>$1,500 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$750 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>14</td><td>MBA (General)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>15</td><td>MBA (Hospital Management)</td><td>$1,600 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$800 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>16</td><td>BA LLB (Hons.)</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>17</td><td>LLB</td><td>$1,000 / year</td><td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50% OFF</span></td><td style="font-weight:700;color:#0d9488;">$500 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 70% Special Scholarship Category Header -->
-    <div style="margin-top:40px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin:0;">
-        🌟 Special Programs <span style="background:#fef3c7;color:#92400e;font-size:12px;padding:4px 10px;border-radius:20px;margin-left:8px;font-weight:700;">70% Special Scholarship</span>
-      </h3>
-      <span style="font-size:13px;color:var(--gray-500);">All fees in USD ($) / Year</span>
-    </div>
-
-    <div style="overflow-x:auto;border-radius:var(--radius-md);box-shadow:var(--shadow-md);">
-      <table class="fee-table fade-in" style="margin-top:0;">
-        <thead>
-          <tr style="background:linear-gradient(135deg, #1e293b, #0f172a);">
-            <th style="width:60px;">S.No.</th>
-            <th>Course / Program</th>
-            <th>Original Annual Fee</th>
-            <th>Scholarship</th>
-            <th>After 70% Scholarship</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>BPES (Bachelor of Physical Education & Sports)</td><td>$1,000 / year</td><td><span style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70% OFF</span></td><td style="font-weight:700;color:#b45309;">$300 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>2</td><td>Master of Yoga</td><td>$1,000 / year</td><td><span style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70% OFF</span></td><td style="font-weight:700;color:#b45309;">$300 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>3</td><td>M.Sc. (Mathematics / Zoology / Botany / Chemistry / Physics)</td><td>$1,000 / year</td><td><span style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70% OFF</span></td><td style="font-weight:700;color:#b45309;">$300 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>4</td><td>Bachelor of Arts (BA)</td><td>$1,000 / year</td><td><span style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70% OFF</span></td><td style="font-weight:700;color:#b45309;">$300 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-          <tr><td>5</td><td>Master of Arts (MA)</td><td>$1,000 / year</td><td><span style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70% OFF</span></td><td style="font-weight:700;color:#b45309;">$300 / year</td><td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Official Hostel Fee Structure (Session 2026-2027) -->
-    <div style="margin-top:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-      <div>
-        <span style="background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.05em;">Approved Structure · Session 2026–2027</span>
-        <h3 style="font-family:var(--font-display);font-size:22px;color:var(--navy);margin-top:6px;">🏠 International Student Hostel &amp; Mess Fees</h3>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a> <span>/</span> Admissions</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+        <span class="badge badge-gold">🌍 International Students</span>
+        <span class="badge badge-white">AIU Recognized</span>
       </div>
-      <span style="font-size:13px;font-weight:700;color:#065f46;background:#ecfdf5;padding:6px 14px;border-radius:8px;border:1px solid #a7f3d0;">✓ Inclusive of Mess Charges</span>
-    </div>
-
-    <div style="overflow-x:auto;margin-top:16px;">
-      <table class="fee-table" style="width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);">
-        <thead>
-          <tr style="background:var(--navy);color:var(--white);">
-            <th style="padding:14px;width:60px;text-align:center;">S.No.</th>
-            <th style="padding:14px;text-align:left;">Residence Type</th>
-            <th style="padding:14px;text-align:left;">Annual Fee (USD)</th>
-            <th style="padding:14px;text-align:left;">Annual Fee (INR)</th>
-            <th style="padding:14px;text-align:center;">Mess Status</th>
-            <th style="padding:14px;text-align:center;">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding:14px;text-align:center;">1</td>
-            <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater Non-AC Room</td>
-            <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,040/- / yr</td>
-            <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹1,00,000/- / yr</td>
-            <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span></td>
-            <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
-          </tr>
-          <tr>
-            <td style="padding:14px;text-align:center;">2</td>
-            <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater Non-AC Room</td>
-            <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/- / yr</td>
-            <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹1,50,000/- / yr</td>
-            <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span></td>
-            <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
-          </tr>
-          <tr>
-            <td style="padding:14px;text-align:center;">3</td>
-            <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater AC Room</td>
-            <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/- / yr</td>
-            <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹1,50,000/- / yr</td>
-            <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span></td>
-            <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
-          </tr>
-          <tr>
-            <td style="padding:14px;text-align:center;">4</td>
-            <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater AC Room</td>
-            <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 2,080/- / yr</td>
-            <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹2,00,000/- / yr</td>
-            <td style="padding:14px;text-align:center;"><span style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span></td>
-            <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p style="margin-top:20px;font-size:13px;color:var(--gray-500);text-align:center;">* Note: The above hostel fees are applicable to international students admitted to Tantia University for the academic session 2026–2027. All stated annual fees are inclusive of mess charges.</p>
-  </div>
-</section>
-
-<!-- Scholarships -->
-<section class="section-pad" style="background:var(--navy);">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label" style="color:rgba(255,255,255,0.5);">Financial Aid</div>
-      <h2 class="section-title" style="color:var(--white);">Scholarships & <em>Financial Support</em></h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.65);">We believe financial constraints should never hold back exceptional talent. Explore our scholarships.</p>
-    </div>
-    <div class="scholarship-grid">
-      <div class="scholarship-card fade-up delay-1">
-        <div class="scholarship-pct">100%</div>
-        <div class="scholarship-name">Merit Scholarship</div>
-        <div class="scholarship-desc">Full tuition waiver for top academic performers. Available for students scoring 90%+ in qualifying exams.</div>
-      </div>
-      <div class="scholarship-card fade-up delay-2">
-        <div class="scholarship-pct">50%</div>
-        <div class="scholarship-name">International Scholar Award</div>
-        <div class="scholarship-desc">50% tuition waiver for outstanding international students. Based on academic excellence and interview.</div>
-      </div>
-      <div class="scholarship-card fade-up delay-3">
-        <div class="scholarship-pct">25%</div>
-        <div class="scholarship-name">Sports Excellence Grant</div>
-        <div class="scholarship-desc">National & international sports achievers receive 25% tuition support. Applicable across all programs.</div>
+      <h1>Join Tantia<br /><em>Apply for 2025-26</em></h1>
+      <p>Your journey to world-class education begins here. Apply online and join students from 40+ countries at Tantia
+        University.</p>
+      <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+        <a href="#apply-form" class="btn btn-primary btn-lg">Apply Online →</a>
+        <a href="#eligibility" class="btn btn-outline btn-lg">Check Eligibility</a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Application Form -->
-<section class="section-pad" style="background:var(--off-white);" id="apply-form">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Apply Now</div>
-      <h2 class="section-title">Start Your <span>Application</span></h2>
-      <p class="section-subtitle">Fill the form below and our admissions team will reach out within 24 hours.</p>
-    </div>
-    <div class="apply-form fade-up delay-2" style="max-width:860px;margin:0 auto;">
-      <form onsubmit="submitApplication(event)">
-        <div class="apply-grid">
-          <div class="form-group">
-            <label class="form-label" for="first-name">First Name *</label>
-            <input class="form-input" id="first-name" type="text" placeholder="John" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="last-name">Last Name *</label>
-            <input class="form-input" id="last-name" type="text" placeholder="Smith" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address *</label>
-            <input class="form-input" id="email" type="email" placeholder="john@example.com" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="phone">Phone / WhatsApp *</label>
-            <input class="form-input" id="phone" type="tel" placeholder="+1 234 567 8900" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="country">Country of Residence *</label>
-            <select class="form-select" id="country" required>
-              <option value="">Select Country</option>
-              <option>India</option><option>Nepal</option><option>Bangladesh</option><option>Sri Lanka</option>
-              <option>Nigeria</option><option>Kenya</option><option>UAE</option><option>Saudi Arabia</option>
-              <option>Afghanistan</option><option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="program">Program of Interest *</label>
-            <select class="form-select" id="program" required>
-              <option value="">Select Program</option>
-              <option>MBBS</option><option>BAMS</option><option>BHMS</option><option>B.Sc. Nursing</option>
-              <option>B.Tech – Computer Science</option><option>B.Tech – Electronics</option><option>B.Tech – Mechanical</option>
-              <option>MBA</option><option>LLB</option><option>B.Pharm</option><option>B.Sc. Agriculture</option><option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="qualification">Highest Qualification *</label>
-            <input class="form-input" id="qualification" type="text" placeholder="e.g. 10+2, A-Levels, CBSE" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="score">Marks / GPA</label>
-            <input class="form-input" id="score" type="text" placeholder="e.g. 85% or 3.8 GPA" />
-          </div>
-          <div class="form-group full-width">
-            <label class="form-label" for="message">Additional Message</label>
-            <textarea class="form-textarea" id="message" placeholder="Tell us about your academic goals, scholarship inquiry, or any questions..."></textarea>
-          </div>
-          <div class="full-width" style="margin-top:8px;">
-            <button type="submit" class="btn btn-primary btn-lg w-full" style="width:100%;justify-content:center;" id="submit-btn">
-              Submit Application →
-            </button>
-            <p style="text-align:center;font-size:13px;color:var(--gray-400);margin-top:12px;">🔒 Your information is secure and will only be used for admission purposes.</p>
+  <!-- Admission Steps -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">How to Apply</div>
+        <h2 class="section-title">Simple <span>4-Step</span> Admission Process</h2>
+        <p class="section-subtitle">International and domestic admissions made simple. Follow these steps to join Tantia
+          University.</p>
+      </div>
+      <div class="admission-steps" style="margin-top:64px;">
+        <div class="step-card fade-up delay-1">
+          <div class="step-icon">📋</div>
+          <div class="step-title">Check Eligibility</div>
+          <div class="step-text">Review program requirements. International students need AIU-recognized qualifications
+            and valid passport.</div>
+        </div>
+        <div class="step-card fade-up delay-2">
+          <div class="step-icon">📝</div>
+          <div class="step-title">Fill Application</div>
+          <div class="step-text">Complete the online application form with personal, academic, and program preference
+            details.</div>
+        </div>
+        <div class="step-card fade-up delay-3">
+          <div class="step-icon">📄</div>
+          <div class="step-title">Submit Documents</div>
+          <div class="step-text">Upload transcripts, English proficiency scores (IELTS/TOEFL), passport copy, and SOP.
           </div>
         </div>
-      </form>
-      <div id="form-success" style="display:none;text-align:center;padding:48px 0;">
-        <div style="font-size:64px;margin-bottom:16px;">🎉</div>
-        <h3 style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--navy);margin-bottom:12px;">Application Received!</h3>
-        <p style="color:var(--gray-600);font-size:16px;">Our admissions team will contact you within 24 hours. Welcome to the Tantia family!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="footer-brand-name">Tantia University</div>
-        <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
-        <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class education & research since 1999.</p>
-        <div class="footer-socials">
-          <div class="social-icon">f</div>
-          <div class="social-icon">𝕏</div>
-          <div class="social-icon">📸</div>
-          <div class="social-icon">in</div>
-          <div class="social-icon">▶</div>
+        <div class="step-card fade-up delay-4">
+          <div class="step-icon">🎓</div>
+          <div class="step-title">Get Admission</div>
+          <div class="step-text">Receive provisional letter, pay fees, process student visa, and prepare for your global
+            journey.</div>
         </div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="academics.html">Academics</a></li>
-        <li><a href="admissions.html">Admissions</a></li>
-        <li><a href="campus.html">Campus</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Programs</h4><ul>
-        <li><a href="academics.html#medical">Medical Sciences</a></li>
-        <li><a href="academics.html#engineering">Engineering</a></li>
-        <li><a href="academics.html#management">Management</a></li>
-        <li><a href="academics.html#law">Law</a></li>
-        <li><a href="academics.html#agriculture">Agriculture</a></li>
-        <li><a href="academics.html#pharma">Pharmacy</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul>
-        <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
-        <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
-        <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
-        <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
-      </ul></div>
     </div>
-  </div>
-  <div class="container">
-    <div class="footer-bottom">
-      <span>© 2025 Tantia University. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+  </section>
+
+  <!-- Eligibility -->
+  <section class="section-pad" style="background:var(--white);" id="eligibility">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Requirements</div>
+        <h2 class="section-title">Eligibility <span>Criteria</span></h2>
+      </div>
+      <div class="eligibility-grid">
+        <div class="eligibility-card fade-up delay-1">
+          <h3 style="font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;">🌍
+            International Students</h3>
+          <p style="font-size:14px;color:var(--gray-600);margin-bottom:4px;">From SAARC, African, Middle East & other
+            countries</p>
+          <div class="req-list">
+            <div class="req-item">
+              <div class="req-icon">📚</div>
+              <div class="req-text">AIU-recognized 10+2 or equivalent qualification</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">🌐</div>
+              <div class="req-text">IELTS 6.0+ or TOEFL 80+ (English proficiency)</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">🛂</div>
+              <div class="req-text">Valid passport with student visa eligibility</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">📋</div>
+              <div class="req-text">Minimum 50% in relevant subjects (varies by program)</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">💳</div>
+              <div class="req-text">Apply via Study in India portal or direct admission</div>
+            </div>
+          </div>
+        </div>
+        <div class="eligibility-card gold fade-up delay-2">
+          <h3 style="font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;">
+            🇮🇳 Domestic Students</h3>
+          <p style="font-size:14px;color:var(--gray-600);margin-bottom:4px;">Indian students from all states</p>
+          <div class="req-list">
+            <div class="req-item">
+              <div class="req-icon">🎓</div>
+              <div class="req-text">10+2 (PCB for Medical / PCM for Engineering) from recognized board</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">📊</div>
+              <div class="req-text">Minimum 50% aggregate marks in qualifying exam</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">🏆</div>
+              <div class="req-text">NEET score (for MBBS, BAMS, BHMS programs)</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">📑</div>
+              <div class="req-text">JEE Main / REAP for Engineering programs</div>
+            </div>
+            <div class="req-item">
+              <div class="req-icon">🆔</div>
+              <div class="req-text">Valid Aadhaar, domicile certificate & mark sheets</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- Fee Structure -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Fee Structure 2026-27</div>
+        <h2 class="section-title">Official <span>International Student Fee Structure</span></h2>
+        <p class="section-subtitle">Annual tuition fee structure for new international students with approved 50% and
+          70% scholarships.</p>
+      </div>
+
+      <!-- 50% Scholarship Category Header -->
+      <div
+        style="margin-top:32px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin:0;">
+          🎓 Undergraduate & Postgraduate Programs <span
+            style="background:#e0f2fe;color:#0369a1;font-size:12px;padding:4px 10px;border-radius:20px;margin-left:8px;font-weight:600;">50%
+            Scholarship Applicable</span>
+        </h3>
+        <span style="font-size:13px;color:var(--gray-500);">All fees in USD ($) / Year</span>
+      </div>
+
+      <div style="overflow-x:auto;border-radius:var(--radius-md);box-shadow:var(--shadow-md);">
+        <table class="fee-table fade-in" style="margin-top:0;">
+          <thead>
+            <tr>
+              <th style="width:60px;">S.No.</th>
+              <th>Course / Program</th>
+              <th>Original Annual Fee</th>
+              <th>Scholarship</th>
+              <th>After 50% Scholarship</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>BPT (Bachelor of Physiotherapy)</td>
+              <td>$2,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$1,000 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>MPT (Master of Physiotherapy)</td>
+              <td>$2,200 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$1,100 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>BASLP (Audiology & Speech Language Pathology)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>BMLS (Medical Lab Sciences)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>B.Optom. (Bachelor of Optometry)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>BMRIT (Medical Radiology & Imaging Tech)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>B.Sc. Nursing</td>
+              <td>$3,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$1,500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Post Basic B.Sc. Nursing</td>
+              <td>$2,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$1,000 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>M.Sc. Nursing</td>
+              <td>$2,800 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$1,400 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>M.Sc. Agriculture</td>
+              <td>$1,800 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$900 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>MBA (Agribusiness)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>B.Pharmacy</td>
+              <td>$2,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$1,000 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>D.Pharmacy</td>
+              <td>$1,500 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$750 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>MBA (General)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>MBA (Hospital Management)</td>
+              <td>$1,600 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$800 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>BA LLB (Hons.)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>LLB</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">50%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#0d9488;">$500 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 70% Special Scholarship Category Header -->
+      <div
+        style="margin-top:40px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin:0;">
+          🌟 Special Programs <span
+            style="background:#fef3c7;color:#92400e;font-size:12px;padding:4px 10px;border-radius:20px;margin-left:8px;font-weight:700;">70%
+            Special Scholarship</span>
+        </h3>
+        <span style="font-size:13px;color:var(--gray-500);">All fees in USD ($) / Year</span>
+      </div>
+
+      <div style="overflow-x:auto;border-radius:var(--radius-md);box-shadow:var(--shadow-md);">
+        <table class="fee-table fade-in" style="margin-top:0;">
+          <thead>
+            <tr style="background:linear-gradient(135deg, #1e293b, #0f172a);">
+              <th style="width:60px;">S.No.</th>
+              <th>Course / Program</th>
+              <th>Original Annual Fee</th>
+              <th>Scholarship</th>
+              <th>After 70% Scholarship</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>BPES (Bachelor of Physical Education & Sports)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#b45309;">$300 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Master of Yoga</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#b45309;">$300 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>M.Sc. (Mathematics / Zoology / Botany / Chemistry / Physics)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#b45309;">$300 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Bachelor of Arts (BA)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#b45309;">$300 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Master of Arts (MA)</td>
+              <td>$1,000 / year</td>
+              <td><span
+                  style="background:#fef3c7;color:#b45309;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:700;">70%
+                  OFF</span></td>
+              <td style="font-weight:700;color:#b45309;">$300 / year</td>
+              <td><a href="#apply-form" class="btn btn-royal btn-sm">Apply Now</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Official Hostel Fee Structure (Session 2026-2027) -->
+      <div
+        style="margin-top:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div>
+          <span
+            style="background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.05em;">Approved
+            Structure · Session 2026–2027</span>
+          <h3 style="font-family:var(--font-display);font-size:22px;color:var(--navy);margin-top:6px;">🏠 International
+            Student Hostel &amp; Mess Fees</h3>
+        </div>
+        <span
+          style="font-size:13px;font-weight:700;color:#065f46;background:#ecfdf5;padding:6px 14px;border-radius:8px;border:1px solid #a7f3d0;">✓
+          Inclusive of Mess Charges</span>
+      </div>
+
+      <div style="overflow-x:auto;margin-top:16px;">
+        <table class="fee-table"
+          style="width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);">
+          <thead>
+            <tr style="background:var(--navy);color:var(--white);">
+              <th style="padding:14px;width:60px;text-align:center;">S.No.</th>
+              <th style="padding:14px;text-align:left;">Residence Type</th>
+              <th style="padding:14px;text-align:left;">Annual Fee (USD)</th>
+              <th style="padding:14px;text-align:left;">Annual Fee (INR)</th>
+              <th style="padding:14px;text-align:center;">Mess Status</th>
+              <th style="padding:14px;text-align:center;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:14px;text-align:center;">1</td>
+              <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater Non-AC Room</td>
+              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,040/- / yr</td>
+              <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹1,00,000/- / yr</td>
+              <td style="padding:14px;text-align:center;"><span
+                  style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span>
+              </td>
+              <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply
+                  Now</a></td>
+            </tr>
+            <tr>
+              <td style="padding:14px;text-align:center;">2</td>
+              <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater Non-AC Room</td>
+              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/- / yr</td>
+              <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹1,50,000/- / yr</td>
+              <td style="padding:14px;text-align:center;"><span
+                  style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span>
+              </td>
+              <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply
+                  Now</a></td>
+            </tr>
+            <tr>
+              <td style="padding:14px;text-align:center;">3</td>
+              <td style="padding:14px;font-weight:700;color:var(--navy);">3 Seater AC Room</td>
+              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 1,560/- / yr</td>
+              <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹1,50,000/- / yr</td>
+              <td style="padding:14px;text-align:center;"><span
+                  style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span>
+              </td>
+              <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply
+                  Now</a></td>
+            </tr>
+            <tr>
+              <td style="padding:14px;text-align:center;">4</td>
+              <td style="padding:14px;font-weight:700;color:var(--navy);">2 Seater AC Room</td>
+              <td style="padding:14px;font-weight:800;color:#059669;font-size:16px;">USD 2,080/- / yr</td>
+              <td style="padding:14px;font-weight:700;color:var(--gray-700);">₹2,00,000/- / yr</td>
+              <td style="padding:14px;text-align:center;"><span
+                  style="background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">Included</span>
+              </td>
+              <td style="padding:14px;text-align:center;"><a href="#apply-form" class="btn btn-royal btn-sm">Apply
+                  Now</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:20px;font-size:13px;color:var(--gray-500);text-align:center;">* Note: The above hostel fees
+        are applicable to international students admitted to Tantia University for the academic session 2026–2027. All
+        stated annual fees are inclusive of mess charges.</p>
+    </div>
+  </section>
+
+  <!-- Scholarships -->
+  <section class="section-pad" style="background:var(--navy);">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label" style="color:rgba(255,255,255,0.5);">Financial Aid</div>
+        <h2 class="section-title" style="color:var(--white);">Scholarships & <em>Financial Support</em></h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.65);">We believe financial constraints should never
+          hold back exceptional talent. Explore our scholarships.</p>
+      </div>
+      <div class="scholarship-grid">
+        <div class="scholarship-card fade-up delay-1">
+          <div class="scholarship-pct">100%</div>
+          <div class="scholarship-name">Merit Scholarship</div>
+          <div class="scholarship-desc">Full tuition waiver for top academic performers. Available for students scoring
+            90%+ in qualifying exams.</div>
+        </div>
+        <div class="scholarship-card fade-up delay-2">
+          <div class="scholarship-pct">50%</div>
+          <div class="scholarship-name">International Scholar Award</div>
+          <div class="scholarship-desc">50% tuition waiver for outstanding international students. Based on academic
+            excellence and interview.</div>
+        </div>
+        <div class="scholarship-card fade-up delay-3">
+          <div class="scholarship-pct">25%</div>
+          <div class="scholarship-name">Sports Excellence Grant</div>
+          <div class="scholarship-desc">National & international sports achievers receive 25% tuition support.
+            Applicable across all programs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section class="section-pad" style="background:var(--off-white);" id="apply-form">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Apply Now</div>
+        <h2 class="section-title">Start Your <span>Application</span></h2>
+        <p class="section-subtitle">Fill the form below and our admissions team will reach out within 24 hours.</p>
+      </div>
+      <div class="apply-form fade-up delay-2" style="max-width:860px;margin:0 auto;">
+        <form onsubmit="submitApplication(event)">
+          <div class="apply-grid">
+            <div class="form-group">
+              <label class="form-label" for="first-name">First Name *</label>
+              <input class="form-input" id="first-name" type="text" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last-name">Last Name *</label>
+              <input class="form-input" id="last-name" type="text" placeholder="Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input class="form-input" id="email" type="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone / WhatsApp *</label>
+              <input class="form-input" id="phone" type="tel" placeholder="+1 234 567 8900" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="country">Country of Residence *</label>
+              <select class="form-select" id="country" required>
+                <option value="">Select Country</option>
+                <option>India</option>
+                <option>Nepal</option>
+                <option>Bangladesh</option>
+                <option>Sri Lanka</option>
+                <option>Nigeria</option>
+                <option>Kenya</option>
+                <option>UAE</option>
+                <option>Saudi Arabia</option>
+                <option>Afghanistan</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="program">Program of Interest *</label>
+              <select class="form-select" id="program" required>
+                <option value="">Select Program</option>
+                <option>MBBS</option>
+                <option>BAMS</option>
+                <option>BHMS</option>
+                <option>B.Sc. Nursing</option>
+                <option>B.Tech – Computer Science</option>
+                <option>B.Tech – Electronics</option>
+                <option>B.Tech – Mechanical</option>
+                <option>MBA</option>
+                <option>LLB</option>
+                <option>B.Pharm</option>
+                <option>B.Sc. Agriculture</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qualification">Highest Qualification *</label>
+              <input class="form-input" id="qualification" type="text" placeholder="e.g. 10+2, A-Levels, CBSE"
+                required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="score">Marks / GPA</label>
+              <input class="form-input" id="score" type="text" placeholder="e.g. 85% or 3.8 GPA" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="message">Additional Message</label>
+              <textarea class="form-textarea" id="message"
+                placeholder="Tell us about your academic goals, scholarship inquiry, or any questions..."></textarea>
+            </div>
+            <div class="full-width" style="margin-top:8px;">
+              <button type="submit" class="btn btn-primary btn-lg w-full" style="width:100%;justify-content:center;"
+                id="submit-btn">
+                Submit Application →
+              </button>
+              <p style="text-align:center;font-size:13px;color:var(--gray-400);margin-top:12px;">🔒 Your information is
+                secure and will only be used for admission purposes.</p>
+            </div>
+          </div>
+        </form>
+        <div id="form-success" style="display:none;text-align:center;padding:48px 0;">
+          <div style="font-size:64px;margin-bottom:16px;">🎉</div>
+          <h3
+            style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--navy);margin-bottom:12px;">
+            Application Received!</h3>
+          <p style="color:var(--gray-600);font-size:16px;">Our admissions team will contact you within 24 hours. Welcome
+            to the Tantia family!</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-<script src="main.js"></script>
-<script>
-function submitApplication(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submit-btn');
-  btn.textContent = 'Submitting...';
-  btn.disabled = true;
-  setTimeout(() => {
-    document.querySelector('.apply-form form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }, 1500);
-}
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="footer-brand-name">Tantia University</div>
+          <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
+          <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class
+            education & research since 1999.</p>
+          <div class="footer-socials">
+            <div class="social-icon">f</div>
+            <div class="social-icon">𝕏</div>
+            <div class="social-icon">📸</div>
+            <div class="social-icon">in</div>
+            <div class="social-icon">▶</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="academics.html#medical">Medical Sciences</a></li>
+            <li><a href="academics.html#engineering">Engineering</a></li>
+            <li><a href="academics.html#management">Management</a></li>
+            <li><a href="academics.html#law">Law</a></li>
+            <li><a href="academics.html#agriculture">Agriculture</a></li>
+            <li><a href="academics.html#pharma">Pharmacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
+            <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
+            <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
+            <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2025 Tantia University. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="main.js"></script>
+  <script>
+    function submitApplication(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.querySelector('.apply-form form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }, 1500);
+    }
+  </script>
 </body>
+
 </html>

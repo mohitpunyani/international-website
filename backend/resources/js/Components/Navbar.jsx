@@ -18,19 +18,19 @@ export default function Navbar({ currentPage = 'home' }) {
     const closeMenu = () => setMenuOpen(false);
 
     const links = [
-        { href: '/',             name: 'home',         label: 'Home' },
-        { href: '/about',        name: 'about',        label: 'About' },
-        { href: '/academics',    name: 'academics',    label: 'Academics' },
-        { href: '/admissions',   name: 'admissions',   label: 'Admissions' },
-        { href: '/campus',       name: 'campus',       label: 'Campus' },
-        { href: '/contact',      name: 'contact',      label: 'Contact' },
+        { href: '/', name: 'home', label: 'Home' },
+        { href: '/about', name: 'about', label: 'About' },
+        { href: '/academics', name: 'academics', label: 'Academics' },
+        { href: '/admissions', name: 'admissions', label: 'Admissions' },
+        { href: '/campus', name: 'campus', label: 'Campus' },
+        { href: '/contact', name: 'contact', label: 'Contact' },
     ];
 
     return (
         <>
             {/* Announcement bar */}
             <div className="announcement-bar">
-                🌍 <span>Applications Open 2025–26</span> — International Students from 40+ Countries Welcome!&nbsp;
+                🌍 <span>Applications Open 2026-27</span> — International Students from 40+ Countries Welcome!&nbsp;
                 <Link href="/admissions">Apply Now →</Link>
             </div>
 
@@ -65,10 +65,10 @@ export default function Navbar({ currentPage = 'home' }) {
                         </div>
 
                         <div className="hidden lg:flex items-center gap-3">
-                            <button className="btn-nav-outline" onClick={() => { window.location.href='/contact'; }}>
+                            <button className="btn-nav-outline" onClick={() => { window.location.href = '/contact'; }}>
                                 Enquire
                             </button>
-                            <button className="btn-nav-primary" onClick={() => { window.location.href='/admissions'; }}>
+                            <button className="btn-nav-primary" onClick={() => { window.location.href = '/admissions'; }}>
                                 Apply Now
                             </button>
                         </div>
@@ -96,7 +96,7 @@ export default function Navbar({ currentPage = 'home' }) {
                     </Link>
                 ))}
                 <Link href="/admissions" className="mobile-nav-apply" onClick={closeMenu}>
-                    Apply Now 2025–26 →
+                    Apply Now 2026-27 →
                 </Link>
             </nav>
         </>

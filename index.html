@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tantia University – World-Class International Education, Rajasthan India</title>
-  <meta name="description" content="Tantia University, Sri Ganganagar – Premier international university with 116+ programs in Engineering, Medical, Law, Management. Join 25,000+ students from 40+ countries." />
+  <meta name="description"
+    content="Tantia University, Sri Ganganagar – Premier international university with 116+ programs in Engineering, Medical, Law, Management. Join 25,000+ students from 40+ countries." />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ============================================
@@ -18,40 +20,56 @@
       overflow: hidden;
       background: var(--navy);
     }
+
     .hero-bg {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background-image: url('assets/campus_students.jpg');
       background-size: cover;
       background-position: center;
       transform: scale(1.05);
       transition: transform 8s ease-out;
     }
-    .hero-bg.loaded { transform: scale(1); }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(13,33,55,0.92) 0%, rgba(13,33,55,0.75) 50%, rgba(13,33,55,0.5) 100%);
+
+    .hero-bg.loaded {
+      transform: scale(1);
     }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13, 33, 55, 0.92) 0%, rgba(13, 33, 55, 0.75) 50%, rgba(13, 33, 55, 0.5) 100%);
+    }
+
     .hero-glow {
       position: absolute;
-      top: 20%; left: -10%;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(21,101,192,0.3), transparent 65%);
+      top: 20%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(21, 101, 192, 0.3), transparent 65%);
       pointer-events: none;
     }
+
     .hero-layout {
       display: grid;
       grid-template-columns: 1fr 320px;
       gap: 48px;
       align-items: center;
-      padding: clamp(80px,10vh,130px) 0 clamp(60px,8vh,100px);
+      padding: clamp(80px, 10vh, 130px) 0 clamp(60px, 8vh, 100px);
     }
-    .hero-content { position: relative; z-index: 2; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(201,168,76,0.12);
-      border: 1px solid rgba(201,168,76,0.35);
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.35);
       border-radius: var(--radius-full);
       padding: 8px 20px;
       font-family: var(--font-ui);
@@ -64,6 +82,7 @@
       backdrop-filter: blur(8px);
       animation: slideDown 0.8s forwards;
     }
+
     .hero h1 {
       font-family: var(--font-display);
       font-size: clamp(38px, 6vw, 80px);
@@ -73,716 +92,1466 @@
       margin-bottom: 20px;
       animation: slideUp 0.9s 0.15s both;
     }
-    .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+
     .hero-desc {
       font-size: clamp(15px, 1.5vw, 18px);
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.78);
       line-height: 1.75;
       max-width: 560px;
       margin-bottom: 36px;
       animation: slideUp 0.9s 0.25s both;
     }
+
     .hero-actions {
-      display: flex; gap: 14px; flex-wrap: wrap;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
       animation: slideUp 0.9s 0.35s both;
     }
+
     .hero-metrics {
-      display: flex; gap: clamp(20px,3vw,40px);
+      display: flex;
+      gap: clamp(20px, 3vw, 40px);
       flex-wrap: wrap;
-      margin-top: clamp(40px,5vw,56px);
+      margin-top: clamp(40px, 5vw, 56px);
       padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
       animation: slideUp 0.9s 0.45s both;
     }
+
     .hero-metric-num {
       font-family: var(--font-ui);
-      font-size: clamp(24px,3vw,32px);
+      font-size: clamp(24px, 3vw, 32px);
       font-weight: 800;
       color: var(--gold);
       line-height: 1;
       margin-bottom: 4px;
     }
-    .hero-metric-label { font-size: clamp(11px,1vw,13px); color: rgba(255,255,255,0.6); font-weight: 500; }
+
+    .hero-metric-label {
+      font-size: clamp(11px, 1vw, 13px);
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+    }
 
     /* Hero Side Cards */
     .hero-side {
-      position: relative; z-index: 2;
-      display: flex; flex-direction: column; gap: 16px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
       animation: slideLeft 1s 0.4s both;
     }
+
     .hero-card {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-lg);
-      padding: clamp(18px,2vw,24px);
+      padding: clamp(18px, 2vw, 24px);
       color: var(--white);
       transition: var(--transition);
     }
-    .hero-card:hover { background: rgba(255,255,255,0.1); transform: translateX(-4px); }
+
+    .hero-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(-4px);
+    }
+
     .hero-card-icon {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-md);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 20px;
       margin-bottom: 10px;
     }
-    .hero-card-title { font-family: var(--font-ui); font-size: 15px; font-weight: 700; margin-bottom: 5px; }
-    .hero-card-text { font-size: 12.5px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    .hero-card-title {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .hero-card-text {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
 
     .hero-scroll {
-      position: absolute; bottom: 30px; left: 50%;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
       transform: translateX(-50%);
       z-index: 3;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.5);
       font-family: var(--font-ui);
       font-size: 10px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       animation: pulse 2s ease-in-out infinite;
     }
+
     .scroll-mouse {
-      width: 24px; height: 36px;
-      border: 2px solid rgba(255,255,255,0.3);
+      width: 24px;
+      height: 36px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 12px;
-      display: flex; justify-content: center; padding-top: 5px;
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
     }
+
     .scroll-mouse::after {
       content: '';
-      width: 3px; height: 6px;
+      width: 3px;
+      height: 6px;
       background: var(--gold);
       border-radius: 2px;
       animation: scrollDot 1.5s ease-in-out infinite;
     }
-    @keyframes scrollDot { 0%,100%{opacity:1;transform:translateY(0)} 50%{opacity:0.5;transform:translateY(5px)} }
-    @keyframes slideDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
-    @keyframes slideUp   { from{opacity:0;transform:translateY(30px)}  to{opacity:1;transform:translateY(0)} }
-    @keyframes slideLeft { from{opacity:0;transform:translateX(40px)}  to{opacity:1;transform:translateX(0)} }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+    @keyframes scrollDot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: translateY(5px)
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes slideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(40px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.5
+      }
+    }
 
     /* Accreditation Strip */
-    .acc-strip { padding: clamp(24px,3vw,40px) 0; background: var(--white); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); overflow: hidden; }
-    .acc-inner { display: flex; align-items: center; gap: 0; flex-wrap: wrap; gap: 8px; }
-    .acc-label { font-family: var(--font-ui); font-size: 11px; font-weight: 700; color: var(--gray-400); letter-spacing: 0.12em; text-transform: uppercase; margin-right: 24px; flex-shrink: 0; white-space: nowrap; }
-    .acc-logos { display: flex; align-items: center; gap: clamp(20px,3vw,48px); flex-wrap: wrap; }
-    .acc-item { display: flex; align-items: center; gap: 8px; font-family: var(--font-ui); font-size: clamp(12px,1.2vw,14px); font-weight: 700; color: var(--gray-600); transition: var(--transition); white-space: nowrap; }
-    .acc-item:hover { color: var(--royal); }
-    .acc-item .icon { font-size: clamp(20px,2.5vw,28px); width: 40px; height: 40px; background: var(--gray-100); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .acc-strip {
+      padding: clamp(24px, 3vw, 40px) 0;
+      background: var(--white);
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+      overflow: hidden;
+    }
+
+    .acc-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .acc-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-right: 24px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .acc-logos {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 48px);
+      flex-wrap: wrap;
+    }
+
+    .acc-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: clamp(12px, 1.2vw, 14px);
+      font-weight: 700;
+      color: var(--gray-600);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .acc-item:hover {
+      color: var(--royal);
+    }
+
+    .acc-item .icon {
+      font-size: clamp(20px, 2.5vw, 28px);
+      width: 40px;
+      height: 40px;
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
     /* Programs */
     .programs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: clamp(16px,2vw,24px);
+      gap: clamp(16px, 2vw, 24px);
     }
+
     .prog-card {
       background: var(--white);
       border-radius: var(--radius-lg);
-      padding: clamp(24px,2.5vw,36px) clamp(20px,2vw,32px);
+      padding: clamp(24px, 2.5vw, 36px) clamp(20px, 2vw, 32px);
       box-shadow: var(--shadow-md);
       transition: var(--transition);
       position: relative;
       overflow: hidden;
-      display: flex; flex-direction: column; gap: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
       border-top: 4px solid transparent;
     }
-    .prog-card:nth-child(1) { border-top-color: var(--royal); }
-    .prog-card:nth-child(2) { border-top-color: var(--gold); }
-    .prog-card:nth-child(3) { border-top-color: var(--teal); }
-    .prog-card:nth-child(4) { border-top-color: #E63946; }
-    .prog-card:nth-child(5) { border-top-color: #7C3AED; }
-    .prog-card:nth-child(6) { border-top-color: #F97316; }
-    .prog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
-    .prog-icon { width: 58px; height: 58px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
-    .prog-icon.blue { background: rgba(21,101,192,0.1); }
-    .prog-icon.gold { background: rgba(201,168,76,0.1); }
-    .prog-icon.teal { background: rgba(0,191,165,0.1); }
-    .prog-icon.red  { background: rgba(230,57,70,0.1); }
-    .prog-icon.purple { background: rgba(124,58,237,0.1); }
-    .prog-icon.orange { background: rgba(249,115,22,0.1); }
-    .prog-title { font-family: var(--font-ui); font-size: clamp(16px,1.6vw,19px); font-weight: 800; color: var(--navy); }
-    .prog-desc { font-size: clamp(12.5px,1.2vw,14px); color: var(--gray-600); line-height: 1.65; flex: 1; }
-    .prog-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--gray-100); margin-top: auto; }
-    .prog-count { font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--royal); }
-    .prog-link { font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; transition: var(--transition); }
-    .prog-link:hover { color: var(--royal); gap: 10px; }
+
+    .prog-card:nth-child(1) {
+      border-top-color: var(--royal);
+    }
+
+    .prog-card:nth-child(2) {
+      border-top-color: var(--gold);
+    }
+
+    .prog-card:nth-child(3) {
+      border-top-color: var(--teal);
+    }
+
+    .prog-card:nth-child(4) {
+      border-top-color: #E63946;
+    }
+
+    .prog-card:nth-child(5) {
+      border-top-color: #7C3AED;
+    }
+
+    .prog-card:nth-child(6) {
+      border-top-color: #F97316;
+    }
+
+    .prog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .prog-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .prog-icon.blue {
+      background: rgba(21, 101, 192, 0.1);
+    }
+
+    .prog-icon.gold {
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    .prog-icon.teal {
+      background: rgba(0, 191, 165, 0.1);
+    }
+
+    .prog-icon.red {
+      background: rgba(230, 57, 70, 0.1);
+    }
+
+    .prog-icon.purple {
+      background: rgba(124, 58, 237, 0.1);
+    }
+
+    .prog-icon.orange {
+      background: rgba(249, 115, 22, 0.1);
+    }
+
+    .prog-title {
+      font-family: var(--font-ui);
+      font-size: clamp(16px, 1.6vw, 19px);
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .prog-desc {
+      font-size: clamp(12.5px, 1.2vw, 14px);
+      color: var(--gray-600);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .prog-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--gray-100);
+      margin-top: auto;
+    }
+
+    .prog-count {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--royal);
+    }
+
+    .prog-link {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .prog-link:hover {
+      color: var(--royal);
+      gap: 10px;
+    }
 
     /* Why Section */
-    .why-section { background: var(--navy); padding: var(--section-pad-v) 0; position: relative; overflow: hidden; }
-    .why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,5vw,80px); align-items: center; position: relative; z-index: 1; }
-    .why-img-wrap { position: relative; }
-    .why-img-wrap img { width: 100%; border-radius: var(--radius-xl); object-fit: cover; height: clamp(360px,40vw,520px); }
+    .why-section {
+      background: var(--navy);
+      padding: var(--section-pad-v) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-img-wrap {
+      position: relative;
+    }
+
+    .why-img-wrap img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      object-fit: cover;
+      height: clamp(360px, 40vw, 520px);
+    }
+
     .why-float-badge {
-      position: absolute; bottom: -18px; right: -18px;
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
       background: var(--grad-gold);
       border-radius: var(--radius-lg);
-      padding: clamp(16px,2vw,24px) clamp(20px,2.5vw,28px);
+      padding: clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 28px);
       box-shadow: var(--shadow-gold);
       text-align: center;
     }
-    .why-float-badge .num { font-family: var(--font-ui); font-size: clamp(28px,3vw,40px); font-weight: 800; color: var(--navy); line-height: 1; }
-    .why-float-badge .lbl { font-size: 11px; font-weight: 700; color: rgba(11,27,58,0.7); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .why-float-badge .num {
+      font-family: var(--font-ui);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .why-float-badge .lbl {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(11, 27, 58, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
     .why-acc-badge {
-      position: absolute; top: 20px; left: -20px;
+      position: absolute;
+      top: 20px;
+      left: -20px;
       background: var(--white);
       border-radius: var(--radius-md);
       padding: 12px 18px;
       box-shadow: var(--shadow-lg);
-      display: flex; align-items: center; gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .why-acc-badge .icon { font-size: 22px; }
-    .why-acc-badge .text { font-size: 12px; font-weight: 700; color: var(--navy); line-height: 1.4; }
-    .why-features { display: flex; flex-direction: column; gap: clamp(18px,2.5vw,28px); margin-top: clamp(28px,3vw,48px); }
-    .why-feature { display: flex; gap: 18px; align-items: flex-start; }
-    .why-feat-icon { width: 46px; height: 46px; border-radius: var(--radius-md); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; transition: var(--transition); }
-    .why-feature:hover .why-feat-icon { background: var(--grad-gold); }
-    .why-feat-title { font-family: var(--font-ui); font-size: clamp(14px,1.4vw,16px); font-weight: 700; color: var(--white); margin-bottom: 5px; }
-    .why-feat-text { font-size: clamp(12.5px,1.2vw,14px); color: rgba(255,255,255,0.6); line-height: 1.65; }
+
+    .why-acc-badge .icon {
+      font-size: 22px;
+    }
+
+    .why-acc-badge .text {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    .why-features {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(18px, 2.5vw, 28px);
+      margin-top: clamp(28px, 3vw, 48px);
+    }
+
+    .why-feature {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .why-feat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+
+    .why-feature:hover .why-feat-icon {
+      background: var(--grad-gold);
+    }
+
+    .why-feat-title {
+      font-family: var(--font-ui);
+      font-size: clamp(14px, 1.4vw, 16px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .why-feat-text {
+      font-size: clamp(12.5px, 1.2vw, 14px);
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.65;
+    }
 
     /* Campus Bento */
     .campus-bento {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: clamp(200px,22vw,280px) clamp(200px,22vw,280px);
-      gap: clamp(10px,1.2vw,16px);
+      grid-template-rows: clamp(200px, 22vw, 280px) clamp(200px, 22vw, 280px);
+      gap: clamp(10px, 1.2vw, 16px);
     }
-    .bento-item { border-radius: var(--radius-lg); overflow: hidden; position: relative; cursor: pointer; }
-    .bento-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-smooth); }
-    .bento-item:hover img { transform: scale(1.06); }
-    .bento-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,33,55,0.8) 0%, transparent 60%); display: flex; align-items: flex-end; padding: clamp(16px,2vw,24px); color: var(--white); opacity: 0; transition: opacity 0.3s; }
-    .bento-item:hover .bento-overlay { opacity: 1; }
-    .bento-label { font-family: var(--font-ui); font-size: clamp(13px,1.3vw,15px); font-weight: 700; }
-    .bento-1 { grid-column: span 7; }
-    .bento-2 { grid-column: span 5; }
-    .bento-3 { grid-column: span 4; }
-    .bento-4 { grid-column: span 8; }
+
+    .bento-item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .bento-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease-smooth);
+    }
+
+    .bento-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .bento-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13, 33, 55, 0.8) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(16px, 2vw, 24px);
+      color: var(--white);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .bento-item:hover .bento-overlay {
+      opacity: 1;
+    }
+
+    .bento-label {
+      font-family: var(--font-ui);
+      font-size: clamp(13px, 1.3vw, 15px);
+      font-weight: 700;
+    }
+
+    .bento-1 {
+      grid-column: span 7;
+    }
+
+    .bento-2 {
+      grid-column: span 5;
+    }
+
+    .bento-3 {
+      grid-column: span 4;
+    }
+
+    .bento-4 {
+      grid-column: span 8;
+    }
 
     /* Testimonials */
-    .testi-wrapper { position: relative; overflow: hidden; margin-top: clamp(40px,5vw,56px); }
-    .testi-track { display: flex; gap: clamp(16px,2vw,24px); transition: transform 0.5s var(--ease-smooth); }
+    .testi-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin-top: clamp(40px, 5vw, 56px);
+    }
+
+    .testi-track {
+      display: flex;
+      gap: clamp(16px, 2vw, 24px);
+      transition: transform 0.5s var(--ease-smooth);
+    }
+
     .testi-card {
       background: var(--white);
       border-radius: var(--radius-lg);
-      padding: clamp(24px,2.5vw,36px);
+      padding: clamp(24px, 2.5vw, 36px);
       box-shadow: var(--shadow-md);
-      flex: 0 0 clamp(280px,35vw,380px);
+      flex: 0 0 clamp(280px, 35vw, 380px);
       border: 1px solid var(--gray-100);
       transition: var(--transition);
     }
-    .testi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
-    .testi-quote { font-size: 48px; color: var(--gold); font-family: var(--font-display); line-height: 0.8; margin-bottom: 16px; }
-    .testi-text { font-size: clamp(13px,1.3vw,15px); color: var(--gray-600); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
-    .testi-author { display: flex; align-items: center; gap: 14px; }
-    .testi-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-ui); font-weight: 800; color: var(--gold); font-size: 16px; flex-shrink: 0; border: 2px solid var(--gold); }
-    .testi-name { font-family: var(--font-ui); font-size: 14.5px; font-weight: 700; color: var(--navy); }
-    .testi-meta { font-size: 12px; color: var(--gray-400); }
-    .stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 4px; }
-    .testi-dots { display: flex; gap: 8px; justify-content: center; margin-top: 28px; }
-    .testi-dot { height: 8px; border-radius: 4px; background: var(--gray-200); cursor: pointer; transition: var(--transition); }
-    .testi-dot.active { width: 24px; background: var(--gold); }
-    .testi-dot:not(.active) { width: 8px; }
+
+    .testi-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .testi-quote {
+      font-size: 48px;
+      color: var(--gold);
+      font-family: var(--font-display);
+      line-height: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .testi-text {
+      font-size: clamp(13px, 1.3vw, 15px);
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testi-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-ui);
+      font-weight: 800;
+      color: var(--gold);
+      font-size: 16px;
+      flex-shrink: 0;
+      border: 2px solid var(--gold);
+    }
+
+    .testi-name {
+      font-family: var(--font-ui);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .testi-meta {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .testi-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 28px;
+    }
+
+    .testi-dot {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--gray-200);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .testi-dot.active {
+      width: 24px;
+      background: var(--gold);
+    }
+
+    .testi-dot:not(.active) {
+      width: 8px;
+    }
 
     /* News */
-    .news-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(20px,3vw,32px); }
-    .news-feat { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition); }
-    .news-feat:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-    .news-feat-img { height: clamp(180px,20vw,260px); overflow: hidden; }
-    .news-feat-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .news-feat:hover .news-feat-img img { transform: scale(1.05); }
-    .news-feat-body { padding: clamp(20px,2.5vw,32px); }
-    .news-date { font-family: var(--font-ui); font-size: 11px; font-weight: 700; color: var(--gray-400); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
-    .news-title { font-family: var(--font-display); font-size: clamp(17px,1.8vw,22px); font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 10px; }
-    .news-snippet { font-size: clamp(12.5px,1.2vw,14px); color: var(--gray-600); line-height: 1.7; }
-    .news-list { display: flex; flex-direction: column; gap: clamp(12px,1.5vw,16px); }
-    .news-item { background: var(--white); border-radius: var(--radius-md); padding: clamp(14px,1.8vw,20px) clamp(16px,2vw,24px); box-shadow: var(--shadow-sm); border-left: 4px solid var(--gold); transition: var(--transition); cursor: pointer; }
-    .news-item:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
-    .news-item-title { font-family: var(--font-ui); font-size: clamp(12.5px,1.2vw,14px); font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1.4; }
-    .news-item-date { font-size: 11.5px; color: var(--gray-400); }
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: clamp(20px, 3vw, 32px);
+    }
+
+    .news-feat {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .news-feat:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .news-feat-img {
+      height: clamp(180px, 20vw, 260px);
+      overflow: hidden;
+    }
+
+    .news-feat-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .news-feat:hover .news-feat-img img {
+      transform: scale(1.05);
+    }
+
+    .news-feat-body {
+      padding: clamp(20px, 2.5vw, 32px);
+    }
+
+    .news-date {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .news-title {
+      font-family: var(--font-display);
+      font-size: clamp(17px, 1.8vw, 22px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .news-snippet {
+      font-size: clamp(12.5px, 1.2vw, 14px);
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(12px, 1.5vw, 16px);
+    }
+
+    .news-item {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: clamp(14px, 1.8vw, 20px) clamp(16px, 2vw, 24px);
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--gold);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .news-item:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .news-item-title {
+      font-family: var(--font-ui);
+      font-size: clamp(12.5px, 1.2vw, 14px);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    .news-item-date {
+      font-size: 11.5px;
+      color: var(--gray-400);
+    }
 
     /* ---- Responsive ---- */
     @media (max-width: 1023px) {
-      .hero-layout { grid-template-columns: 1fr; }
-      .hero-side { display: none; }
-      .hero h1 { font-size: clamp(34px, 5.5vw, 60px); }
-      .why-layout { grid-template-columns: 1fr; gap: 40px; }
-      .why-acc-badge { left: 12px; }
-      .why-float-badge { right: 12px; bottom: -14px; }
-      .programs-grid { grid-template-columns: repeat(2,1fr); }
-      .news-grid { grid-template-columns: 1fr; }
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 5.5vw, 60px);
+      }
+
+      .why-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .why-acc-badge {
+        left: 12px;
+      }
+
+      .why-float-badge {
+        right: 12px;
+        bottom: -14px;
+      }
+
+      .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 767px) {
       .campus-bento {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
       }
-      .bento-1,.bento-2,.bento-3,.bento-4 { grid-column: span 2; height: 200px; }
-      .hero-metrics { gap: 16px; }
-      .hero-metrics > div { min-width: 80px; }
+
+      .bento-1,
+      .bento-2,
+      .bento-3,
+      .bento-4 {
+        grid-column: span 2;
+        height: 200px;
+      }
+
+      .hero-metrics {
+        gap: 16px;
+      }
+
+      .hero-metrics>div {
+        min-width: 80px;
+      }
     }
+
     @media (max-width: 599px) {
-      .programs-grid { grid-template-columns: 1fr; }
-      .testi-card { flex: 0 0 calc(100vw - 2 * var(--container-pad) - 0px); }
-      .news-grid { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; justify-content: center; }
-      .campus-bento .bento-item { height: 180px; }
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testi-card {
+        flex: 0 0 calc(100vw - 2 * var(--container-pad) - 0px);
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .campus-bento .bento-item {
+        height: 180px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- Loader -->
-<div class="loader-screen" id="loader">
-  <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
-  <div class="loader-ring"></div>
-  <div class="loader-text">Loading Excellence</div>
-</div>
-
-<!-- Nav Overlay -->
-<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
-
-<!-- Announcement Bar -->
-<div class="announcement-bar">
-  🌍 <span>Applications Open 2025–26</span> — International Students from 40+ Countries Welcome! &nbsp;<a href="admissions.html">Apply Now →</a>
-</div>
-
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="nav-brand-text">
-          <div class="university-name">Tantia University</div>
-          <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="academics.html">Academics</a>
-        <a href="admissions.html">Admissions</a>
-        <a href="campus.html">Campus</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="nav-cta">
-        <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
-        <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
-      </div>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
+  <!-- Loader -->
+  <div class="loader-screen" id="loader">
+    <img src="assets/logo.png" alt="Tantia University" class="loader-logo" />
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading Excellence</div>
   </div>
-</nav>
 
-<!-- Mobile Nav -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="academics.html" onclick="closeMenu()">Academics</a>
-  <a href="admissions.html" onclick="closeMenu()">Admissions</a>
-  <a href="campus.html" onclick="closeMenu()">Campus</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2025–26 →</a>
-</nav>
+  <!-- Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="home">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-glow"></div>
-  <div class="container">
-    <div class="hero-layout">
-      <div class="hero-content">
-        <div class="hero-eyebrow">⭐ NAAC Accredited · UGC Recognized · Est. 1999</div>
-        <h1>
-          Shape Your Future<br />
-          at a <em>World-Class</em> University
-        </h1>
-        <p class="hero-desc">
-          Tantia University offers 116+ internationally recognized programs across Medicine, Engineering, Law, Management & more — shaping leaders for a globalized world.
-        </p>
-        <div class="hero-actions">
-          <a href="admissions.html" class="btn btn-primary btn-lg">Apply for 2025–26 →</a>
-          <a href="academics.html" class="btn btn-outline btn-lg">Explore Programs</a>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    🌍 <span>Applications Open 2026-27</span> — International Students from 40+ Countries Welcome! &nbsp;<a
+      href="admissions.html">Apply Now →</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="nav-brand-text">
+            <div class="university-name">Tantia University</div>
+            <div class="university-tagline">Sri Ganganagar, Rajasthan</div>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="academics.html">Academics</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="campus.html">Campus</a>
+          <a href="contact.html">Contact</a>
         </div>
-        <div class="hero-metrics">
-          <div><div class="hero-metric-num counter" data-target="25000" data-suffix="+">0</div><div class="hero-metric-label">Students</div></div>
-          <div><div class="hero-metric-num counter" data-target="116" data-suffix="+">0</div><div class="hero-metric-label">Programs</div></div>
-          <div><div class="hero-metric-num counter" data-target="40" data-suffix="+">0</div><div class="hero-metric-label">Countries</div></div>
-          <div><div class="hero-metric-num counter" data-target="25" data-suffix="+">0</div><div class="hero-metric-label">Years</div></div>
+        <div class="nav-cta">
+          <button class="btn-nav-outline" onclick="location.href='contact.html'">Enquire</button>
+          <button class="btn-nav-primary" onclick="location.href='admissions.html'">Apply Now</button>
         </div>
-      </div>
-      <!-- Side Cards (hidden on mobile via CSS) -->
-      <div class="hero-side">
-        <div class="hero-card">
-          <div class="hero-card-icon" style="background:rgba(201,168,76,0.15)">🎓</div>
-          <div class="hero-card-title">International Admissions Open</div>
-          <div class="hero-card-text">Students from 40+ nations. Apply via Study in India portal. AIU recognized degrees.</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-icon" style="background:rgba(0,191,165,0.15)">🌐</div>
-          <div class="hero-card-title">Global MoU Partners</div>
-          <div class="hero-card-text">Collaborations with international universities & research institutions worldwide.</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-icon" style="background:rgba(21,101,192,0.15)">🏥</div>
-          <div class="hero-card-title">Medical Powerhouse</div>
-          <div class="hero-card-text">MBBS, BAMS, BHMS & 20+ medical programs with world-class hospital facilities.</div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
         </div>
       </div>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-mouse"></div>
-    <span>Scroll</span>
-  </div>
-</section>
+  </nav>
 
-<!-- ============ ACCREDITATION STRIP ============ -->
-<div class="acc-strip">
-  <div class="container">
-    <div class="acc-inner">
-      <span class="acc-label">Recognized by</span>
-      <div class="acc-logos">
-        <div class="acc-item"><div class="icon">🏛️</div><span>UGC Approved</span></div>
-        <div class="acc-item"><div class="icon">✅</div><span>NAAC Accredited</span></div>
-        <div class="acc-item"><div class="icon">🌍</div><span>AIU Member</span></div>
-        <div class="acc-item"><div class="icon">🏥</div><span>MCI/NMC Approved</span></div>
-        <div class="acc-item"><div class="icon">⚖️</div><span>BCI Approved</span></div>
-        <div class="acc-item"><div class="icon">🎓</div><span>Study in India</span></div>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" onclick="closeMenu()" aria-label="Close">✕</button>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="academics.html" onclick="closeMenu()">Academics</a>
+    <a href="admissions.html" onclick="closeMenu()">Admissions</a>
+    <a href="campus.html" onclick="closeMenu()">Campus</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <a href="admissions.html" class="mobile-nav-apply" onclick="closeMenu()">Apply Now 2026-27 →</a>
+  </nav>
 
-<!-- ============ STATS ============ -->
-<div class="stats-strip">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item"><span class="stat-number counter" data-target="25000" data-suffix="+">0</span><div class="stat-label">Students Enrolled</div></div>
-      <div class="stat-item"><span class="stat-number counter" data-target="116" data-suffix="+">0</span><div class="stat-label">Programs Offered</div></div>
-      <div class="stat-item"><span class="stat-number counter" data-target="500" data-suffix="+">0</span><div class="stat-label">Expert Faculty</div></div>
-      <div class="stat-item"><span class="stat-number counter" data-target="98" data-suffix="%">0</span><div class="stat-label">Placement Rate</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ PROGRAMS ============ -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label">Approved International Portfolio 2025–26</div>
-      <h2 class="section-title">Official <span>International Student Programs</span></h2>
-      <p class="section-subtitle">Verified degree &amp; diploma programs with approved 50% and 70% scholarships for international applicants.</p>
-    </div>
-    <div class="programs-grid">
-      <a href="academics.html#allied_health" class="prog-card fade-up delay-1">
-        <div class="prog-icon blue">🩺</div>
-        <div class="prog-title">Allied Health Sciences</div>
-        <div class="prog-desc">BPT, MPT, BASLP, BMLS, B.Optom, BMRIT — 50% approved annual scholarship.</div>
-        <div class="prog-meta"><span class="prog-count">6 Programs</span><span class="prog-link">50% Scholarship →</span></div>
-      </a>
-      <a href="academics.html#nursing" class="prog-card fade-up delay-2">
-        <div class="prog-icon gold">👩‍⚕️</div>
-        <div class="prog-title">Nursing Sciences</div>
-        <div class="prog-desc">B.Sc. Nursing, Post Basic B.Sc. Nursing, M.Sc. Nursing with hospital clinical training.</div>
-        <div class="prog-meta"><span class="prog-count">3 Programs</span><span class="prog-link">50% Scholarship →</span></div>
-      </a>
-      <a href="academics.html#pharmacy" class="prog-card fade-up delay-3">
-        <div class="prog-icon orange">💊</div>
-        <div class="prog-title">Pharmacy & Life Sciences</div>
-        <div class="prog-desc">B.Pharmacy, D.Pharmacy — PCI approved state-of-the-art labs &amp; research.</div>
-        <div class="prog-meta"><span class="prog-count">2 Programs</span><span class="prog-link">50% Scholarship →</span></div>
-      </a>
-      <a href="academics.html#agriculture" class="prog-card fade-up delay-1">
-        <div class="prog-icon purple">🌾</div>
-        <div class="prog-title">Agribusiness & Agriculture</div>
-        <div class="prog-desc">M.Sc. Agriculture, MBA Agribusiness — 100-acre research farm &amp; corporate exposure.</div>
-        <div class="prog-meta"><span class="prog-count">2 Programs</span><span class="prog-link">50% Scholarship →</span></div>
-      </a>
-      <a href="academics.html#management" class="prog-card fade-up delay-2">
-        <div class="prog-icon teal">💼</div>
-        <div class="prog-title">Management & Legal Studies</div>
-        <div class="prog-desc">MBA (General), MBA (Hospital Mgmt), BA LLB (Hons.), LLB — BCI &amp; AIU recognized.</div>
-        <div class="prog-meta"><span class="prog-count">4 Programs</span><span class="prog-link">50% Scholarship →</span></div>
-      </a>
-      <a href="academics.html#sports" class="prog-card fade-up delay-3">
-        <div class="prog-icon red">🌟</div>
-        <div class="prog-title">Sports, Yoga & Basic Sciences</div>
-        <div class="prog-desc">BPES, Master of Yoga, M.Sc. Sciences, BA, MA — 70% Special Scholarship ($300/yr).</div>
-        <div class="prog-meta"><span class="prog-count">5 Programs</span><span class="prog-link">70% Special Off →</span></div>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:clamp(32px,4vw,48px);">
-      <a href="academics.html" class="btn btn-royal btn-lg">Explore All International Programs &amp; Fees →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY TANTIA ============ -->
-<section class="why-section">
-  <div style="position:absolute;top:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(21,101,192,0.35),transparent 65%);border-radius:50%;pointer-events:none;"></div>
-  <div class="container">
-    <div class="why-layout">
-      <div class="why-img-wrap fade-in">
-        <img src="assets/campus_students.jpg" alt="International students studying at Tantia University campus" />
-        <div class="why-float-badge">
-          <div class="num">25+</div>
-          <div class="lbl">Years of<br/>Excellence</div>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="hero-eyebrow">⭐ NAAC Accredited · UGC Recognized · Est. 1999</div>
+          <h1>
+            Shape Your Future<br />
+            at a <em>World-Class</em> University
+          </h1>
+          <p class="hero-desc">
+            Tantia University offers 116+ internationally recognized programs across Medicine, Engineering, Law,
+            Management & more — shaping leaders for a globalized world.
+          </p>
+          <div class="hero-actions">
+            <a href="admissions.html" class="btn btn-primary btn-lg">Apply for 2026-27 →</a>
+            <a href="academics.html" class="btn btn-outline btn-lg">Explore Programs</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <div class="hero-metric-num counter" data-target="25000" data-suffix="+">0</div>
+              <div class="hero-metric-label">Students</div>
+            </div>
+            <div>
+              <div class="hero-metric-num counter" data-target="116" data-suffix="+">0</div>
+              <div class="hero-metric-label">Programs</div>
+            </div>
+            <div>
+              <div class="hero-metric-num counter" data-target="40" data-suffix="+">0</div>
+              <div class="hero-metric-label">Countries</div>
+            </div>
+            <div>
+              <div class="hero-metric-num counter" data-target="25" data-suffix="+">0</div>
+              <div class="hero-metric-label">Years</div>
+            </div>
+          </div>
         </div>
-        <div class="why-acc-badge">
-          <div class="icon">🏆</div>
-          <div class="text">NAAC<br/>Accredited</div>
+        <!-- Side Cards (hidden on mobile via CSS) -->
+        <div class="hero-side">
+          <div class="hero-card">
+            <div class="hero-card-icon" style="background:rgba(201,168,76,0.15)">🎓</div>
+            <div class="hero-card-title">International Admissions Open</div>
+            <div class="hero-card-text">Students from 40+ nations. Apply via Study in India portal. AIU recognized
+              degrees.</div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-icon" style="background:rgba(0,191,165,0.15)">🌐</div>
+            <div class="hero-card-title">Global MoU Partners</div>
+            <div class="hero-card-text">Collaborations with international universities & research institutions
+              worldwide.</div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-icon" style="background:rgba(21,101,192,0.15)">🏥</div>
+            <div class="hero-card-title">Medical Powerhouse</div>
+            <div class="hero-card-text">MBBS, BAMS, BHMS & 20+ medical programs with world-class hospital facilities.
+            </div>
+          </div>
         </div>
       </div>
-      <div class="fade-up">
-        <div class="section-label" style="color:rgba(255,255,255,0.5);">Why Choose Us</div>
-        <h2 class="section-title" style="color:var(--white);">Why Tantia is Your<br /><em>Global Choice</em></h2>
-        <div class="gold-divider"></div>
-        <p style="color:rgba(255,255,255,0.65);font-size:clamp(14px,1.4vw,16px);line-height:1.8;margin-bottom:8px;">
-          A multidisciplinary powerhouse committed to nurturing tomorrow's global leaders through world-class education, cutting-edge research, and international collaboration.
-        </p>
-        <div class="why-features">
-          <div class="why-feature"><div class="why-feat-icon">🌐</div><div><div class="why-feat-title">International Recognition</div><div class="why-feat-text">Degrees recognized by AIU, UGC & universities worldwide. Study in India partner for international applicants.</div></div></div>
-          <div class="why-feature"><div class="why-feat-icon">🔬</div><div><div class="why-feat-title">Research & Innovation Hub</div><div class="why-feat-text">State-of-the-art research centers, modern labs, active MoU collaborations with global institutions.</div></div></div>
-          <div class="why-feature"><div class="why-feat-icon">🏥</div><div><div class="why-feat-title">Medical Excellence</div><div class="why-feat-text">Teaching hospital with 500+ beds, advanced diagnostics & clinical training for medical aspirants.</div></div></div>
-          <div class="why-feature"><div class="why-feat-icon">💼</div><div><div class="why-feat-title">Career-First Placement</div><div class="why-feat-text">200+ recruiting companies, 98% placement rate. Industry MoUs for structured internship programs.</div></div></div>
-        </div>
-        <div style="margin-top:clamp(24px,3vw,40px);">
-          <a href="about.html" class="btn btn-primary btn-lg">Discover Our Story →</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============ ACCREDITATION STRIP ============ -->
+  <div class="acc-strip">
+    <div class="container">
+      <div class="acc-inner">
+        <span class="acc-label">Recognized by</span>
+        <div class="acc-logos">
+          <div class="acc-item">
+            <div class="icon">🏛️</div><span>UGC Approved</span>
+          </div>
+          <div class="acc-item">
+            <div class="icon">✅</div><span>NAAC Accredited</span>
+          </div>
+          <div class="acc-item">
+            <div class="icon">🌍</div><span>AIU Member</span>
+          </div>
+          <div class="acc-item">
+            <div class="icon">🏥</div><span>MCI/NMC Approved</span>
+          </div>
+          <div class="acc-item">
+            <div class="icon">⚖️</div><span>BCI Approved</span>
+          </div>
+          <div class="acc-item">
+            <div class="icon">🎓</div><span>Study in India</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ============ CAMPUS BENTO ============ -->
-<section class="section-pad" style="background:var(--white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Campus Life</div>
-      <h2 class="section-title">Experience an <span>Extraordinary</span> Campus</h2>
-      <p class="section-subtitle">From world-class labs to vibrant hostels, sports to cultural fests — Tantia is a complete city of learning.</p>
-    </div>
-    <div class="campus-bento">
-      <div class="bento-item bento-1 fade-in">
-        <img src="assets/hero_campus.jpg" alt="Tantia University Grand Campus" />
-        <div class="bento-overlay"><span class="bento-label">🏛️ Grand Campus</span></div>
-      </div>
-      <div class="bento-item bento-2 fade-in delay-2">
-        <img src="assets/campus_life.jpg" alt="Research Laboratories" />
-        <div class="bento-overlay"><span class="bento-label">🔬 Research Labs</span></div>
-      </div>
-      <div class="bento-item bento-3 fade-in delay-1">
-        <img src="assets/campus_students.jpg" alt="International Students" />
-        <div class="bento-overlay"><span class="bento-label">🌍 International Students</span></div>
-      </div>
-      <div class="bento-item bento-4 fade-in delay-3">
-        <img src="assets/students_global.jpg" alt="Library & Study" />
-        <div class="bento-overlay"><span class="bento-label">📚 Digital Library</span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:clamp(24px,3vw,40px);">
-      <a href="campus.html" class="btn btn-outline-dark btn-lg">Explore Campus Life →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="section-pad" style="background:var(--off-white);">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Student Stories</div>
-      <h2 class="section-title">What Our <span>Alumni</span> Say</h2>
-    </div>
-    <div class="testi-wrapper">
-      <div class="testi-track" id="testiTrack">
-        <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <div class="stars">★★★★★</div>
-          <div class="testi-text">Tantia University gave me the platform to pursue MBBS with world-class clinical training. The faculty's dedication and modern hospital prepared me for international practice.</div>
-          <div class="testi-author"><div class="testi-avatar">AS</div><div><div class="testi-name">Dr. Arjun Sharma</div><div class="testi-meta">MBBS Graduate · Now in UAE</div></div></div>
+  <!-- ============ STATS ============ -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-number counter" data-target="25000" data-suffix="+">0</span>
+          <div class="stat-label">Students Enrolled</div>
         </div>
-        <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <div class="stars">★★★★★</div>
-          <div class="testi-text">As an international student from Nepal, Tantia made my transition seamless. The multicultural environment and B.Tech program helped me secure a job in Singapore.</div>
-          <div class="testi-author"><div class="testi-avatar">RK</div><div><div class="testi-name">Rajan Karki</div><div class="testi-meta">B.Tech CS · Nepal → Singapore</div></div></div>
+        <div class="stat-item"><span class="stat-number counter" data-target="116" data-suffix="+">0</span>
+          <div class="stat-label">Programs Offered</div>
         </div>
-        <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <div class="stars">★★★★★</div>
-          <div class="testi-text">The MBA program provided real-world business exposure through internships and industry partnerships. I launched my startup 6 months after graduation using skills from Tantia.</div>
-          <div class="testi-author"><div class="testi-avatar">PM</div><div><div class="testi-name">Priya Mehta</div><div class="testi-meta">MBA Graduate · Startup Founder</div></div></div>
+        <div class="stat-item"><span class="stat-number counter" data-target="500" data-suffix="+">0</span>
+          <div class="stat-label">Expert Faculty</div>
         </div>
-        <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <div class="stars">★★★★★</div>
-          <div class="testi-text">The Law faculty's expertise and moot court experience at Tantia was incredible. I cleared the bar on my first attempt and now practice constitutional law.</div>
-          <div class="testi-author"><div class="testi-avatar">VA</div><div><div class="testi-name">Vikram Agarwal</div><div class="testi-meta">LLM Graduate · Constitutional Lawyer</div></div></div>
+        <div class="stat-item"><span class="stat-number counter" data-target="98" data-suffix="%">0</span>
+          <div class="stat-label">Placement Rate</div>
         </div>
       </div>
     </div>
-    <div class="testi-dots" id="testiDots"></div>
   </div>
-</section>
 
-<!-- ============ NEWS ============ -->
-<section class="section-pad" style="background:var(--white);">
-  <div class="container">
-    <div class="section-header fade-up" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-      <div><div class="section-label">Latest Updates</div><h2 class="section-title">News & <span>Announcements</span></h2></div>
-      <a href="#" class="btn btn-outline-dark btn-md" style="margin-top:16px;">All News →</a>
+  <!-- ============ PROGRAMS ============ -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Approved International Portfolio 2026-27</div>
+        <h2 class="section-title">Official <span>International Student Programs</span></h2>
+        <p class="section-subtitle">Verified degree &amp; diploma programs with approved 50% and 70% scholarships for
+          international applicants.</p>
+      </div>
+      <div class="programs-grid">
+        <a href="academics.html#allied_health" class="prog-card fade-up delay-1">
+          <div class="prog-icon blue">🩺</div>
+          <div class="prog-title">Allied Health Sciences</div>
+          <div class="prog-desc">BPT, MPT, BASLP, BMLS, B.Optom, BMRIT — 50% approved annual scholarship.</div>
+          <div class="prog-meta"><span class="prog-count">6 Programs</span><span class="prog-link">50% Scholarship
+              →</span></div>
+        </a>
+        <a href="academics.html#nursing" class="prog-card fade-up delay-2">
+          <div class="prog-icon gold">👩‍⚕️</div>
+          <div class="prog-title">Nursing Sciences</div>
+          <div class="prog-desc">B.Sc. Nursing, Post Basic B.Sc. Nursing, M.Sc. Nursing with hospital clinical training.
+          </div>
+          <div class="prog-meta"><span class="prog-count">3 Programs</span><span class="prog-link">50% Scholarship
+              →</span></div>
+        </a>
+        <a href="academics.html#pharmacy" class="prog-card fade-up delay-3">
+          <div class="prog-icon orange">💊</div>
+          <div class="prog-title">Pharmacy & Life Sciences</div>
+          <div class="prog-desc">B.Pharmacy, D.Pharmacy — PCI approved state-of-the-art labs &amp; research.</div>
+          <div class="prog-meta"><span class="prog-count">2 Programs</span><span class="prog-link">50% Scholarship
+              →</span></div>
+        </a>
+        <a href="academics.html#agriculture" class="prog-card fade-up delay-1">
+          <div class="prog-icon purple">🌾</div>
+          <div class="prog-title">Agribusiness & Agriculture</div>
+          <div class="prog-desc">M.Sc. Agriculture, MBA Agribusiness — 100-acre research farm &amp; corporate exposure.
+          </div>
+          <div class="prog-meta"><span class="prog-count">2 Programs</span><span class="prog-link">50% Scholarship
+              →</span></div>
+        </a>
+        <a href="academics.html#management" class="prog-card fade-up delay-2">
+          <div class="prog-icon teal">💼</div>
+          <div class="prog-title">Management & Legal Studies</div>
+          <div class="prog-desc">MBA (General), MBA (Hospital Mgmt), BA LLB (Hons.), LLB — BCI &amp; AIU recognized.
+          </div>
+          <div class="prog-meta"><span class="prog-count">4 Programs</span><span class="prog-link">50% Scholarship
+              →</span></div>
+        </a>
+        <a href="academics.html#sports" class="prog-card fade-up delay-3">
+          <div class="prog-icon red">🌟</div>
+          <div class="prog-title">Sports, Yoga & Basic Sciences</div>
+          <div class="prog-desc">BPES, Master of Yoga, M.Sc. Sciences, BA, MA — 70% Special Scholarship ($300/yr).</div>
+          <div class="prog-meta"><span class="prog-count">5 Programs</span><span class="prog-link">70% Special Off
+              →</span></div>
+        </a>
+      </div>
+      <div style="text-align:center;margin-top:clamp(32px,4vw,48px);">
+        <a href="academics.html" class="btn btn-royal btn-lg">Explore All International Programs &amp; Fees →</a>
+      </div>
     </div>
-    <div class="news-grid">
-      <div class="news-feat fade-in">
-        <div class="news-feat-img"><img src="assets/campus_students.jpg" alt="Tantia University news" /></div>
-        <div class="news-feat-body">
-          <div class="news-date">September 15, 2025</div>
-          <div class="news-title">Tantia University Signs MoU with 5 International Universities for Research Exchange</div>
-          <div class="news-snippet">Landmark partnerships with top universities in the UK, USA, Australia, Canada and UAE open new doors for student and faculty exchange programs.</div>
-          <a href="#" class="btn btn-royal btn-sm" style="margin-top:20px;">Read More →</a>
+  </section>
+
+  <!-- ============ WHY TANTIA ============ -->
+  <section class="why-section">
+    <div
+      style="position:absolute;top:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(21,101,192,0.35),transparent 65%);border-radius:50%;pointer-events:none;">
+    </div>
+    <div class="container">
+      <div class="why-layout">
+        <div class="why-img-wrap fade-in">
+          <img src="assets/campus_students.jpg" alt="International students studying at Tantia University campus" />
+          <div class="why-float-badge">
+            <div class="num">25+</div>
+            <div class="lbl">Years of<br />Excellence</div>
+          </div>
+          <div class="why-acc-badge">
+            <div class="icon">🏆</div>
+            <div class="text">NAAC<br />Accredited</div>
+          </div>
+        </div>
+        <div class="fade-up">
+          <div class="section-label" style="color:rgba(255,255,255,0.5);">Why Choose Us</div>
+          <h2 class="section-title" style="color:var(--white);">Why Tantia is Your<br /><em>Global Choice</em></h2>
+          <div class="gold-divider"></div>
+          <p style="color:rgba(255,255,255,0.65);font-size:clamp(14px,1.4vw,16px);line-height:1.8;margin-bottom:8px;">
+            A multidisciplinary powerhouse committed to nurturing tomorrow's global leaders through world-class
+            education, cutting-edge research, and international collaboration.
+          </p>
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="why-feat-icon">🌐</div>
+              <div>
+                <div class="why-feat-title">International Recognition</div>
+                <div class="why-feat-text">Degrees recognized by AIU, UGC & universities worldwide. Study in India
+                  partner for international applicants.</div>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feat-icon">🔬</div>
+              <div>
+                <div class="why-feat-title">Research & Innovation Hub</div>
+                <div class="why-feat-text">State-of-the-art research centers, modern labs, active MoU collaborations
+                  with global institutions.</div>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feat-icon">🏥</div>
+              <div>
+                <div class="why-feat-title">Medical Excellence</div>
+                <div class="why-feat-text">Teaching hospital with 500+ beds, advanced diagnostics & clinical training
+                  for medical aspirants.</div>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feat-icon">💼</div>
+              <div>
+                <div class="why-feat-title">Career-First Placement</div>
+                <div class="why-feat-text">200+ recruiting companies, 98% placement rate. Industry MoUs for structured
+                  internship programs.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:clamp(24px,3vw,40px);">
+            <a href="about.html" class="btn btn-primary btn-lg">Discover Our Story →</a>
+          </div>
         </div>
       </div>
-      <div class="news-list">
-        <div class="news-item fade-up delay-1"><div class="news-item-title">Admissions 2025-26 Now Open for All International Programs</div><div class="news-item-date">Sep 10, 2025</div></div>
-        <div class="news-item fade-up delay-2"><div class="news-item-title">Tantia University Ranked Among Top 50 Private Universities in India</div><div class="news-item-date">Aug 28, 2025</div></div>
-        <div class="news-item fade-up delay-3"><div class="news-item-title">New Research Center Inaugurated by Honourable Governor</div><div class="news-item-date">Aug 15, 2025</div></div>
-        <div class="news-item fade-up delay-4"><div class="news-item-title">100% Scholarship Announced for Merit Students in MBBS</div><div class="news-item-date">Aug 5, 2025</div></div>
-        <div class="news-item fade-up delay-5"><div class="news-item-title">Annual International Cultural Fest 'TantiaFest 2025' Opens Registration</div><div class="news-item-date">Jul 22, 2025</div></div>
+    </div>
+  </section>
+
+  <!-- ============ CAMPUS BENTO ============ -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Campus Life</div>
+        <h2 class="section-title">Experience an <span>Extraordinary</span> Campus</h2>
+        <p class="section-subtitle">From world-class labs to vibrant hostels, sports to cultural fests — Tantia is a
+          complete city of learning.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta-section">
-  <div class="glow-orb"></div>
-  <div class="container">
-    <div class="badge badge-gold" style="margin-bottom:20px;display:inline-flex;">🎓 Admissions Open 2025–26</div>
-    <div class="cta-title">Begin Your <em>Global Journey</em><br />at Tantia University</div>
-    <p class="cta-subtitle">Join 25,000+ students from across the world. Your future starts here.</p>
-    <div class="cta-actions">
-      <a href="admissions.html" class="btn btn-primary btn-lg">Apply Online Now →</a>
-      <a href="contact.html" class="btn btn-outline btn-lg">Talk to Advisor</a>
-      <a href="academics.html" class="btn btn-glass btn-lg">Browse Programs</a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Tantia University Logo" />
-        <div class="footer-brand-name">Tantia University</div>
-        <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
-        <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class education, research & innovation since 1999.</p>
-        <div class="footer-socials">
-          <div class="social-icon" title="Facebook">f</div>
-          <div class="social-icon" title="Twitter">𝕏</div>
-          <div class="social-icon" title="Instagram">📸</div>
-          <div class="social-icon" title="LinkedIn">in</div>
-          <div class="social-icon" title="YouTube">▶</div>
+      <div class="campus-bento">
+        <div class="bento-item bento-1 fade-in">
+          <img src="assets/hero_campus.jpg" alt="Tantia University Grand Campus" />
+          <div class="bento-overlay"><span class="bento-label">🏛️ Grand Campus</span></div>
+        </div>
+        <div class="bento-item bento-2 fade-in delay-2">
+          <img src="assets/campus_life.jpg" alt="Research Laboratories" />
+          <div class="bento-overlay"><span class="bento-label">🔬 Research Labs</span></div>
+        </div>
+        <div class="bento-item bento-3 fade-in delay-1">
+          <img src="assets/campus_students.jpg" alt="International Students" />
+          <div class="bento-overlay"><span class="bento-label">🌍 International Students</span></div>
+        </div>
+        <div class="bento-item bento-4 fade-in delay-3">
+          <img src="assets/students_global.jpg" alt="Library & Study" />
+          <div class="bento-overlay"><span class="bento-label">📚 Digital Library</span></div>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="academics.html">Academics</a></li>
-          <li><a href="admissions.html">Admissions</a></li>
-          <li><a href="campus.html">Campus</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="academics.html#medical">Medical Sciences</a></li>
-          <li><a href="academics.html#engineering">Engineering</a></li>
-          <li><a href="academics.html#management">Management</a></li>
-          <li><a href="academics.html#law">Law</a></li>
-          <li><a href="academics.html#agriculture">Agriculture</a></li>
-          <li><a href="academics.html#pharma">Pharmacy</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
-          <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
-          <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
-          <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
-        </ul>
+      <div style="text-align:center;margin-top:clamp(24px,3vw,40px);">
+        <a href="campus.html" class="btn btn-outline-dark btn-lg">Explore Campus Life →</a>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="footer-bottom">
-      <span>© 2025 Tantia University. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Sitemap</a>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Student Stories</div>
+        <h2 class="section-title">What Our <span>Alumni</span> Say</h2>
+      </div>
+      <div class="testi-wrapper">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">Tantia University gave me the platform to pursue MBBS with world-class clinical
+              training. The faculty's dedication and modern hospital prepared me for international practice.</div>
+            <div class="testi-author">
+              <div class="testi-avatar">AS</div>
+              <div>
+                <div class="testi-name">Dr. Arjun Sharma</div>
+                <div class="testi-meta">MBBS Graduate · Now in UAE</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">As an international student from Nepal, Tantia made my transition seamless. The
+              multicultural environment and B.Tech program helped me secure a job in Singapore.</div>
+            <div class="testi-author">
+              <div class="testi-avatar">RK</div>
+              <div>
+                <div class="testi-name">Rajan Karki</div>
+                <div class="testi-meta">B.Tech CS · Nepal → Singapore</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">The MBA program provided real-world business exposure through internships and
+              industry partnerships. I launched my startup 6 months after graduation using skills from Tantia.</div>
+            <div class="testi-author">
+              <div class="testi-avatar">PM</div>
+              <div>
+                <div class="testi-name">Priya Mehta</div>
+                <div class="testi-meta">MBA Graduate · Startup Founder</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">The Law faculty's expertise and moot court experience at Tantia was incredible. I
+              cleared the bar on my first attempt and now practice constitutional law.</div>
+            <div class="testi-author">
+              <div class="testi-avatar">VA</div>
+              <div>
+                <div class="testi-name">Vikram Agarwal</div>
+                <div class="testi-meta">LLM Graduate · Constitutional Lawyer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-dots" id="testiDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ NEWS ============ -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header fade-up"
+        style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <div class="section-label">Latest Updates</div>
+          <h2 class="section-title">News & <span>Announcements</span></h2>
+        </div>
+        <a href="#" class="btn btn-outline-dark btn-md" style="margin-top:16px;">All News →</a>
+      </div>
+      <div class="news-grid">
+        <div class="news-feat fade-in">
+          <div class="news-feat-img"><img src="assets/campus_students.jpg" alt="Tantia University news" /></div>
+          <div class="news-feat-body">
+            <div class="news-date">September 15, 2025</div>
+            <div class="news-title">Tantia University Signs MoU with 5 International Universities for Research Exchange
+            </div>
+            <div class="news-snippet">Landmark partnerships with top universities in the UK, USA, Australia, Canada and
+              UAE open new doors for student and faculty exchange programs.</div>
+            <a href="#" class="btn btn-royal btn-sm" style="margin-top:20px;">Read More →</a>
+          </div>
+        </div>
+        <div class="news-list">
+          <div class="news-item fade-up delay-1">
+            <div class="news-item-title">Admissions 2025-26 Now Open for All International Programs</div>
+            <div class="news-item-date">Sep 10, 2025</div>
+          </div>
+          <div class="news-item fade-up delay-2">
+            <div class="news-item-title">Tantia University Ranked Among Top 50 Private Universities in India</div>
+            <div class="news-item-date">Aug 28, 2025</div>
+          </div>
+          <div class="news-item fade-up delay-3">
+            <div class="news-item-title">New Research Center Inaugurated by Honourable Governor</div>
+            <div class="news-item-date">Aug 15, 2025</div>
+          </div>
+          <div class="news-item fade-up delay-4">
+            <div class="news-item-title">100% Scholarship Announced for Merit Students in MBBS</div>
+            <div class="news-item-date">Aug 5, 2025</div>
+          </div>
+          <div class="news-item fade-up delay-5">
+            <div class="news-item-title">Annual International Cultural Fest 'TantiaFest 2025' Opens Registration</div>
+            <div class="news-item-date">Jul 22, 2025</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script src="main.js"></script>
-<script>
-  // Hero BG load
-  const heroBg = document.getElementById('heroBg');
-  setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="glow-orb"></div>
+    <div class="container">
+      <div class="badge badge-gold" style="margin-bottom:20px;display:inline-flex;">🎓 Admissions Open 2026-27</div>
+      <div class="cta-title">Begin Your <em>Global Journey</em><br />at Tantia University</div>
+      <p class="cta-subtitle">Join 25,000+ students from across the world. Your future starts here.</p>
+      <div class="cta-actions">
+        <a href="admissions.html" class="btn btn-primary btn-lg">Apply Online Now →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Talk to Advisor</a>
+        <a href="academics.html" class="btn btn-glass btn-lg">Browse Programs</a>
+      </div>
+    </div>
+  </section>
 
-  // Testimonials Carousel
-  (function() {
-    const track = document.getElementById('testiTrack');
-    const dotsEl = document.getElementById('testiDots');
-    if (!track || !dotsEl) return;
-    const cards = track.querySelectorAll('.testi-card');
-    let current = 0;
-    let autoTimer;
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Tantia University Logo" />
+          <div class="footer-brand-name">Tantia University</div>
+          <div class="footer-brand-tagline">Excellence · Innovation · Achievement</div>
+          <p class="footer-desc">A premier multidisciplinary institution shaping global leaders through world-class
+            education, research & innovation since 1999.</p>
+          <div class="footer-socials">
+            <div class="social-icon" title="Facebook">f</div>
+            <div class="social-icon" title="Twitter">𝕏</div>
+            <div class="social-icon" title="Instagram">📸</div>
+            <div class="social-icon" title="LinkedIn">in</div>
+            <div class="social-icon" title="YouTube">▶</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="academics.html#medical">Medical Sciences</a></li>
+            <li><a href="academics.html#engineering">Engineering</a></li>
+            <li><a href="academics.html#management">Management</a></li>
+            <li><a href="academics.html#law">Law</a></li>
+            <li><a href="academics.html#agriculture">Agriculture</a></li>
+            <li><a href="academics.html#pharma">Pharmacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 Sri Ganganagar, Rajasthan 335002</a></li>
+            <li><a href="tel:+911544297019">📞 +91-1544-297019</a></li>
+            <li><a href="mailto:dia@tantiauniversity.com">✉️ dia@tantiauniversity.com</a></li>
+            <li><a href="https://www.tantiauniversity.com" target="_blank">🌐 tantiauniversity.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2025 Tantia University. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    function getCardWidth() {
-      return cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || 24);
-    }
+  <script src="main.js"></script>
+  <script>
+    // Hero BG load
+    const heroBg = document.getElementById('heroBg');
+    setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
 
-    // Build dots
-    cards.forEach((_, i) => {
-      const d = document.createElement('div');
-      d.className = 'testi-dot' + (i === 0 ? ' active' : '');
-      d.onclick = () => go(i);
-      dotsEl.appendChild(d);
-    });
+    // Testimonials Carousel
+    (function () {
+      const track = document.getElementById('testiTrack');
+      const dotsEl = document.getElementById('testiDots');
+      if (!track || !dotsEl) return;
+      const cards = track.querySelectorAll('.testi-card');
+      let current = 0;
+      let autoTimer;
 
-    function go(idx) {
-      current = idx;
-      track.style.transform = `translateX(-${current * getCardWidth()}px)`;
-      dotsEl.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-    }
+      function getCardWidth() {
+        return cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || 24);
+      }
 
-    function next() { go((current + 1) % cards.length); }
+      // Build dots
+      cards.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+        d.onclick = () => go(i);
+        dotsEl.appendChild(d);
+      });
 
-    autoTimer = setInterval(next, 4500);
-    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
-    track.parentElement.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 4500); });
+      function go(idx) {
+        current = idx;
+        track.style.transform = `translateX(-${current * getCardWidth()}px)`;
+        dotsEl.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      }
 
-    // Touch/swipe support
-    let startX = 0;
-    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) { diff > 0 ? go(Math.min(current+1, cards.length-1)) : go(Math.max(current-1, 0)); }
-    });
-  })();
-</script>
+      function next() { go((current + 1) % cards.length); }
+
+      autoTimer = setInterval(next, 4500);
+      track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      track.parentElement.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 4500); });
+
+      // Touch/swipe support
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { diff > 0 ? go(Math.min(current + 1, cards.length - 1)) : go(Math.max(current - 1, 0)); }
+      });
+    })();
+  </script>
 </body>
+
 </html>
