@@ -7,7 +7,9 @@ if [ ! -f .env ]; then
   cp .env.example .env
 fi
 
+mkdir -p database storage/framework/sessions storage/framework/views storage/framework/cache bootstrap/cache
 touch database/database.sqlite
+chmod -R 777 storage bootstrap/cache database
 
 if ! grep -q "APP_KEY=base64:" .env 2>/dev/null; then
   php artisan key:generate --force

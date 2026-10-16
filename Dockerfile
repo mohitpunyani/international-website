@@ -1,4 +1,4 @@
-FROM php:8.3-cli-alpine
+FROM php:8.4-cli-alpine
 
 RUN apk add --no-cache \
     curl \
@@ -19,13 +19,13 @@ COPY --from=composer:2.8 /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 
 COPY backend/composer.json backend/composer.lock ./
-RUN composer install --no-dev --no-scripts --no-autoloader --no-interaction
+RUN composer install --no-dev --no-scripts --no-autoloader --no-interaction --ignore-platform-req=php+
 
 COPY backend/package.json backend/package-lock.json ./
 RUN npm ci || npm install
 
 COPY backend/ .
-RUN composer dump-autoload --optimize --no-dev
+RUN composer dump-autoload --optimize --no-dev --ignore-platform-req=php+
 RUN npm run build
 
 RUN mkdir -p database storage/framework/sessions storage/framework/views storage/framework/cache bootstrap/cache && \
